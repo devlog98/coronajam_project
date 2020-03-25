@@ -108,6 +108,8 @@ MonoBehaviour:
   upOffset: {x: 0, y: 1.7, z: 0}
   timeMovement: 4
   timeAttack: 3
+  virusShot: 1
+  virusObject: {fileID: 0}
 --- !u!50 &2212428972574410522
 Rigidbody2D:
   serializedVersion: 4

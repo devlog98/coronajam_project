@@ -17,6 +17,16 @@ public class VirusShot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.right * speed * Time.deltaTime); 
+        transform.Translate(Vector2.left * speed * Time.deltaTime); 
+
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    { 
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
