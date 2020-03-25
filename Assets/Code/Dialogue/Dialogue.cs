@@ -27,7 +27,7 @@ public class Dialogue : MonoBehaviour {
     //show sentence for a specific amount of time
     private IEnumerator ShowSentence(DialogueSentence sentence) {
         inSentence = true; //starting sentence
-        Debug.Log(sentence.SentenceKey); //write sentence in screen
+        UI.instance.UpdateDialogueSentenceText(sentence.SentenceKey); //write sentence in screen
         yield return new WaitForSeconds(sentence.SentenceDuration); //wait for sentence duration to end
         inSentence = false; //stopping sentence
     }

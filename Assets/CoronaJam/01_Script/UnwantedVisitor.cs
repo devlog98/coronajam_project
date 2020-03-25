@@ -34,7 +34,7 @@ public class UnwantedVisitor : MonoBehaviour
     float timeA;
 
     [Header("Attack")]
-    public Transform bulletSpawn;;
+    public Transform bulletSpawn;
     // Start is called before the first frame update
     void Start()
     {
