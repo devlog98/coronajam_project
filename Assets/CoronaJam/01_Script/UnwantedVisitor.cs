@@ -9,8 +9,6 @@ public class UnwantedVisitor : MonoBehaviour
     public float speedUp;
     public bool left, right, up, down;
 
-
-
     [Header("Check")]
     public LayerMask groundCheck;
     public Vector3 sideOffset, upOffset;
@@ -34,7 +32,8 @@ public class UnwantedVisitor : MonoBehaviour
     float timeA;
 
     [Header("Attack")]
-    public Transform bulletSpawn;;
+    public bool virusShot;
+    public GameObject virusObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -79,7 +78,12 @@ public class UnwantedVisitor : MonoBehaviour
         if (timeA >= timeAttack)
         {
             timeA = 0;
-            Fire();
+
+            if (virusShot)
+            {
+                Fire();
+            }
+            
         }
 
 
@@ -206,7 +210,7 @@ public class UnwantedVisitor : MonoBehaviour
 
     void Fire()
     {
-
+        GameObject cloneVirus = Instantiate(virusObject, transform.position, transform.rotation);
     }
 
     private void OnDrawGizmos()
