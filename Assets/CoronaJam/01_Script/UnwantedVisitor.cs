@@ -33,7 +33,8 @@ public class UnwantedVisitor : MonoBehaviour
     float timeM;
     float timeA;
 
-
+    [Header("Attack")]
+    public Transform bulletSpawn;;
     // Start is called before the first frame update
     void Start()
     {
@@ -78,6 +79,7 @@ public class UnwantedVisitor : MonoBehaviour
         if (timeA >= timeAttack)
         {
             timeA = 0;
+            Fire();
         }
 
 
@@ -200,6 +202,11 @@ public class UnwantedVisitor : MonoBehaviour
         {
             down = false;
         }
+    }
+
+    void Fire()
+    {
+
     }
 
     private void OnDrawGizmos()
