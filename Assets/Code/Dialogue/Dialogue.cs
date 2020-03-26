@@ -1,30 +1,50 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Dialogue : MonoBehaviour {
-    [SerializeField] List<DialogueSentence> dialogueSentences; //list with all sentences from this dialogue
-    [SerializeField] List<DialogueChoice> dialogueChoices; //list with all choices from this dialogue
+    public static Dialogue instance;
 
-    Queue<DialogueSentence> dialogueSentencesQueue; //queues to help with dialogue flow
-    Queue<DialogueChoice> dialogueChoicesQueue;
-    bool inSentence;
+    private Queue<DialogueSentence> dialogueSentencesQueue; //queues to help with dialogue flow
+    private Queue<DialogueChoice> dialogueChoicesQueue;
+    private Action<bool> dialogueCallback; //method to be called after dialogue is finished
+    private bool inSentence;
 
-    //creates queue with all sentences from this dialogue
-    private void Start() {
+    //setting singleton instance
+    private void Awake() {
+        if (instance != null && instance != this) {
+            Destroy(this.gameObject);
+        }
+        else {
+            instance = this;
+        }
+    }
+
+    //creates queue with all sentences from this dialogue and sets callback
+    public void StartDialogue(List<DialogueSentence> dialogueSentences, List<DialogueChoice> dialogueChoices, Action<bool> callback) {
         dialogueSentencesQueue = new Queue<DialogueSentence>(dialogueSentences);
         dialogueChoicesQueue = new Queue<DialogueChoice>(dialogueChoices);
+        dialogueCallback = callback;
     }
 
     private void Update() {
-        //if the sentence is over, show new sentence or quit dialogue
-        if (!inSentence) {
-            //if there are still sentences on queue
-            if (dialogueSentencesQueue.Count > 0) {
-                DialogueSentence sentence = dialogueSentencesQueue.Dequeue();
-                StartCoroutine(ShowSentence(sentence));
+        // if there is dialogue to be displayed
+        if (dialogueSentencesQueue != null) {
+            //go to next sentence if current is over
+            if (!inSentence) {
+                //show next sentence if queue has any left, else quit dialogue
+                if (dialogueSentencesQueue.Count > 0) {
+                    DialogueSentence sentence = dialogueSentencesQueue.Dequeue();
+                    StartCoroutine(ShowSentence(sentence));
+                }
+                else {
+                    dialogueSentencesQueue = null;
+                    dialogueChoicesQueue = null;
+                    dialogueCallback(true);
+                }
             }
-        }
+        }     
     }
 
     //show sentence for a specific amount of time
