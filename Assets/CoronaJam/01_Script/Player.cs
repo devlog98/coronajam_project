@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
     bool walkSide;
     bool walkUp;
 
+    public Transform spawn;
+    public GameObject spawnObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,11 @@ public class Player : MonoBehaviour
 
         CheckInput();
         Move();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GameObject spawVirus = Instantiate(spawnObject, spawn.position, spawn.rotation);
+        }
 
     }
     private void FixedUpdate()
@@ -59,6 +66,7 @@ public class Player : MonoBehaviour
             
             moveUp = Input.GetAxis("Vertical");
             if (moveUp > 0 && up || moveUp < 0 && down) { walkUp = true; }
+            
         }
     }
 

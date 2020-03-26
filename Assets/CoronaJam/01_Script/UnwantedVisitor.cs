@@ -34,6 +34,8 @@ public class UnwantedVisitor : MonoBehaviour
     [Header("Attack")]
     public bool virusShot;
     public GameObject virusObject;
+    public bool virusSneeze;
+    public GameObject SneezeObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -81,7 +83,8 @@ public class UnwantedVisitor : MonoBehaviour
 
             if (virusShot)
             {
-                Fire();
+                Sneeze();
+                //Fire();
             }
             
         }
@@ -211,6 +214,11 @@ public class UnwantedVisitor : MonoBehaviour
     void Fire()
     {
         GameObject cloneVirus = Instantiate(virusObject, transform.position, transform.rotation);
+    }
+
+    void Sneeze()
+    {
+        GameObject cloneSneeze = Instantiate(SneezeObject, transform.position, transform.rotation);
     }
 
     private void OnDrawGizmos()

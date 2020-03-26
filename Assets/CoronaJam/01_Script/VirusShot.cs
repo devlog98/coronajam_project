@@ -28,5 +28,10 @@ public class VirusShot : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (other.gameObject.CompareTag("Ground"))
+        {
+           
+        }
     }
 }
