@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -27,30 +28,34 @@ public class UI : MonoBehaviour {
         }
     }
 
-    //update dialogue sentence that is being show on screen
-    public void UpdateDialogueSentenceText(string sentence) {
+    //show dialogue sentence on screen with typing effect
+    public void ShowDialogueSentence(string sentence) {
         StopCoroutine("TypeText");
-        StartCoroutine(TypeText(dialogueSentenceText, sentence, dialogueTypeSpeed));
+        StartCoroutine(TypeText(dialogueSentenceText, dialogueSentenceBox, sentence, dialogueTypeSpeed));
     }
 
-    public void HideDialogueSentence() {
-
+    //hide dialogue sentence with fade
+    public void HideDialogueSentence(Action<bool> callback) {
+        StopCoroutine("FadeText");
+        StartCoroutine(FadeText(dialogueSentenceText, dialogueSentenceBox, dialogueFadeAmount, callback));
     }
 
     //types each letter of text at a certain amount of time and displays on specific UI element
-    private IEnumerator TypeText(TextMeshProUGUI textUI, string text, float typeSpeed) {
-        textUI.text = "";
+    private IEnumerator TypeText(TextMeshProUGUI textUI, Image textBoxUI, string text, float typeSpeed) {
+        //restores alpha if fade occurred
+        float alpha = 1f;
+        textBoxUI.color = new Color(textBoxUI.color.r, textBoxUI.color.g, textBoxUI.color.b, alpha);
+        textUI.color = new Color(textUI.color.r, textUI.color.g, textUI.color.b, alpha);
 
+        textUI.text = "";
         foreach (char letter in text.ToCharArray()) {
             textUI.text += letter;
             yield return new WaitForSeconds(typeSpeed);
         }
-
-        StartCoroutine(FadeText(dialogueSentenceText, dialogueSentenceBox, dialogueFadeAmount));
     }
 
-    //fades UI elements based on specific fade amount
-    private IEnumerator FadeText(TextMeshProUGUI textUI, Image textBoxUI, float fadeAmount) {
+    //fades UI elements based on specific fade amount and then activates callback
+    private IEnumerator FadeText(TextMeshProUGUI textUI, Image textBoxUI, float fadeAmount, Action<bool> callback) {
         float alpha = 1f;
 
         while (textUI.color.a > 0) {
@@ -59,5 +64,7 @@ public class UI : MonoBehaviour {
             alpha -= fadeAmount;
             yield return null;
         }
+
+        callback(true); //returns successful callback
     }
 }
