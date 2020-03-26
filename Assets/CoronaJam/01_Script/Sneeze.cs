@@ -15,6 +15,7 @@ public class Sneeze : MonoBehaviour
     private GameObject targetGrid;
     private int getRandom;
     bool get = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,11 +27,11 @@ public class Sneeze : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
-        
     }
 
     void GetTransform()
     {
+        //Obtem as grids da cena e coloca em 3 vetores
         for (int i = 1; i <= 10; i++)
         {
             if (i < 4)
@@ -46,13 +47,13 @@ public class Sneeze : MonoBehaviour
             {
                 linha3[i - 7] = GameObject.Find("Grid " + i);
             }
-
         }
     }
 
     void getTargetGrid()
     {
-        getRandom = Random.Range(0,3);
+        //Pega a posição do Gameobject e obtem um dos vetores da mesma posição
+        getRandom = Random.Range(0, 3);
         //-0.25
         //-1.95
         //-3.65
@@ -79,6 +80,7 @@ public class Sneeze : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Se a grid de colisão tiver o mesmo nome do gameobject destroi o o objeto e spawna uma grid infectada
         if (collision.gameObject.name == targetGrid.name)
         {
             GameObject spawVirus = Instantiate(spawnObject, collision.transform.position, collision.transform.rotation);

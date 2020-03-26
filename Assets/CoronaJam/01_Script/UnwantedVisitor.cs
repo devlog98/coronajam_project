@@ -12,7 +12,6 @@ public class UnwantedVisitor : MonoBehaviour
     [Header("Check")]
     public LayerMask groundCheck;
     public Vector3 sideOffset, upOffset;
-    bool leftSide, rightSide, upSide, downSide;
     bool horizontal;
     bool vertical;
     Vector3 localização;
@@ -22,29 +21,29 @@ public class UnwantedVisitor : MonoBehaviour
 
     [Header("Control")]
     public float timeMovement;
-    public float timeAttack;
     string[] direction = new[] { "Horizontal", "Vertical" };
-    int[] sense = new[] {-1, 1 };
+    int[] sense = new[] { -1, 1 };
     string getDirection;
     int getSense;
     int getRandom;
     float timeM;
-    float timeA;
+
 
     [Header("Attack")]
+    Vector3 distanceAttack = new Vector3(-1.5f, 0f, 0f);
     public bool virusShot;
     public GameObject virusObject;
+    public float timeVirusShot;
+    float timeV;
     public bool virusSneeze;
     public GameObject SneezeObject;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float timeSneeze;
+    float timeS;
 
     // Update is called once per frame
     void Update()
     {
+        timeControl();
         control();
         CheckInput();
         Move();
@@ -52,59 +51,72 @@ public class UnwantedVisitor : MonoBehaviour
 
     private void FixedUpdate()
     {
-
         PhysicsCheck();
+    }
+
+    void timeControl()
+    {
+        // a cada um segundo as variaveis time recebem um incremento.
+        timeM += Time.deltaTime;
+        if (virusSneeze)
+        {
+            timeV += Time.deltaTime;
+        }
+        if (virusShot)
+        {
+            timeS += Time.deltaTime;
+        }
     }
 
     public void control()
     {
-        //a cada um segundo as variaveis time recebem um incremento.
-        timeM += Time.deltaTime;
-        timeA += Time.deltaTime;
-
         //quando o time tiver um valor igual ou maior ao especificado para o movimento é realizado a ação
         if (timeM >= timeMovement)
         {
             timeM = 0;
-
             //Obtem uma direção e sentido aleatório dos arrays.
             getRandom = Random.Range(0, sense.Length);
             getDirection = direction[getRandom];
             getRandom = Random.Range(0, sense.Length);
             getSense = sense[getRandom];
-
             if (getDirection == "Horizontal" && getSense > 0 && !right || getDirection == "Horizontal" && getSense < 0 && !left || getDirection == "Vertical" && getSense > 0 && !up || getDirection == "Vertical" && getSense < 0 && !down) { timeM = 3; }
         }
 
         //quando o time tiver um valor igual ou maior ao especificado para o ataque é realizado a ação
-        if (timeA >= timeAttack)
+        else if (timeS >= timeSneeze && virusSneeze && !horizontal || timeS >= timeSneeze && virusSneeze && !vertical)
         {
-            timeA = 0;
-
-            if (virusShot)
-            {
-                Sneeze();
-                //Fire();
-            }
-            
+            timeV = 0;
+            timeS = 0;
+            Sneeze();
         }
-
-
-
+        else if (timeV >= timeVirusShot && virusShot && !horizontal || timeV >= timeVirusShot && virusShot && !vertical)
+        {
+            timeV = 0;
+            Fire();
+        }
+        else if (horizontal || vertical && timeV >= timeVirusShot && virusShot)
+        {
+            timeV = 2 - (Mathf.RoundToInt(timeV));
+        }
+        else if (horizontal || timeS >= timeSneeze && virusSneeze)
+        {
+            timeS = 2 - (Mathf.RoundToInt(timeS));
+        }
     }
+
     public void CheckInput()
     {
         //Checar se a direção e sentidos estão disponiveis, se disponivel a variavel da direção recebe verdadeiro
         if (getDirection == "Horizontal" && !horizontal && !vertical)
         {
             getDirection = null;
-            if (getSense > 0 && right || getSense < 0 && left) { walkSide = true; }           
+            if (getSense > 0 && right || getSense < 0 && left) { walkSide = true; }
         }
         if (getDirection == "Vertical" && !vertical && !horizontal)
         {
             getDirection = null;
-            if (getSense > 0 && up || getSense < 0 && down) { walkUp = true; }           
-        }      
+            if (getSense > 0 && up || getSense < 0 && down) { walkUp = true; }
+        }
     }
 
     public void Move()
@@ -114,7 +126,6 @@ public class UnwantedVisitor : MonoBehaviour
         if (walkSide)
         {
             walkSide = false;
-
             if (getSense > 0)
             {
                 localização = transform.position + sideOffset;
@@ -144,88 +155,45 @@ public class UnwantedVisitor : MonoBehaviour
         if (horizontal)
         {
             transform.position = Vector3.MoveTowards(transform.position, localização, speedSide * Time.deltaTime);
-
             if (Vector3.Distance(transform.position, localização) == 0f)
             {
                 horizontal = false;
             }
-
-
         }
         //move para cima e baixo
         if (vertical)
         {
             transform.position = Vector3.MoveTowards(transform.position, localização, speedUp * Time.deltaTime);
-
             if (Vector3.Distance(transform.position, localização) == 0f)
             {
                 vertical = false;
             }
-
-
         }
-
-
     }
 
     void PhysicsCheck()
     {
         //verificar se pode se locomover, e distancia de cada grid.
-        rightSide = Physics2D.OverlapCircle(transform.position + sideOffset, 0.15f, groundCheck);
-        leftSide = Physics2D.OverlapCircle(transform.position + (-sideOffset), 0.15f, groundCheck);
-        upSide = Physics2D.OverlapCircle(transform.position + upOffset, 0.15f, groundCheck);
-        downSide = Physics2D.OverlapCircle(transform.position + (-upOffset), 0.15f, groundCheck);
-
-
-        if (rightSide)
-        {
-            right = true;
-        }
-        else
-        {
-            right = false;
-        }
-        if (leftSide)
-        {
-            left = true;
-        }
-        else
-        {
-            left = false;
-        }
-        if (upSide)
-        {
-            up = true;
-        }
-        else
-        {
-            up = false;
-        }
-        if (downSide)
-        {
-            down = true;
-        }
-        else
-        {
-            down = false;
-        }
+        right = Physics2D.OverlapCircle(transform.position + sideOffset, 0.15f, groundCheck);
+        left = Physics2D.OverlapCircle(transform.position + (-sideOffset), 0.15f, groundCheck);
+        up = Physics2D.OverlapCircle(transform.position + upOffset, 0.15f, groundCheck);
+        down = Physics2D.OverlapCircle(transform.position + (-upOffset), 0.15f, groundCheck);
     }
 
     void Fire()
     {
-        GameObject cloneVirus = Instantiate(virusObject, transform.position, transform.rotation);
+        GameObject cloneVirus = Instantiate(virusObject, distanceAttack + transform.position, transform.rotation);
     }
 
     void Sneeze()
     {
-        GameObject cloneSneeze = Instantiate(SneezeObject, transform.position, transform.rotation);
+        GameObject cloneSneeze = Instantiate(SneezeObject, distanceAttack + transform.position, transform.rotation);
     }
 
     private void OnDrawGizmos()
     {
         //mostra o overlap na unity
         Gizmos.color = Color.blue;
-
         Gizmos.DrawWireSphere(transform.position + sideOffset, 0.15f);
         Gizmos.DrawWireSphere(transform.position + (-sideOffset), 0.15f);
         Gizmos.DrawWireSphere(transform.position + upOffset, 0.15f);
