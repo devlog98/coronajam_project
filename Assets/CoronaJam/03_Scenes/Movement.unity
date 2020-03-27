@@ -369,11 +369,11 @@ MonoBehaviour:
   sideOffset: {x: 3, y: 0, z: 0}
   upOffset: {x: 0, y: 1.7, z: 0}
   timeMovement: 4
-  virusShot: 1
+  virusShot: 0
   virusObject: {fileID: 8030715616327531638, guid: 07d83b4e59a7ab346b42a0cd9a6104f1,
     type: 3}
   timeVirusShot: 4
-  virusSneeze: 0
+  virusSneeze: 1
   SneezeObject: {fileID: 2925357327320654707, guid: ab75028434004bf49ac6375b35b528a5,
     type: 3}
   timeSneeze: 12
@@ -563,6 +563,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1285196525185800191, guid: 591a2ee6deca1a64e94df244e72a63ad,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 591a2ee6deca1a64e94df244e72a63ad, type: 3}

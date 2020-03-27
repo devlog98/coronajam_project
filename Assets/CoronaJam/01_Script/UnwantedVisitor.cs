@@ -60,10 +60,12 @@ public class UnwantedVisitor : MonoBehaviour
         timeM += Time.deltaTime;
         if (virusSneeze)
         {
+            Debug.Log("time " + timeV);
             timeV += Time.deltaTime;
         }
         if (virusShot)
         {
+            Debug.Log("time " + timeS);
             timeS += Time.deltaTime;
         }
     }
@@ -81,26 +83,28 @@ public class UnwantedVisitor : MonoBehaviour
             getSense = sense[getRandom];
             if (getDirection == "Horizontal" && getSense > 0 && !right || getDirection == "Horizontal" && getSense < 0 && !left || getDirection == "Vertical" && getSense > 0 && !up || getDirection == "Vertical" && getSense < 0 && !down) { timeM = 3; }
         }
-
-        //quando o time tiver um valor igual ou maior ao especificado para o ataque é realizado a ação
-        else if (timeS >= timeSneeze && virusSneeze && !horizontal || timeS >= timeSneeze && virusSneeze && !vertical)
+        else if (timeV >= timeSneeze && virusSneeze && !horizontal || timeV >= timeSneeze && virusSneeze && !vertical)//quando o time tiver um valor igual ou maior ao especificado para o ataque é realizado a ação
         {
+            Debug.Log("Sneeze " + timeV);
             timeV = 0;
             timeS = 0;
             Sneeze();
         }
-        else if (timeV >= timeVirusShot && virusShot && !horizontal || timeV >= timeVirusShot && virusShot && !vertical)
+        else if (timeS >= timeVirusShot && virusShot && !horizontal || timeS >= timeVirusShot && virusShot && !vertical)
         {
-            timeV = 0;
+            Debug.Log("Viorus Shot " + timeS);
+            timeS = 0;
             Fire();
         }
-        else if (horizontal || vertical && timeV >= timeVirusShot && virusShot)
-        {
-            timeV = 2 - (Mathf.RoundToInt(timeV));
-        }
-        else if (horizontal || timeS >= timeSneeze && virusSneeze)
+        else if (horizontal && timeS >= timeVirusShot && virusShot || vertical && timeS >= timeVirusShot && virusShot)
         {
             timeS = 2 - (Mathf.RoundToInt(timeS));
+            Debug.Log("Vertical " + timeS);
+        }
+        else if (horizontal && timeV >= timeSneeze && virusSneeze || vertical && timeV >= timeSneeze && virusSneeze)
+        {
+            timeV = 2 - (Mathf.RoundToInt(timeV));
+            Debug.Log("Forizontal " + timeV);
         }
     }
 
