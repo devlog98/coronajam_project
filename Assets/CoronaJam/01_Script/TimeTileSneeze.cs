@@ -6,6 +6,7 @@ public class TimeTileSneeze : MonoBehaviour
 {
     [Header("Time")]
     public float timeDestroy;
+    public int damage = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -13,9 +14,11 @@ public class TimeTileSneeze : MonoBehaviour
         Destroy(gameObject, timeDestroy);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerStay2D(Collider2D other) 
     {
-
+        if (other.gameObject.CompareTag("Player")) 
+        {
+            other.gameObject.SendMessage("ReceiveDamage", damage);
+        }
     }
 }

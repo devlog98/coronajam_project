@@ -373,7 +373,7 @@ MonoBehaviour:
   virusObject: {fileID: 8030715616327531638, guid: 07d83b4e59a7ab346b42a0cd9a6104f1,
     type: 3}
   timeVirusShot: 4
-  virusSneeze: 0
+  virusSneeze: 1
   SneezeObject: {fileID: 2925357327320654707, guid: ab75028434004bf49ac6375b35b528a5,
     type: 3}
   timeSneeze: 12
@@ -614,6 +614,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3453182228024514286, guid: 99ef0555088b2f743a0d0c85bd923641,
         type: 3}
+    - target: {fileID: 4464245204284777443, guid: 2695ab8f95331c345ac88aa80dfeae8c,
+        type: 3}
+      propertyPath: health
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4464245204284777452, guid: 2695ab8f95331c345ac88aa80dfeae8c,
         type: 3}
       propertyPath: m_SortingOrder
@@ -2144,7 +2149,7 @@ PrefabInstance:
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
       propertyPath: rounds.Array.data[0].enemyDifficulty.timeSneeze
-      value: 12
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
@@ -2219,7 +2224,7 @@ PrefabInstance:
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
       propertyPath: rounds.Array.data[0].enemyDifficulty.virusSneeze
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4847848136191870123, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}

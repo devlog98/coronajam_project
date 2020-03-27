@@ -6,7 +6,9 @@ public class VirusShot : MonoBehaviour
 {
     [Header("Bullet")]
     public float speed;
+    public int damage = 1;
     private float timeDestroy;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,11 +26,8 @@ public class VirusShot : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            other.gameObject.SendMessage("ReceiveDamage", damage);
             Destroy(gameObject);
-        }
-        if (other.gameObject.CompareTag("Ground"))
-        {
-
         }
     }
 }

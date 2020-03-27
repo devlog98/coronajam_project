@@ -20,6 +20,16 @@ public class Player : MonoBehaviour
     bool walkSide;
     bool walkUp;
 
+    [Header("Health")]
+    public int health = 3;
+    public PlayerUI healthUI;
+    public float invincibilityTime = 2f;  
+    private bool isInvincible;
+
+    private void Start() {
+        healthUI.StartHealthCounter(health);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -106,6 +116,23 @@ public class Player : MonoBehaviour
         left = Physics2D.OverlapCircle(transform.position + (-sideOffset), 0.15f, groundCheck);
         up = Physics2D.OverlapCircle(transform.position + upOffset, 0.15f, groundCheck);
         down = Physics2D.OverlapCircle(transform.position + (-upOffset), 0.15f, groundCheck);
+    }
+
+    //responsável por calcular o dano que o jogador sofre
+    public void ReceiveDamage(int damage)
+    {
+        if (!isInvincible) {
+            health -= damage;
+            Debug.Log("Vida do Player = " + health);
+            StartCoroutine(ActivateInvincibility());
+        }
+    }
+
+    private IEnumerator ActivateInvincibility()
+    {
+        isInvincible = true;
+        yield return new WaitForSeconds(invincibilityTime);
+        isInvincible = false;
     }
 
     private void OnDrawGizmos()
