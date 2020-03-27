@@ -373,7 +373,7 @@ MonoBehaviour:
   virusObject: {fileID: 8030715616327531638, guid: 07d83b4e59a7ab346b42a0cd9a6104f1,
     type: 3}
   timeVirusShot: 4
-  virusSneeze: 1
+  virusSneeze: 0
   SneezeObject: {fileID: 2925357327320654707, guid: ab75028434004bf49ac6375b35b528a5,
     type: 3}
   timeSneeze: 12
@@ -2116,10 +2116,120 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[0].enemyDifficulty.speedSide
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[0].enemyDifficulty.speedUp
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[0].enemyDifficulty.timeMovement
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[0].enemyDifficulty.timeVirusShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[0].enemyDifficulty.timeSneeze
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[0].enemyDifficulty.virusShot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[0].dialogueSentences.Array.data[0].sentenceDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[0].dialogueSentences.Array.data[1].sentenceDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[0].dialogueSentences.Array.data[2].sentenceDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[1].dialogueSentences.Array.data[0].sentenceDuration
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[1].dialogueSentences.Array.data[1].sentenceDuration
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[1].enemyDifficulty.speedSide
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[1].enemyDifficulty.speedUp
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[1].enemyDifficulty.timeMovement
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[1].enemyDifficulty.timeVirusShot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[1].enemyDifficulty.timeSneeze
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[1].enemyDifficulty.virusShot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[1].enemyDifficulty.virusSneeze
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 189262955}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[0].enemyDifficulty.virusSneeze
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4847848136191870123, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
       propertyPath: m_Name
       value: Battle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870123, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 339b43b08375b5649b38a3562b45d696, type: 3}

@@ -190,6 +190,20 @@ public class UnwantedVisitor : MonoBehaviour
         GameObject cloneSneeze = Instantiate(SneezeObject, distanceAttack + transform.position, transform.rotation);
     }
 
+    //altera a dificuldade do inimigo baseado no round
+    public void SetDifficulty(EnemyDifficulty difficulty) {
+        //movimento do inimigo
+        speedSide = difficulty.SpeedSide;
+        speedUp = difficulty.SpeedUp;
+
+        //ataques do inimigo
+        timeMovement = difficulty.TimeMovement;
+        timeVirusShot = difficulty.TimeVirusShot;
+        virusShot = difficulty.VirusShot;
+        timeSneeze = difficulty.TimeSneeze;
+        virusSneeze = difficulty.VirusSneeze;
+    }
+
     private void OnDrawGizmos()
     {
         //mostra o overlap na unity

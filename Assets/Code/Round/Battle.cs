@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Battle : MonoBehaviour {
     [SerializeField] private List<Round> rounds; //list with all rounds sequentially ordered for the battle
+    [SerializeField] private UnwantedVisitor enemy; //reference of enemy
 
     private Queue<Round> roundsQueue; //queues to help with battle flow
     private bool inRound;
@@ -19,7 +20,7 @@ public class Battle : MonoBehaviour {
             if (roundsQueue.Count > 0) {
                 Round round = roundsQueue.Dequeue(); //grabs next round
                 Dialogue.instance.StartDialogue(round.DialogueSentences, round.DialogueChoices, DialogueOverCallback); //sends all needed data to dialogue
-                                                                                                                       //TODO -> sends all needed data to enemy
+                enemy.SetDifficulty(round.EnemyDifficulty); //sends all needed data to enemy
                 inRound = true;
             }
             else {
