@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     public float speedSide;
     public float speedUp;
     public bool left, right, up, down;
+    public bool isIdle;
 
     [Header("Check")]
     public LayerMask groundCheck;
@@ -45,6 +46,7 @@ public class Player : MonoBehaviour
     {
         CheckInput();
         Move();
+        animationPlayer();
     }
     private void FixedUpdate()
     {
@@ -70,6 +72,7 @@ public class Player : MonoBehaviour
                     localização = transform.position + (-sideOffset);
                     
                 }
+                isIdle = false;
                 horizontal = true;
                 
             }
@@ -91,7 +94,8 @@ public class Player : MonoBehaviour
                         localização = transform.position + (-upOffset);
                         
                     }
-                    vertical = true;
+                isIdle = false;
+                vertical = true;
                 
             }
         }
@@ -105,36 +109,46 @@ public class Player : MonoBehaviour
 
 
         //move para os lados
-        if (horizontal)
-        {
-            if(moveSide > 0)
-            {
-                playerAnim.SetTrigger("IsGoingFront");
-                
-            }
-            else 
-            {
-                playerAnim.SetTrigger("IsGoingBack");
-                
-            }
 
-            
+        if (horizontal) {
             transform.position = Vector3.MoveTowards(transform.position, localização, speedSide * Time.deltaTime);
             if (Vector3.Distance(transform.position, localização) == 0f)
             {
                 horizontal = false;
+                isIdle = true;
             }
         }
         //move para cima e baixo
         if (vertical)
         {
-            playerAnim.SetTrigger("IsJumping");
+            //playerAnim.SetTrigger("IsJumping");           
             transform.position = Vector3.MoveTowards(transform.position, localização, speedUp * Time.deltaTime);
             if (Vector3.Distance(transform.position, localização) == 0f)
             {
                 vertical = false;
+                isIdle = true;
             }
         }
+    }
+
+    void animationPlayer()
+    {
+        if (moveSide > 0)
+        {
+            //playerAnim.SetTrigger("IsGoingFront");
+            playerAnim.SetBool("IsGoingFront", horizontal);
+
+        }
+        else
+        {
+            //playerAnim.SetTrigger("IsGoingBack");
+            playerAnim.SetBool("IsGoingBack", horizontal);
+
+        }
+
+        playerAnim.SetBool("IsIdle", isIdle);
+        playerAnim.SetBool("IsJumping", vertical);
+
     }
 
     void PhysicsCheck()
