@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 8143586707953563271}
   - component: {fileID: 7456877969228981872}
   - component: {fileID: 6205856693416176514}
+  - component: {fileID: 8571232749580417802}
   m_Layer: 5
-  m_Name: Health Template
+  m_Name: Health Icon Template
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +64,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -205270267638800340, guid: 55a2fa13d486a674f93618a92ab82d96,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -73,6 +75,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &8571232749580417802
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5196677081092522805}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e72a8a5f53634614bb958495417d08af, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6440508085042754165
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,7 +167,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -2.230011, y: -1.1600037}
+  m_AnchoredPosition: {x: -2.2299805, y: -1.1600037}
   m_SizeDelta: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &143347296413081438
@@ -221,6 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeaaf3d14d526704cac245d046505ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthTemplate: {fileID: 5196677081092522805}
+  anim: {fileID: 0}
+  healthIconTemplate: {fileID: 5196677081092522805}
   healthContainer: {fileID: 6440508085042754165}
-  healthDistance: 0.75
+  healthIconDistance: 0.75
