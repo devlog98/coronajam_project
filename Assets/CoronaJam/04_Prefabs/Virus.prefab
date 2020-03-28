@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8030715616327531639}
   - component: {fileID: 8030715616327531625}
   - component: {fileID: 977949442573184974}
+  - component: {fileID: 6497839767097247393}
   m_Layer: 0
   m_Name: Virus
   m_TagString: Untagged
@@ -72,7 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 75d4d0f895045e144bf3364449c706af, type: 3}
+  m_Sprite: {fileID: 7626591313061547822, guid: 4fe736e71ea7e534aa1287799b1e7d3d,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  damage: 1
 --- !u!58 &977949442573184974
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -112,3 +115,22 @@ CircleCollider2D:
   m_Offset: {x: 0.03098154, y: -0.56647205}
   serializedVersion: 2
   m_Radius: 0.63883305
+--- !u!95 &6497839767097247393
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8030715616327531638}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: acb5c130b1f3fb24f8d38877b0ec6708, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

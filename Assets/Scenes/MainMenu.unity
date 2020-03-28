@@ -595,6 +595,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1950078740}
+        m_MethodName: StopEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &506424628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2165,3 +2176,15 @@ RectTransform:
   m_AnchoredPosition: {x: 17, y: -12}
   m_SizeDelta: {x: 700, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1950078740 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3520340928472885642, guid: 994784aba5b8dae4eba1870b9d5492c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 187384532}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f15f586841ca8684daf54e7ea000f05a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -1,10 +1,16 @@
-﻿using FMODUnity;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private bool canPlayAudio = true;
+
+    [HideInInspector]public Animator playerAnim;
+
+    //public AudioSource playerAudio;
+    //public AudioClip playerDash;
+
     [Header("Movement")]
     private float moveSide;
     private float moveUp;
@@ -27,11 +33,11 @@ public class Player : MonoBehaviour
     public float invincibilityTime = 2f;  
     private bool isInvincible;
 
-    [Header("Sound")]
-    [EventRef] [SerializeField] private string moveSound;
-
-    private void Start() {
+    void Start() {
         healthUI.StartHealthCounter(health);
+        playerAnim = GetComponent<Animator>();
+        //playerAudio = GetComponent<AudioSource>();
+        canPlayAudio = true;
     }
 
     // Update is called once per frame
@@ -51,51 +57,68 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Horizontal") && !horizontal && !vertical)
         {
             moveSide = Input.GetAxis("Horizontal");
-            if (moveSide > 0 && right || moveSide < 0 && left) { walkSide = true; }
+            if (moveSide > 0 && right || moveSide < 0 && left) 
+            {
+                //move para os lados
+                if (moveSide > 0)
+                {
+                    localização = transform.position + sideOffset;
+                    
+                }
+                else
+                {
+                    localização = transform.position + (-sideOffset);
+                    
+                }
+                horizontal = true;
+                
+            }
         }
 
         if (Input.GetButtonDown("Vertical") && !vertical && !horizontal)
         {
             moveUp = Input.GetAxis("Vertical");
-            if (moveUp > 0 && up || moveUp < 0 && down) { walkUp = true; }
+            if (moveUp > 0 && up || moveUp < 0 && down) 
+            {
+                //move para cima e baixo
+                    if (moveUp > 0)
+                    {
+                        localização = transform.position + upOffset;
+                        
+                    }
+                    else
+                    {
+                        localização = transform.position + (-upOffset);
+                        
+                    }
+                    vertical = true;
+                
+            }
         }
     }
 
     public void Move()
     {
+        StartCoroutine(PlayDashAudio());
         //Mover em grid com base nos Physics2dOverlap
-        //move para os lados
-        if (walkSide)
-        {
-            walkSide = false;
-            if (moveSide > 0)
-            {
-                localização = transform.position + sideOffset;
-            }
-            else
-            {
-                localização = transform.position + (-sideOffset);
-            }
-            horizontal = true;
-        }
-        //move para cima e baixo
-        if (walkUp)
-        {
-            walkUp = false;
-            if (moveUp > 0)
-            {
-                localização = transform.position + upOffset;
-            }
-            else
-            {
-                localização = transform.position + (-upOffset);
-            }
-            vertical = true;
-        }
+
+
 
         //move para os lados
         if (horizontal)
         {
+            if(moveSide > 0)
+            {
+                playerAnim.SetTrigger("IsGoingFront");
+                
+            }
+            else 
+            {
+                playerAnim.SetTrigger("IsGoingBack");
+                
+            }
+
+            
             transform.position = Vector3.MoveTowards(transform.position, localização, speedSide * Time.deltaTime);
             if (Vector3.Distance(transform.position, localização) == 0f)
             {
@@ -105,6 +128,7 @@ public class Player : MonoBehaviour
         //move para cima e baixo
         if (vertical)
         {
+            playerAnim.SetTrigger("IsJumping");
             transform.position = Vector3.MoveTowards(transform.position, localização, speedUp * Time.deltaTime);
             if (Vector3.Distance(transform.position, localização) == 0f)
             {
@@ -147,5 +171,18 @@ public class Player : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position + (-sideOffset), 0.15f);
         Gizmos.DrawWireSphere(transform.position + upOffset, 0.15f);
         Gizmos.DrawWireSphere(transform.position + (-upOffset), 0.15f);
+    }
+
+    public IEnumerator PlayDashAudio()
+    {
+        if (canPlayAudio)
+        {
+            //playerAudio.PlayOneShot(playerDash);
+            canPlayAudio = false;
+        }
+        
+        yield return new WaitForSeconds(speedSide);
+        canPlayAudio = true;
+
     }
 }

@@ -16,7 +16,7 @@ public class TimeTileSneeze : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other) 
     {
-        if (other.gameObject.CompareTag("Player")) 
+        if (other.gameObject.name == "Player") 
         {
             other.gameObject.SendMessage("ReceiveDamage", damage);
         }

@@ -25,7 +25,7 @@ public class MusicManager : MonoBehaviour {
         musicEvent.start();
     }
 
-    void StopEvent() {
+    public void StopEvent() {
         musicEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 

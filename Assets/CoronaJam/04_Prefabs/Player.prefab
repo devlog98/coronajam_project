@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1da12fa23e35d14e841f1d45dc82742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerAnim: {fileID: 0}
   speedSide: 20
   speedUp: 15
   left: 0
@@ -111,7 +112,6 @@ MonoBehaviour:
   health: 3
   healthUI: {fileID: 2391131561026914273}
   invincibilityTime: 2
-  moveSound: 
 --- !u!50 &4464245204284777454
 Rigidbody2D:
   serializedVersion: 4
@@ -266,6 +266,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5196677081092522805, guid: ce5b1b92a66c44b47851dca4d1caa39f,
+        type: 3}
+      propertyPath: m_Name
+      value: Health Icon Template
+      objectReference: {fileID: 0}
+    - target: {fileID: 7061277626729574700, guid: ce5b1b92a66c44b47851dca4d1caa39f,
+        type: 3}
+      propertyPath: healthIconTemplate
+      value: 
+      objectReference: {fileID: 635005000903439864}
     - target: {fileID: 8865399423192472288, guid: ce5b1b92a66c44b47851dca4d1caa39f,
         type: 3}
       propertyPath: m_Name
@@ -291,3 +301,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeaaf3d14d526704cac245d046505ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &635005000903439864 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5196677081092522805, guid: ce5b1b92a66c44b47851dca4d1caa39f,
+    type: 3}
+  m_PrefabInstance: {fileID: 4670712109177059021}
+  m_PrefabAsset: {fileID: 0}
