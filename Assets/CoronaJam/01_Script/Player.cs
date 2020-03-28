@@ -127,7 +127,7 @@ public class Player : MonoBehaviour
     {
         if (!isInvincible) {
             health -= damage;
-            Debug.Log("Vida do Player = " + health);
+            healthUI.UpdateHealthCounter(true);
             StartCoroutine(ActivateInvincibility());
         }
     }
