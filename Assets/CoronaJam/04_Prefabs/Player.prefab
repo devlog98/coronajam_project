@@ -111,7 +111,6 @@ MonoBehaviour:
   health: 3
   healthUI: {fileID: 2391131561026914273}
   invincibilityTime: 2
-  moveSound: 
 --- !u!50 &4464245204284777454
 Rigidbody2D:
   serializedVersion: 4
@@ -219,12 +218,12 @@ PrefabInstance:
     - target: {fileID: 4082295050661385575, guid: ce5b1b92a66c44b47851dca4d1caa39f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.75
+      value: -0.75
       objectReference: {fileID: 0}
     - target: {fileID: 4082295050661385575, guid: ce5b1b92a66c44b47851dca4d1caa39f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.5
+      value: 1.476
       objectReference: {fileID: 0}
     - target: {fileID: 4082295050661385575, guid: ce5b1b92a66c44b47851dca4d1caa39f,
         type: 3}

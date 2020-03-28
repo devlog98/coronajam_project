@@ -8,7 +8,7 @@ public class Dialogue : MonoBehaviour {
 
     private Queue<DialogueSentence> dialogueSentencesQueue; //queues to help with dialogue flow
     private Queue<DialogueChoice> dialogueChoicesQueue;
-    private Action<bool> dialogueCallback; //method to be called after dialogue is finished
+    private Action<bool,Queue<DialogueChoice>> dialogueCallback; //method to be called after dialogue is finished
     private bool inSentence;
 
     //setting singleton instance
@@ -22,7 +22,7 @@ public class Dialogue : MonoBehaviour {
     }
 
     //creates queue with all sentences from this dialogue and sets callback
-    public void StartDialogue(List<DialogueSentence> dialogueSentences, List<DialogueChoice> dialogueChoices, Action<bool> callback) {
+    public void StartDialogue(List<DialogueSentence> dialogueSentences, List<DialogueChoice> dialogueChoices, Action<bool,Queue<DialogueChoice>> callback) {
         dialogueSentencesQueue = new Queue<DialogueSentence>(dialogueSentences);
         dialogueChoicesQueue = new Queue<DialogueChoice>(dialogueChoices);
         dialogueCallback = callback;
@@ -40,8 +40,9 @@ public class Dialogue : MonoBehaviour {
                 }
                 else {
                     dialogueSentencesQueue = null;
-                    dialogueChoicesQueue = null;
-                    dialogueCallback(true);
+                    dialogueCallback(true, dialogueChoicesQueue);
+                    //dialogueChoicesQueue = null;
+                    
                 }
             }
         }     

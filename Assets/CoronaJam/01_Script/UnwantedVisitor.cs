@@ -40,6 +40,8 @@ public class UnwantedVisitor : MonoBehaviour
     public float timeSneeze;
     float timeS;
 
+    public Animator VisitorAnim;
+
     // Update is called once per frame
     void Update()
     {
@@ -125,6 +127,7 @@ public class UnwantedVisitor : MonoBehaviour
 
     public void Move()
     {
+        
         //Mover em grid com base nos Physics2dOverlap
         //obtem o sentido da direção Horizontal
         if (walkSide)
@@ -158,6 +161,7 @@ public class UnwantedVisitor : MonoBehaviour
         //move para os lados
         if (horizontal)
         {
+            VisitorAnim.SetTrigger("IsMoving");
             transform.position = Vector3.MoveTowards(transform.position, localização, speedSide * Time.deltaTime);
             if (Vector3.Distance(transform.position, localização) == 0f)
             {
@@ -167,6 +171,7 @@ public class UnwantedVisitor : MonoBehaviour
         //move para cima e baixo
         if (vertical)
         {
+            VisitorAnim.SetTrigger("IsMoving");
             transform.position = Vector3.MoveTowards(transform.position, localização, speedUp * Time.deltaTime);
             if (Vector3.Distance(transform.position, localização) == 0f)
             {
@@ -187,11 +192,13 @@ public class UnwantedVisitor : MonoBehaviour
     void Fire()
     {
         GameObject cloneVirus = Instantiate(virusObject, distanceAttack + transform.position, transform.rotation);
+        VisitorAnim.SetTrigger("IsCoughing");
     }
 
     void Sneeze()
     {
         GameObject cloneSneeze = Instantiate(SneezeObject, distanceAttack + transform.position, transform.rotation);
+        VisitorAnim.SetTrigger("IsSneezing");
     }
 
     //altera a dificuldade do inimigo baseado no round
