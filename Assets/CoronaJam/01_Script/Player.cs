@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using FMODUnity;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,6 +26,9 @@ public class Player : MonoBehaviour
     public PlayerUI healthUI;
     public float invincibilityTime = 2f;  
     private bool isInvincible;
+
+    [Header("Sound")]
+    [EventRef] [SerializeField] private string moveSound;
 
     private void Start() {
         healthUI.StartHealthCounter(health);
