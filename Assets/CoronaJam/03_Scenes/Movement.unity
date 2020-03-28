@@ -3616,7 +3616,7 @@ PrefabInstance:
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
       propertyPath: rounds.Array.size
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
@@ -3626,7 +3626,47 @@ PrefabInstance:
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
       propertyPath: rounds.Array.data[1].dialogueChoices.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[0].dialogueSentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[2].dialogueSentences.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[2].dialogueChoices.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[3].dialogueSentences.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[3].dialogueChoices.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[4].dialogueSentences.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[4].dialogueChoices.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[1].dialogueSentences.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
@@ -3641,17 +3681,17 @@ PrefabInstance:
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
       propertyPath: rounds.Array.data[0].enemyDifficulty.timeMovement
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
       propertyPath: rounds.Array.data[0].enemyDifficulty.timeVirusShot
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
       propertyPath: rounds.Array.data[0].enemyDifficulty.timeSneeze
-      value: 3
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
@@ -3661,12 +3701,12 @@ PrefabInstance:
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
       propertyPath: rounds.Array.data[0].dialogueSentences.Array.data[0].sentenceDuration
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
       propertyPath: rounds.Array.data[0].dialogueSentences.Array.data[1].sentenceDuration
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
@@ -3676,12 +3716,12 @@ PrefabInstance:
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
       propertyPath: rounds.Array.data[1].dialogueSentences.Array.data[0].sentenceDuration
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
       propertyPath: rounds.Array.data[1].dialogueSentences.Array.data[1].sentenceDuration
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
@@ -3696,17 +3736,17 @@ PrefabInstance:
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
       propertyPath: rounds.Array.data[1].enemyDifficulty.timeMovement
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
-        type: 3}
-      propertyPath: rounds.Array.data[1].enemyDifficulty.timeVirusShot
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
+      propertyPath: rounds.Array.data[1].enemyDifficulty.timeVirusShot
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
       propertyPath: rounds.Array.data[1].enemyDifficulty.timeSneeze
-      value: 5
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
@@ -3716,7 +3756,7 @@ PrefabInstance:
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
       propertyPath: rounds.Array.data[1].enemyDifficulty.virusSneeze
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
@@ -3726,7 +3766,7 @@ PrefabInstance:
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
       propertyPath: rounds.Array.data[0].enemyDifficulty.virusSneeze
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
@@ -3756,17 +3796,473 @@ PrefabInstance:
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
       propertyPath: rounds.Array.data[0].dialogueChoices.Array.data[0].choiceKey
-      value: blbabla1
+      value: "N\xE3o, ela chega ja j\xE1!"
       objectReference: {fileID: 0}
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
       propertyPath: rounds.Array.data[0].dialogueChoices.Array.data[1].choiceKey
-      value: kkkkk
+      value: "N\xE3o sei..."
       objectReference: {fileID: 0}
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
       propertyPath: rounds.Array.data[1].dialogueChoices.Array.data[0].choiceKey
-      value: blablabla do 1
+      value: Ah depende...
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[0].dialogueSentences.Array.data[0].sentenceKey
+      value: Bom, acho que posso ficar mais um pouco...
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[0].dialogueSentences.Array.data[1].sentenceKey
+      value: Acha que ela demora muito?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[0].dialogueChoices.Array.data[0].choiceReactionKey
+      value: "Ent\xE3o t\xE1 bom..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[0].dialogueChoices.Array.data[1].choiceReactionKey
+      value: "Eu n\xE3o posso esperar muito hein..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[1].dialogueSentences.Array.data[0].sentenceKey
+      value: "Sabe, a minha neta queria fazer aquelas coisa de inform\xE1tica l\xE1...
+        Tipo o que voc\xEA faz."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[1].dialogueSentences.Array.data[1].sentenceKey
+      value: "Onde j\xE1 se viu. Ai que ela vai continuar encalhada mesmo!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[1].dialogueChoices.Array.data[0].choiceReactionKey
+      value: "Eu s\xF3 quero o melhor pra ela..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[1].dialogueChoices.Array.data[1].choiceKey
+      value: Ela tem que fazer o que a faz feliz!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[1].dialogueChoices.Array.data[1].choiceReactionKey
+      value: "Felicidade n\xE3o paga conta!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[2].dialogueSentences.Array.data[0].sentenceKey
+      value: "Voc\xEA s\xF3 joga essas coisas o dia inteiro!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[2].dialogueSentences.Array.data[0].sentenceDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[2].dialogueSentences.Array.data[1].sentenceKey
+      value: "Devia fazer um pouco de exerc\xEDcio..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[2].dialogueSentences.Array.data[1].sentenceDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[2].dialogueChoices.Array.data[0].choiceKey
+      value: "Voc\xEA est\xE1 certa, eu devia fazer alguma coisa..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[2].dialogueChoices.Array.data[0].choiceReactionKey
+      value: Vai correr na rua, andar de bicicleta...
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[2].dialogueChoices.Array.data[1].choiceKey
+      value: "Afe, nada a ver isso da\xED Dona Sandra!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[2].dialogueChoices.Array.data[1].choiceReactionKey
+      value: "Bom, quem avisa amigo \xE9 n\xE9."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[3].dialogueSentences.Array.data[0].sentenceKey
+      value: "Meu marido n\xE3o faz nada direito!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[3].dialogueSentences.Array.data[0].sentenceDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[3].dialogueSentences.Array.data[1].sentenceKey
+      value: "To a 3 semanas esperando ele trocar a resist\xEAncia do chuveiro do
+        banheiro de cima."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[3].dialogueSentences.Array.data[1].sentenceDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[3].dialogueChoices.Array.data[0].choiceKey
+      value: "Qualquer hora dessas eu passo l\xE1..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[3].dialogueChoices.Array.data[0].choiceReactionKey
+      value: "Obrigado querido, mas acho que vou chamar um t\xE9cnico"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[3].dialogueChoices.Array.data[1].choiceKey
+      value: "N\xE3o \xE9 todo mundo que se liga nisso..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[3].dialogueChoices.Array.data[1].choiceReactionKey
+      value: Homem tem que saber isso!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[4].dialogueSentences.Array.data[0].sentenceKey
+      value: "Eu acho que vou embora, esotu te atrapalhando n\xE3o?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[4].dialogueSentences.Array.data[0].sentenceDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[4].dialogueSentences.Array.data[1].sentenceKey
+      value: "Voc\xEA me lembra o meu filho mais velho..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[4].dialogueSentences.Array.data[1].sentenceDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[4].dialogueChoices.Array.data[0].choiceKey
+      value: "Eu liguei pra algu\xE9m..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[4].dialogueChoices.Array.data[0].choiceReactionKey
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[4].dialogueChoices.Array.data[1].choiceKey
+      value: "N\xE3o sei..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[4].dialogueChoices.Array.data[1].choiceReactionKey
+      value: "Eu n\xE3o posso esperar muito hein..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[1].dialogueSentences.Array.data[2].sentenceKey
+      value: "Mulher tem que primeiro aprender a ajudar em casa, arrumar um namorado...
+        de prefer\xEAncia casar na igreja."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[1].dialogueSentences.Array.data[2].sentenceDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[1].dialogueSentences.Array.data[3].sentenceKey
+      value: "N\xE3o acha?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[1].dialogueSentences.Array.data[3].sentenceDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[1].dialogueChoices.Array.data[2].choiceKey
+      value: "Uh... N\xE3o sei..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[1].dialogueChoices.Array.data[2].choiceReactionKey
+      value: Enfim...
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[1].dialogueChoices.Array.data[1].choiceValue
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[2].dialogueSentences.Array.data[2].sentenceKey
+      value: "\xC9 por isso que ta todo mundo com medo dessa gripe!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[2].dialogueSentences.Array.data[2].sentenceDuration
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[2].dialogueSentences.Array.data[3].sentenceKey
+      value: "Todo mundo sabe que quem tem corpo de atleta n\xE3o pega isso!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[2].dialogueSentences.Array.data[3].sentenceDuration
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[2].dialogueSentences.Array.data[4].sentenceKey
+      value: Eu lavo, passo e limpo a casa todo dia, tenho certeza que vou ficar
+        bem!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[2].dialogueSentences.Array.data[4].sentenceDuration
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[2].dialogueSentences.Array.data[5].sentenceKey
+      value: "Mas voc\xEA s\xF3 fica a\xED sentado!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[2].dialogueSentences.Array.data[5].sentenceDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[2].dialogueChoices.Array.data[1].choiceValue
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[3].dialogueSentences.Array.data[2].sentenceKey
+      value: "Mas ele diz que n\xE3o sabe..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[3].dialogueSentences.Array.data[2].sentenceDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[3].dialogueSentences.Array.data[3].sentenceKey
+      value: Eu casei com um bolha mesmo!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[3].dialogueSentences.Array.data[3].sentenceDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[3].dialogueSentences.Array.data[4].sentenceKey
+      value: "Pra que serve marido se n\xE3o for pra fazer essas manuten\xE7\xF5es
+        de casa ?!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[3].dialogueSentences.Array.data[4].sentenceDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[3].dialogueChoices.Array.data[2].choiceKey
+      value: UHHH... QUE?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[3].dialogueChoices.Array.data[2].choiceReactionKey
+      value: Enfim...
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[3].dialogueChoices.Array.data[1].choiceValue
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[3].dialogueChoices.Array.data[2].choiceValue
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[4].dialogueSentences.Array.data[2].sentenceKey
+      value: "Sua m\xE3e que fique de olho em voc\xEA."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[4].dialogueSentences.Array.data[2].sentenceDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[4].dialogueSentences.Array.data[3].sentenceKey
+      value: "Voc\xEA tem que estar presente na vida dela, cuidar dela na velhice."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[4].dialogueSentences.Array.data[3].sentenceDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[4].dialogueSentences.Array.data[4].sentenceKey
+      value: "Depois de um tempo, \xE9 papel dos filhos cuidarem dos pais"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[4].dialogueSentences.Array.data[4].sentenceDuration
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[4].dialogueSentences.Array.data[5].sentenceKey
+      value: "Acho que \xE9 por isso que est\xE1 todo mundo t\xE3o preocupado com
+        essa gripe n\xE9?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[4].dialogueSentences.Array.data[5].sentenceDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[4].dialogueSentences.Array.data[6].sentenceKey
+      value: Estou me sentindo um pouco mal...
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[4].dialogueSentences.Array.data[6].sentenceDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[2].enemyDifficulty.speedSide
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[2].enemyDifficulty.speedUp
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[2].enemyDifficulty.timeMovement
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[2].enemyDifficulty.timeVirusShot
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[2].enemyDifficulty.timeSneeze
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[2].enemyDifficulty.virusShot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[2].enemyDifficulty.virusSneeze
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[3].enemyDifficulty.speedSide
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[3].enemyDifficulty.speedUp
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[3].enemyDifficulty.timeMovement
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[3].enemyDifficulty.timeVirusShot
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[3].enemyDifficulty.timeSneeze
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[3].enemyDifficulty.virusShot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[3].enemyDifficulty.virusSneeze
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[4].enemyDifficulty.speedSide
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[4].enemyDifficulty.speedUp
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[4].enemyDifficulty.timeMovement
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[4].enemyDifficulty.timeVirusShot
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[4].enemyDifficulty.timeSneeze
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[4].enemyDifficulty.virusShot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: rounds.Array.data[4].enemyDifficulty.virusSneeze
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4847848136191870123, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
