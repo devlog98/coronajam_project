@@ -1,11 +1,10 @@
-﻿using System.Collections;
+﻿using FMODUnity;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private bool canPlayAudio = true;
-
     [HideInInspector]public Animator playerAnim;
 
     //public AudioSource playerAudio;
@@ -33,6 +32,11 @@ public class Player : MonoBehaviour
     public PlayerUI healthUI;
     public float invincibilityTime = 2f;  
     private bool isInvincible;
+
+    [Header("Sound Effects")]
+    [EventRef] public string moveSound;
+    [EventRef] public string hitSound;
+    private bool canPlayAudio = true;
 
     void Start() {
         healthUI.StartHealthCounter(health);
@@ -103,30 +107,41 @@ public class Player : MonoBehaviour
 
     public void Move()
     {
-        StartCoroutine(PlayDashAudio());
         //Mover em grid com base nos Physics2dOverlap
-
-
 
         //move para os lados
 
         if (horizontal) {
+            //play movement audio once
+            if (canPlayAudio) {
+                AudioManager.instance.PlayAudioclip(moveSound);
+                canPlayAudio = false;
+            }
+
             transform.position = Vector3.MoveTowards(transform.position, localização, speedSide * Time.deltaTime);
             if (Vector3.Distance(transform.position, localização) == 0f)
             {
                 horizontal = false;
                 isIdle = true;
+                canPlayAudio = true;
             }
         }
         //move para cima e baixo
         if (vertical)
         {
+            //play movement audio once
+            if (canPlayAudio) {
+                AudioManager.instance.PlayAudioclip(moveSound);
+                canPlayAudio = false;
+            }
+
             //playerAnim.SetTrigger("IsJumping");           
             transform.position = Vector3.MoveTowards(transform.position, localização, speedUp * Time.deltaTime);
             if (Vector3.Distance(transform.position, localização) == 0f)
             {
                 vertical = false;
                 isIdle = true;
+                canPlayAudio = true;
             }
         }
     }
@@ -166,6 +181,7 @@ public class Player : MonoBehaviour
         if (!isInvincible) {
             health -= damage;
             healthUI.UpdateHealthCounter(true);
+            AudioManager.instance.PlayAudioclip(hitSound);
             StartCoroutine(ActivateInvincibility());
         }
     }
@@ -185,18 +201,5 @@ public class Player : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position + (-sideOffset), 0.15f);
         Gizmos.DrawWireSphere(transform.position + upOffset, 0.15f);
         Gizmos.DrawWireSphere(transform.position + (-upOffset), 0.15f);
-    }
-
-    public IEnumerator PlayDashAudio()
-    {
-        if (canPlayAudio)
-        {
-            //playerAudio.PlayOneShot(playerDash);
-            canPlayAudio = false;
-        }
-        
-        yield return new WaitForSeconds(speedSide);
-        canPlayAudio = true;
-
     }
 }

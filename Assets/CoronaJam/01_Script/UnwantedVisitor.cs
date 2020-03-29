@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using FMODUnity;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -41,6 +42,12 @@ public class UnwantedVisitor : MonoBehaviour
     float timeS;
 
     public Animator VisitorAnim;
+
+    [Header("Sound Effects")]
+    [EventRef] public string moveSound;
+    [EventRef] public string virusShotSound;
+    [EventRef] public string virusSneezeSound;
+    private bool canPlayAudio = true;
 
     // Update is called once per frame
     void Update()
@@ -161,21 +168,35 @@ public class UnwantedVisitor : MonoBehaviour
         //move para os lados
         if (horizontal)
         {
+            //play movement audio once
+            if (canPlayAudio) {
+                AudioManager.instance.PlayAudioclip(moveSound);
+                canPlayAudio = false;
+            }
+
             VisitorAnim.SetTrigger("IsMoving");
             transform.position = Vector3.MoveTowards(transform.position, localização, speedSide * Time.deltaTime);
             if (Vector3.Distance(transform.position, localização) == 0f)
             {
                 horizontal = false;
+                canPlayAudio = true;
             }
         }
         //move para cima e baixo
         if (vertical)
         {
+            //play movement audio once
+            if (canPlayAudio) {
+                AudioManager.instance.PlayAudioclip(moveSound);
+                canPlayAudio = false;
+            }
+
             VisitorAnim.SetTrigger("IsMoving");
             transform.position = Vector3.MoveTowards(transform.position, localização, speedUp * Time.deltaTime);
             if (Vector3.Distance(transform.position, localização) == 0f)
             {
                 vertical = false;
+                canPlayAudio = true;
             }
         }
     }
@@ -193,12 +214,14 @@ public class UnwantedVisitor : MonoBehaviour
     {
         GameObject cloneVirus = Instantiate(virusObject, distanceAttack + transform.position, transform.rotation);
         VisitorAnim.SetTrigger("IsCoughing");
+        AudioManager.instance.PlayAudioclip(virusShotSound);
     }
 
     void Sneeze()
     {
         GameObject cloneSneeze = Instantiate(SneezeObject, distanceAttack + transform.position, transform.rotation);
         VisitorAnim.SetTrigger("IsSneezing");
+        AudioManager.instance.PlayAudioclip(virusSneezeSound);
     }
 
     //altera a dificuldade do inimigo baseado no round

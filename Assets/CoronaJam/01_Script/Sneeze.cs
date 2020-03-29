@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using FMODUnity;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +16,9 @@ public class Sneeze : MonoBehaviour
     private GameObject targetGrid;
     private int getRandom;
     bool get = false;
+
+    [Header("Sound")]
+    [EventRef] public string sneezeSound;
 
     // Start is called before the first frame update
     void Start()
@@ -83,6 +87,7 @@ public class Sneeze : MonoBehaviour
         //Se a grid de colisão tiver o mesmo nome do gameobject destroi o o objeto e spawna uma grid infectada
         if (collision.gameObject.name == targetGrid.name)
         {
+            AudioManager.instance.PlayAudioclip(sneezeSound);
             GameObject spawVirus = Instantiate(spawnObject, collision.transform.position, collision.transform.rotation);
             Destroy(gameObject);
         }
