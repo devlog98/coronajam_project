@@ -18,23 +18,21 @@ public class MainMenuButton : MaskableGraphic, IPointerEnterHandler, IPointerExi
 
     public void OnPointerEnter(PointerEventData eventData) {
         AudioManager.instance.PlayAudioclip(buttonHighlightSound);
-        Debug.Log("Entrou");
         StartCoroutine("FontIncrement");
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("saiu");
         StartCoroutine("FontDecrement");
     }
 
     public void OnClick() {
-        AudioManager.instance.PlayAudioclip(buttonSelectSound);
         FontReturn();
+        AudioManager.instance.PlayAudioclip(buttonSelectSound);
     }
 
     void FontReturn() {
-        myText.fontSize = 42;
+        myText.fontSize = fontSizeExit;
         myText.color = colorExit;
     }
 
@@ -45,7 +43,7 @@ public class MainMenuButton : MaskableGraphic, IPointerEnterHandler, IPointerExi
             Debug.Log("incrementando");
             myText.fontSize = i;
             myText.color = colorEnter;
-            yield return null;
+            yield return new WaitForEndOfFrame();
         }
         yield return new WaitForEndOfFrame();
     }
@@ -57,7 +55,7 @@ public class MainMenuButton : MaskableGraphic, IPointerEnterHandler, IPointerExi
             Debug.Log("tirando");
             myText.fontSize = i;
             myText.color = colorExit;
-            yield return null;
+            yield return new WaitForEndOfFrame();
         }
         yield return new WaitForEndOfFrame();
     }
