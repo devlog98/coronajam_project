@@ -1225,7 +1225,7 @@ PrefabInstance:
     - target: {fileID: 4464245204284777452, guid: 2695ab8f95331c345ac88aa80dfeae8c,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4464245204284777452, guid: 2695ab8f95331c345ac88aa80dfeae8c,
         type: 3}
@@ -1745,6 +1745,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Music Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3520340928472885643, guid: 994784aba5b8dae4eba1870b9d5492c9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3520340928472885645, guid: 994784aba5b8dae4eba1870b9d5492c9,
         type: 3}
