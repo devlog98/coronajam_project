@@ -77,8 +77,7 @@ public class Player : MonoBehaviour
                     
                 }
                 isIdle = false;
-                horizontal = true;
-                
+                horizontal = true;              
             }
         }
 
@@ -102,6 +101,10 @@ public class Player : MonoBehaviour
                 vertical = true;
                 
             }
+        }
+
+        if (Input.GetButtonDown("Cancel")) {
+            Pause.instance.TogglePause();
         }
     }
 
