@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{23650b22-dc5f-44e1-84ae-6f752ed86c5a}">
+		<property name="assetPath">
+			<value>GGel.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.5865306122448979</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d4934583-3659-4c96-a319-46e36ca58a2c}</destination>
+		</relationship>
+	</object>
+</objects>

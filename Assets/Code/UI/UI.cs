@@ -13,10 +13,14 @@ using UnityEngine.UI;
 public class UI : MonoBehaviour {
     public static UI instance;
 
+    [Header("Dialogue")]
     [SerializeField] TextMeshProUGUI dialogueSentenceText; //element used for displaying dialogue sentences
     [SerializeField] Image dialogueSentenceBox; //element used as box for dialogue
     [SerializeField] float dialogueTypeSpeed = 0.02f; //speed which dialogue is typed on screen
     [SerializeField] float dialogueFadeAmount = 0.1f; //speed which dialogue disappears from screen
+
+    [Header("Pause")]
+    [SerializeField] GameObject pauseContainer; //stores all elements from pause
 
     //setting singleton instance
     void Awake() {
@@ -66,5 +70,15 @@ public class UI : MonoBehaviour {
         }
 
         callback(true); //returns successful callback
+    }
+
+    //activates pause menu
+    public void ShowPause() {
+        pauseContainer.SetActive(true);
+    }
+
+    //deactivates pause menu
+    public void HidePause() {
+        pauseContainer.SetActive(false);
     }
 }
