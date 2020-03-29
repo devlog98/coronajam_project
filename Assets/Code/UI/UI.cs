@@ -22,6 +22,9 @@ public class UI : MonoBehaviour {
     [Header("Pause")]
     [SerializeField] GameObject pauseContainer; //stores all elements from pause
 
+    [Header("Game Over")]
+    [SerializeField] GameObject gameOverContainer; //stores all elements from game over
+
     //setting singleton instance
     void Awake() {
         if (instance != null && instance != this) {
@@ -80,5 +83,15 @@ public class UI : MonoBehaviour {
     //deactivates pause menu
     public void HidePause() {
         pauseContainer.SetActive(false);
+    }
+
+    //activates game over menu
+    public void ShowGameOver() {
+        gameOverContainer.SetActive(true);
+    }
+
+    //deactivates game over menu
+    public void HideGameOver() {
+        gameOverContainer.SetActive(false);
     }
 }

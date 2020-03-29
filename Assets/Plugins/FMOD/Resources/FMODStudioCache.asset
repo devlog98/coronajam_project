@@ -58,6 +58,23 @@ MonoBehaviour:
   Max: 3
   Default: 3
   Exists: 1
+--- !u!114 &-7269470313026924964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/GMusic/Pause
+  m_EditorClassIdentifier: 
+  Name: Pause
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-6986067328523098858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,7 +126,7 @@ MonoBehaviour:
   Path: event:/MPlay
   guid: b5c19c8bcd64cd48885191ea5ae3eb83
   Banks:
-  - {fileID: -6969587430906329842}
+  - {fileID: -4064536066527216543}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -132,7 +149,7 @@ MonoBehaviour:
   Path: event:/GCough
   guid: 5c1f141117325b428bd51e94704ef53f
   Banks:
-  - {fileID: -6969587430906329842}
+  - {fileID: -4064536066527216543}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -173,7 +190,7 @@ MonoBehaviour:
   Path: event:/GOver
   guid: de6479a654d61b479535c8b1da8786f3
   Banks:
-  - {fileID: -6969587430906329842}
+  - {fileID: -4064536066527216543}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -214,6 +231,24 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+  Exists: 1
+--- !u!114 &-4064536066527216543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Audio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637210384121975572
+  LoadResult: 0
+  FileSizes: []
   Exists: 1
 --- !u!114 &-2925816736628233272
 MonoBehaviour:
@@ -317,7 +352,7 @@ MonoBehaviour:
   Path: event:/GHit
   guid: ee6521e98993c84590138939451c0dbc
   Banks:
-  - {fileID: -6969587430906329842}
+  - {fileID: -4064536066527216543}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -357,13 +392,13 @@ MonoBehaviour:
   Path: event:/GMusic
   guid: dd62025d7ed13944b3fec00b0cf49d03
   Banks:
-  - {fileID: -6969587430906329842}
+  - {fileID: -4064536066527216543}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -847516445969404722}
-  - {fileID: -4163644424916795902}
+  - {fileID: 4235303967269305111}
+  - {fileID: -7269470313026924964}
   MinDistance: 0
   MaxDistance: 0
   Length: 55097
@@ -381,7 +416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 614351053988854869}
-  - {fileID: -6969587430906329842}
+  - {fileID: -4064536066527216543}
   EditorEvents:
   - {fileID: 3523169393880125873}
   - {fileID: 5255923194564058855}
@@ -398,10 +433,10 @@ MonoBehaviour:
   - {fileID: -5450846893005700966}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -6969587430906329842}
+  - {fileID: -4064536066527216543}
   StringsBanks:
   - {fileID: 614351053988854869}
-  stringsBankWriteTime: 637210356417971706
+  stringsBankWriteTime: 637210384122065632
   cacheVersion: 3
 --- !u!114 &178095582073750741
 MonoBehaviour:
@@ -435,7 +470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Audio/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637210356417971706
+  lastModified: 637210384122065632
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -498,7 +533,7 @@ MonoBehaviour:
   Path: event:/GCatarro
   guid: 290c611ac2aa364582a86f66b326980e
   Banks:
-  - {fileID: -6969587430906329842}
+  - {fileID: -4064536066527216543}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -538,7 +573,7 @@ MonoBehaviour:
   Path: event:/GDash
   guid: 94f90e6cac262549b9e0b0ce8c8e99f6
   Banks:
-  - {fileID: -6969587430906329842}
+  - {fileID: -4064536066527216543}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -619,7 +654,7 @@ MonoBehaviour:
   Path: event:/MSelect
   guid: 04c5e078cf89494f96a3feab0d3699ec
   Banks:
-  - {fileID: -6969587430906329842}
+  - {fileID: -4064536066527216543}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -644,6 +679,23 @@ MonoBehaviour:
   lastModified: 637209479091649709
   LoadResult: 0
   FileSizes: []
+  Exists: 1
+--- !u!114 &4235303967269305111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/GMusic/Health
+  m_EditorClassIdentifier: 
+  Name: Health
+  Min: 1
+  Max: 3
+  Default: 3
   Exists: 1
 --- !u!114 &4969269329317285179
 MonoBehaviour:
@@ -677,7 +729,7 @@ MonoBehaviour:
   Path: event:/MMusic
   guid: 900de8725543ba468b1f07641c4b40b8
   Banks:
-  - {fileID: -6969587430906329842}
+  - {fileID: -4064536066527216543}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -723,7 +775,7 @@ MonoBehaviour:
   Path: event:/MPass
   guid: 1ea6baca5af716488004c4cb609ae76f
   Banks:
-  - {fileID: -6969587430906329842}
+  - {fileID: -4064536066527216543}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -799,7 +851,7 @@ MonoBehaviour:
   Path: event:/GVDash
   guid: dfebbe04c775e34facbd04f717474366
   Banks:
-  - {fileID: -6969587430906329842}
+  - {fileID: -4064536066527216543}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -822,7 +874,7 @@ MonoBehaviour:
   Path: event:/GSneeze
   guid: 395a5708a800a1438761c461bc58a547
   Banks:
-  - {fileID: -6969587430906329842}
+  - {fileID: -4064536066527216543}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -845,7 +897,7 @@ MonoBehaviour:
   Path: event:/GGel
   guid: 98fa42684e631d409b16c2d1a22585e9
   Banks:
-  - {fileID: -6969587430906329842}
+  - {fileID: -4064536066527216543}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1

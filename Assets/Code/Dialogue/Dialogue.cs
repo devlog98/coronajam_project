@@ -10,6 +10,7 @@ public class Dialogue : MonoBehaviour {
     private Queue<DialogueChoice> dialogueChoicesQueue;
     private Action<bool,Queue<DialogueChoice>> dialogueCallback; //method to be called after dialogue is finished
     private bool inSentence;
+    private bool isPaused;
 
     //setting singleton instance
     private void Awake() {
@@ -31,18 +32,19 @@ public class Dialogue : MonoBehaviour {
     private void Update() {
         // if there is dialogue to be displayed
         if (dialogueSentencesQueue != null) {
-            //go to next sentence if current is over
-            if (!inSentence) {
-                //show next sentence if queue has any left, else quit dialogue
-                if (dialogueSentencesQueue.Count > 0) {
-                    DialogueSentence sentence = dialogueSentencesQueue.Dequeue();
-                    StartCoroutine(ShowSentence(sentence));
-                }
-                else {
-                    dialogueSentencesQueue = null;
-                    dialogueCallback(true, dialogueChoicesQueue);
-                    //dialogueChoicesQueue = null;
-                    
+            //if dialogue is not paused
+            if (!isPaused) {
+                //go to next sentence if current is over
+                if (!inSentence) {
+                    //show next sentence if queue has any left, else quit dialogue
+                    if (dialogueSentencesQueue.Count > 0) {
+                        DialogueSentence sentence = dialogueSentencesQueue.Dequeue();
+                        StartCoroutine(ShowSentence(sentence));
+                    }
+                    else {
+                        dialogueSentencesQueue = null;
+                        dialogueCallback(true, dialogueChoicesQueue);
+                    }
                 }
             }
         }     
@@ -61,5 +63,14 @@ public class Dialogue : MonoBehaviour {
         if (isFaded) {
             inSentence = false; //stopping sentence
         }
+    }
+
+    //pauses or resumes dialogue
+    public void PauseDialogue() {
+        isPaused = true;
+    }
+
+    public void UnpauseDialogue() {
+        isPaused = false;
     }
 }

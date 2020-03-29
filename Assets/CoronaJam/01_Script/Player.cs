@@ -32,12 +32,13 @@ public class Player : MonoBehaviour
     [Header("Health")]
     public int health = 3;
     public PlayerUI healthUI;
-    public float invincibilityTime = 2f;  
+    public float invincibilityTime = 2f;
     private bool isInvincible;
 
     [Header("Sound Effects")]
     [EventRef] public string moveSound;
     [EventRef] public string hitSound;
+    [EventRef] public string deathSound;
     private bool canPlayAudio = true;
 
     void Start() {
@@ -56,7 +57,6 @@ public class Player : MonoBehaviour
         if (canMove == false)
         {
             click += Time.deltaTime;
-            Debug.Log("Entrou " +click);
             if (click >= 0.3f)
             {
                 canMove = true;
@@ -203,11 +203,20 @@ public class Player : MonoBehaviour
     //responsável por calcular o dano que o jogador sofre
     public void ReceiveDamage(int damage)
     {
-        if (!isInvincible) {
+        if (health != 0 && !isInvincible) {
             health -= damage;
             healthUI.UpdateHealthCounter(true);
             AudioManager.instance.PlayAudioclip(hitSound);
-            StartCoroutine(ActivateInvincibility());
+
+            if (health > 0) {
+                playerAnim.SetTrigger("IsGettingDamage");
+                StartCoroutine(ActivateInvincibility());
+            }
+            else {
+                playerAnim.SetTrigger("Death");
+                AudioManager.instance.PlayAudioclip(deathSound);
+                GM.instance.LevelFailed(3.5f); //calls game over -> hack monstro pra fazer funcionar
+            }
         }
     }
 

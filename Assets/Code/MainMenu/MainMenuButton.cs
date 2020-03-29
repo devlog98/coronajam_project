@@ -45,7 +45,7 @@ public class MainMenuButton : MaskableGraphic, IPointerEnterHandler, IPointerExi
             Debug.Log("incrementando");
             myText.fontSize = i;
             myText.color = colorEnter;
-            yield return new WaitForSeconds(0.01f);
+            yield return null;
         }
         yield return new WaitForEndOfFrame();
     }
@@ -57,7 +57,7 @@ public class MainMenuButton : MaskableGraphic, IPointerEnterHandler, IPointerExi
             Debug.Log("tirando");
             myText.fontSize = i;
             myText.color = colorExit;
-            yield return new WaitForSeconds(0.01f);
+            yield return null;
         }
         yield return new WaitForEndOfFrame();
     }

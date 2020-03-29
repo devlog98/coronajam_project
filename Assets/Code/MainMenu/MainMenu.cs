@@ -15,7 +15,18 @@ public class MainMenu : MonoBehaviour {
         Time.timeScale = 1.0f;
 
         //start fade out
-        StartCoroutine(PlayGameCoroutine());
+        StartCoroutine(PlayGameCoroutine(gameSceneIndex));
+    }
+
+    //loads scene
+    public void LoadScene(int sceneIndex) {
+        //hides and locks mouse to avoid repeated clicks
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Time.timeScale = 1.0f;
+
+        //start fade out
+        StartCoroutine(PlayGameCoroutine(sceneIndex));
     }
 
     public void PauseGame() {
@@ -27,7 +38,7 @@ public class MainMenu : MonoBehaviour {
     }
 
     //coroutine responsible for fade out of menu
-    private IEnumerator PlayGameCoroutine() {
+    private IEnumerator PlayGameCoroutine(int sceneIndex) {
         anim.SetTrigger("StartGame"); //activates animation
         yield return null; //skips frame so that animator info is updated with new activated animation
         yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length); //waits duration on fade out animation
@@ -36,6 +47,6 @@ public class MainMenu : MonoBehaviour {
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        SceneManager.LoadScene(gameSceneIndex); //goes to scene
+        SceneManager.LoadScene(sceneIndex); //goes to scene
     }
 }
