@@ -424,11 +424,11 @@ MonoBehaviour:
   m_ShapeLightFalloffSize: 3.51
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: 1.204083, y: -6.5019803, z: 0}
+  - {x: 1.0042672, y: -5.2697854, z: 0}
   - {x: 2.2970915, y: -8.104331, z: 0}
   - {x: 3.5291119, y: -8.407884, z: 0}
-  - {x: 1.0381479, y: -5.3714066, z: 0}
-  - {x: 4.6362305, y: -5.4098673, z: 0}
+  - {x: 5.0677586, y: -8.102218, z: 0}
+  - {x: 1.772212, y: -5.44317, z: 0}
   - {x: -3.8167372, y: 2.778493, z: 0}
   - {x: -4.196017, y: 2.8671057, z: 0}
 --- !u!4 &109454541
@@ -5062,7 +5062,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 531224223332916325, guid: eb42fda3c12718640a3ab7c31e8eba4f,
         type: 3}
       propertyPath: m_SortingOrder
