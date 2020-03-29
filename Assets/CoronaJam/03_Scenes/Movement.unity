@@ -696,7 +696,7 @@ PrefabInstance:
     - target: {fileID: 1285196525185800189, guid: 591a2ee6deca1a64e94df244e72a63ad,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1285196525185800189, guid: 591a2ee6deca1a64e94df244e72a63ad,
         type: 3}
@@ -3917,7 +3917,7 @@ PrefabInstance:
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
       propertyPath: rounds.Array.data[0].enemyDifficulty.timeSneeze
-      value: 12
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
@@ -3992,7 +3992,7 @@ PrefabInstance:
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
       propertyPath: rounds.Array.data[0].enemyDifficulty.virusSneeze
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
