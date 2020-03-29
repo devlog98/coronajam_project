@@ -18,6 +18,7 @@ public class UnwantedVisitor : MonoBehaviour
     Vector3 localização;
     bool walkSide;
     bool walkUp;
+    bool animMovement = false;
 
 
     [Header("Control")]
@@ -56,6 +57,12 @@ public class UnwantedVisitor : MonoBehaviour
         control();
         CheckInput();
         Move();
+
+
+    VisitorAnim.SetBool("IsMoving", animMovement);
+         
+ 
+
     }
 
     private void FixedUpdate()
@@ -97,13 +104,19 @@ public class UnwantedVisitor : MonoBehaviour
             Debug.Log("Sneeze " + timeV);
             timeV = 0;
             timeS = 0;
-            Sneeze();
+            VisitorAnim.SetTrigger("IsSneezing");
+            AudioManager.instance.PlayAudioclip(virusSneezeSound);
+            //VisitorAnim.SetBool("IsSneezing", );
+            Invoke("Sneeze", 0.4f);
+            //Sneeze();
         }
         else if (timeS >= timeVirusShot && virusShot && !horizontal || timeS >= timeVirusShot && virusShot && !vertical)
         {
             Debug.Log("Viorus Shot " + timeS);
             timeS = 0;
-            Fire();
+            VisitorAnim.SetTrigger("IsCoughing");
+            AudioManager.instance.PlayAudioclip(virusShotSound);
+            Invoke("Fire", 0.5f);            
         }
         else if (horizontal && timeS >= timeVirusShot && virusShot || vertical && timeS >= timeVirusShot && virusShot)
         {
@@ -168,16 +181,18 @@ public class UnwantedVisitor : MonoBehaviour
         //move para os lados
         if (horizontal)
         {
+            animMovement = true;
+            VisitorAnim.SetTrigger("IsMoving");
+            transform.position = Vector3.MoveTowards(transform.position, localização, speedSide * Time.deltaTime);
             //play movement audio once
-            if (canPlayAudio) {
+            if (canPlayAudio)
+            {
                 AudioManager.instance.PlayAudioclip(moveSound);
                 canPlayAudio = false;
             }
-
-            VisitorAnim.SetTrigger("IsMoving");
-            transform.position = Vector3.MoveTowards(transform.position, localização, speedSide * Time.deltaTime);
             if (Vector3.Distance(transform.position, localização) == 0f)
             {
+                animMovement = false; 
                 horizontal = false;
                 canPlayAudio = true;
             }
@@ -185,6 +200,7 @@ public class UnwantedVisitor : MonoBehaviour
         //move para cima e baixo
         if (vertical)
         {
+            animMovement = true;
             //play movement audio once
             if (canPlayAudio) {
                 AudioManager.instance.PlayAudioclip(moveSound);
@@ -195,6 +211,7 @@ public class UnwantedVisitor : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, localização, speedUp * Time.deltaTime);
             if (Vector3.Distance(transform.position, localização) == 0f)
             {
+                animMovement = false;
                 vertical = false;
                 canPlayAudio = true;
             }
@@ -212,16 +229,12 @@ public class UnwantedVisitor : MonoBehaviour
 
     void Fire()
     {
-        GameObject cloneVirus = Instantiate(virusObject, distanceAttack + transform.position, transform.rotation);
-        VisitorAnim.SetTrigger("IsCoughing");
-        AudioManager.instance.PlayAudioclip(virusShotSound);
+        GameObject cloneVirus = Instantiate(virusObject, distanceAttack + transform.position, transform.rotation);      
     }
 
     void Sneeze()
-    {
-        GameObject cloneSneeze = Instantiate(SneezeObject, distanceAttack + transform.position, transform.rotation);
-        VisitorAnim.SetTrigger("IsSneezing");
-        AudioManager.instance.PlayAudioclip(virusSneezeSound);
+    {                
+        GameObject cloneSneeze = Instantiate(SneezeObject, distanceAttack + transform.position, transform.rotation);              
     }
 
     //altera a dificuldade do inimigo baseado no round
