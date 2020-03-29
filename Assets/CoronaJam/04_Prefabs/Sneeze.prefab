@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7146371599649417014}
   - component: {fileID: 55185926964900010}
   - component: {fileID: 1216953227376328567}
+  - component: {fileID: 276849052414582027}
   m_Layer: 0
   m_Name: Sneeze
   m_TagString: Untagged
@@ -72,7 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 52df046bce7b7c4448273bb23c08f8b4, type: 3}
+  m_Sprite: {fileID: 2861077218865916389, guid: 49109a1ba0e933548809e1224a8bdf58,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,7 +102,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.7066667, y: 1.7066667}
+    oldSize: {x: 6.826667, y: 5.12}
     newSize: {x: 5.12, y: 5.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -125,3 +127,22 @@ MonoBehaviour:
   spawnObject: {fileID: 3453182228024514286, guid: 99ef0555088b2f743a0d0c85bd923641,
     type: 3}
   sneezeSound: event:/GCatarro
+--- !u!95 &276849052414582027
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2925357327320654707}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 053274e726ab08e41823e9dcf29420ab, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
