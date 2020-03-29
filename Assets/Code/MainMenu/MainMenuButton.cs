@@ -40,7 +40,6 @@ public class MainMenuButton : MaskableGraphic, IPointerEnterHandler, IPointerExi
     {       
         for (int i = fontSizeExit; i <= fontSize; i++ )
         {
-            Debug.Log("incrementando");
             myText.fontSize = i;
             myText.color = colorEnter;
             yield return new WaitForEndOfFrame();
@@ -52,7 +51,6 @@ public class MainMenuButton : MaskableGraphic, IPointerEnterHandler, IPointerExi
     {
         for (int i = fontSize; i >= fontSizeExit; i--)
         {
-            Debug.Log("tirando");
             myText.fontSize = i;
             myText.color = colorExit;
             yield return new WaitForEndOfFrame();
