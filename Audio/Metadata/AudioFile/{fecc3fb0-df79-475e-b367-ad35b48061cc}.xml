@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{fecc3fb0-df79-475e-b367-ad35b48061cc}">
+		<property name="assetPath">
+			<value>CSGuto1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.3028798185941044</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d4934583-3659-4c96-a319-46e36ca58a2c}</destination>
+		</relationship>
+	</object>
+</objects>
