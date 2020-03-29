@@ -12,7 +12,7 @@ public class UnwantedVisitor : MonoBehaviour
 
     [Header("Check")]
     public LayerMask groundCheck;
-    public Vector3 sideOffset, upOffset;
+    public Vector3 sideOffset, upOffset, downOffset;
     bool horizontal;
     bool vertical;
     Vector3 localização;
@@ -207,7 +207,7 @@ public class UnwantedVisitor : MonoBehaviour
         right = Physics2D.OverlapCircle(transform.position + sideOffset, 0.15f, groundCheck);
         left = Physics2D.OverlapCircle(transform.position + (-sideOffset), 0.15f, groundCheck);
         up = Physics2D.OverlapCircle(transform.position + upOffset, 0.15f, groundCheck);
-        down = Physics2D.OverlapCircle(transform.position + (-upOffset), 0.15f, groundCheck);
+        down = Physics2D.OverlapCircle(transform.position + downOffset, 0.15f, groundCheck);
     }
 
     void Fire()
@@ -245,6 +245,6 @@ public class UnwantedVisitor : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position + sideOffset, 0.15f);
         Gizmos.DrawWireSphere(transform.position + (-sideOffset), 0.15f);
         Gizmos.DrawWireSphere(transform.position + upOffset, 0.15f);
-        Gizmos.DrawWireSphere(transform.position + (-upOffset), 0.15f);
+        Gizmos.DrawWireSphere(transform.position + downOffset, 0.15f);
     }
 }

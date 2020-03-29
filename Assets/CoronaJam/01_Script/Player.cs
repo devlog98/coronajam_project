@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
     Vector3 localização;
     bool walkSide;
     bool walkUp;
+    float click = 0.5f;
+    bool canMove = true;
 
     [Header("Health")]
     public int health = 3;
@@ -50,15 +52,29 @@ public class Player : MonoBehaviour
     {
         CheckInput();
         Move();
-        animationPlayer();
+
+        if (canMove == false)
+        {
+            click += Time.deltaTime;
+            Debug.Log("Entrou " +click);
+            if (click >= 0.3f)
+            {
+                canMove = true;
+                click = 0;
+            }
+        }
     }
     private void FixedUpdate()
     {
         PhysicsCheck();
+        animationPlayer();
     }
 
     public void CheckInput()
     {
+        if (!canMove)
+            return;
+
         //Checar inputs do usuário
         if (Input.GetButtonDown("Horizontal") && !horizontal && !vertical)
         {
@@ -76,8 +92,9 @@ public class Player : MonoBehaviour
                     localização = transform.position + (-sideOffset);
                     
                 }
+                canMove = false;
                 isIdle = false;
-                horizontal = true;              
+                horizontal = true;               
             }
         }
 
@@ -97,9 +114,9 @@ public class Player : MonoBehaviour
                         localização = transform.position + (-upOffset);
                         
                     }
+                canMove = false;
                 isIdle = false;
-                vertical = true;
-                
+                vertical = true;               
             }
         }
 
@@ -165,7 +182,12 @@ public class Player : MonoBehaviour
         }
 
         playerAnim.SetBool("IsIdle", isIdle);
-        playerAnim.SetBool("IsJumping", vertical);
+        //playerAnim.SetBool("IsJumping", vertical);
+        if (vertical)
+        {
+            playerAnim.SetTrigger("Jump");
+        }
+        
 
     }
 
