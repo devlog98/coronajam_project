@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -98,11 +99,9 @@ public class Battle : MonoBehaviour
             }
             else
             {
-                //BATTLE IS OVER
+                MusicManager.instance.StopEvent();
+                SceneManager.LoadScene(3);
             }
-
-
-
         }
     }
 
