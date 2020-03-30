@@ -2,26 +2,43 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 
-public class Battle : MonoBehaviour {
+public class Battle : MonoBehaviour
+{
     [SerializeField] private List<Round> rounds; //list with all rounds sequentially ordered for the battle
     [SerializeField] private UnwantedVisitor enemy; //reference of enemy
 
+    [Header("PostProcessing")]
+    UnityEngine.Rendering.Universal.ColorAdjustments colorAdjustments;
+    public VolumeProfile volumeProfile;
+    [SerializeField] GameObject volume;
+
     [Header("Choices")]
     [SerializeField] private GameObject choice1, choice2, choice3, choice4, choice5;
-    public TextMeshProUGUI choice1Txt, choice2Txt, choice3Txt, choice4Txt, choice5Txt;
-
-
+    [HideInInspector] public TextMeshProUGUI choice1Txt, choice2Txt, choice3Txt, choice4Txt, choice5Txt;
+    private DialogueChoice[] choiceArray;
+    private int choiceIndex;
+    [HideInInspector] public bool reactionWasShown;
+    private bool isFirstDialogue;
+    private bool inReaction;
+    public GameObject player;
 
     private GameObject[] pausableGameObjects;
 
     private Queue<Round> roundsQueue; //queues to help with battle flow
-    public  bool inRound;
+    public bool inRound;
 
+
+    float t;
+
+    bool fadeIn;
+    public float duration = 0.2f;
     //creates queue with all rounds from this battle
-    private void Start() {
+    private void Start()
+    {
         roundsQueue = new Queue<Round>(rounds);
         pausableGameObjects = GameObject.FindGameObjectsWithTag("Pausable");
 
@@ -30,41 +47,79 @@ public class Battle : MonoBehaviour {
         choice3Txt = choice3.GetComponentInChildren<TextMeshProUGUI>();
         choice4Txt = choice4.GetComponentInChildren<TextMeshProUGUI>();
         choice5Txt = choice5.GetComponentInChildren<TextMeshProUGUI>();
+
+        t = 0;
+        fadeIn = false;
+        isFirstDialogue = true;
+        inReaction = false;
+        reactionWasShown = true;
+        volumeProfile = volume.GetComponent<UnityEngine.Rendering.Volume>()?.profile;
+        if (!volumeProfile) throw new System.NullReferenceException(nameof(UnityEngine.Rendering.VolumeProfile));
+
+        if (!volumeProfile.TryGet(out colorAdjustments)) throw new System.NullReferenceException(nameof(colorAdjustments));
     }
 
-    private void Update() {
+    private void Update()
+    {
+
+        if (colorAdjustments.saturation.value <= -100)
+        {
+            fadeIn = false;
+        }
+        if (fadeIn)
+        {
+            t += Time.deltaTime / duration;
+
+            colorAdjustments.saturation.Override(Mathf.Lerp(0, -100, t));
+        }
         //activate round if none is happening
-        if (!inRound) {
-            
+        if (!inRound)
+        {
+
             DisableAllChoices();
             EnablePausableScripts();
 
-            if (roundsQueue.Count > 0) {
+            if (!isFirstDialogue && !inReaction)
+            {
+                StartCoroutine(Dialogue.instance.ShowReaction(choiceArray[choiceIndex]));
+                inReaction = true;
+            }
+
+            if (roundsQueue.Count > 0 && reactionWasShown)
+            {
+
                 Round round = roundsQueue.Dequeue(); //grabs next round
                 Dialogue.instance.StartDialogue(round.DialogueSentences, round.DialogueChoices, DialogueOverCallback); //sends all needed data to dialogue
                 enemy.SetDifficulty(round.EnemyDifficulty); //sends all needed data to enemy
                 inRound = true;
+                isFirstDialogue = false;
             }
-            else {
+            else
+            {
                 //BATTLE IS OVER
             }
+
+
+
         }
     }
 
     //method will be called after round dialogue is over
-    public void DialogueOverCallback(bool isOver, Queue<DialogueChoice> Choices) {
+    public void DialogueOverCallback(bool isOver, Queue<DialogueChoice> Choices)
+    {
 
-        
-       
-        foreach (GameObject go in pausableGameObjects)
+        choiceArray = Choices.ToArray();
+        fadeIn = true;
+        Time.timeScale = 0.3f;
+
+        MonoBehaviour[] scripts = player.GetComponents<MonoBehaviour>();
+
+
+        foreach (MonoBehaviour script in scripts)
         {
-            MonoBehaviour[] scripts = go.GetComponents<MonoBehaviour>();
-            
-            foreach(MonoBehaviour script in scripts)
-            {
-                script.enabled = false;
-            }
+            script.enabled = false;
         }
+
 
         switch (Choices.Count)
         {
@@ -81,7 +136,7 @@ public class Battle : MonoBehaviour {
 
                 choice2Txt.text = Choices.Dequeue().ChoiceKey;
                 choice2.SetActive(true);
-                
+
                 break;
 
             case 3:
@@ -129,15 +184,20 @@ public class Battle : MonoBehaviour {
         }
 
 
-        if (isOver && false) {
+        if (isOver && false)
+        {
             inRound = false; //stopping round
 
         }
     }
 
-    public  void FinishRound()
+    public void FinishRound(int choiceIndexp)
     {
         inRound = false;
+        inReaction = false;
+        this.choiceIndex = choiceIndexp;
+        Time.timeScale = 1;
+        colorAdjustments.saturation.Override(0);
     }
 
     public void DisableAllChoices()

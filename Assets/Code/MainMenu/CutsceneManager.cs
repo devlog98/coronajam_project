@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class CutsceneManager : MonoBehaviour {
     [SerializeField] private List<CutsceneSlide> cutscenes;
+    public int sceneIndex;
     private int slideIndex = 0;
 
     public Image currentImage;
@@ -65,7 +66,7 @@ public class CutsceneManager : MonoBehaviour {
     }
 
     public void JumpIntro() {
-        AudioManager.instance.PlayAudioclip("Teste");
-        SceneManager.LoadScene(1);
+        MusicManager.instance.StopEvent();
+        SceneManager.LoadScene(sceneIndex);
     }
 }

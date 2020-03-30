@@ -18,16 +18,22 @@ public class MainMenuButton : MaskableGraphic, IPointerEnterHandler, IPointerExi
 
     public void OnPointerEnter(PointerEventData eventData) {
         AudioManager.instance.PlayAudioclip(buttonHighlightSound);
-        StartCoroutine("FontIncrement");
+        if (myText != null) {
+            StartCoroutine("FontIncrement");
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        StartCoroutine("FontDecrement");
+        if (myText != null) {
+            StartCoroutine("FontDecrement");
+        }
     }
 
     public void OnClick() {
-        FontReturn();
+        if (myText != null) {
+            FontReturn();
+        }
         AudioManager.instance.PlayAudioclip(buttonSelectSound);
     }
 

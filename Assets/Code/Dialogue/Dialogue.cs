@@ -6,6 +6,8 @@ using UnityEngine;
 public class Dialogue : MonoBehaviour {
     public static Dialogue instance;
 
+
+    public Battle battle;
     private Queue<DialogueSentence> dialogueSentencesQueue; //queues to help with dialogue flow
     private Queue<DialogueChoice> dialogueChoicesQueue;
     private Action<bool,Queue<DialogueChoice>> dialogueCallback; //method to be called after dialogue is finished
@@ -23,12 +25,12 @@ public class Dialogue : MonoBehaviour {
     }
 
     //creates queue with all sentences from this dialogue and sets callback
-    public void StartDialogue(List<DialogueSentence> dialogueSentences, List<DialogueChoice> dialogueChoices, Action<bool,Queue<DialogueChoice>> callback) {
+    public void StartDialogue(List<DialogueSentence> dialogueSentences, List<DialogueChoice> dialogueChoices, Action<bool, Queue<DialogueChoice>> callback)
+    {
         dialogueSentencesQueue = new Queue<DialogueSentence>(dialogueSentences);
         dialogueChoicesQueue = new Queue<DialogueChoice>(dialogueChoices);
         dialogueCallback = callback;
     }
-
     private void Update() {
         // if there is dialogue to be displayed
         if (dialogueSentencesQueue != null) {
@@ -72,5 +74,14 @@ public class Dialogue : MonoBehaviour {
 
     public void UnpauseDialogue() {
         isPaused = false;
+    }
+    public IEnumerator ShowReaction(DialogueChoice sentence)
+    {
+        inSentence = true; //starting sentence
+        UI.instance.ShowDialogueSentence(sentence.ChoiceReactionKey);
+        yield return new WaitForSeconds(sentence.ReactionTime);
+        battle.reactionWasShown = true;
+
+        UI.instance.HideDialogueSentence(SentenceFadeCallback);
     }
 }

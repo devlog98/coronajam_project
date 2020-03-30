@@ -6,8 +6,8 @@ public class ChoicesController : MonoBehaviour
 {
     public Battle BattleScript;
 
-    public void FinishRound()
+    public void FinishRound(int choiceIndex)
     {
-        BattleScript.FinishRound();
+        BattleScript.FinishRound(choiceIndex);
     }
 }
