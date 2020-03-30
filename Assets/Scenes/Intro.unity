@@ -912,6 +912,10 @@ MonoBehaviour:
     name: GUTO
     sentence: "Pera\xED Dona Sandra, minha m\xE3e chega j\xE1..."
     soundEffect: event:/CGuto
+  - sprite: {fileID: 21300000, guid: 8ee4967e8e1308c4e82793f127060018, type: 3}
+    name: 
+    sentence: 
+    soundEffect: 
   sceneIndex: 1
   currentImage: {fileID: 1685698450}
   currentName: {fileID: 1974180575}
