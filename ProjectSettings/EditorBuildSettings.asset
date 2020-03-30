@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CoronaJam/03_Scenes/Movement.unity
     guid: bd0a2702d41094245b4b6f6003c31000
+  - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 196d013d232b1d54d983735f79bedae7
+  - enabled: 1
+    path: Assets/Scenes/Outro.unity
+    guid: fcff5edbc676e4f4ba6d0b76282f03eb
   m_configObjects: {}
