@@ -30,7 +30,7 @@ public class Battle : MonoBehaviour
 
     private Queue<Round> roundsQueue; //queues to help with battle flow
     public bool inRound;
-
+    public Player playerScript;
 
     float t;
 
@@ -57,6 +57,8 @@ public class Battle : MonoBehaviour
         if (!volumeProfile) throw new System.NullReferenceException(nameof(UnityEngine.Rendering.VolumeProfile));
 
         if (!volumeProfile.TryGet(out colorAdjustments)) throw new System.NullReferenceException(nameof(colorAdjustments));
+
+        playerScript = player.GetComponent<Player>();
     }
 
     private void Update()
@@ -197,7 +199,8 @@ public class Battle : MonoBehaviour
         inReaction = false;
         this.choiceIndex = choiceIndexp;
         Time.timeScale = 1;
-        colorAdjustments.saturation.Override(0);
+        StartCoroutine(backToNormalColor());
+
     }
 
     public void DisableAllChoices()
@@ -219,6 +222,21 @@ public class Battle : MonoBehaviour
             {
                 script.enabled = true;
             }
+        }
+    }
+
+    IEnumerator backToNormalColor()
+    {
+        if (choiceArray[choiceIndex].ChoiceValue == 0)
+        {
+            colorAdjustments.saturation.Override(0);
+        }
+        else
+        {
+            playerScript.ReceiveDamage(1);
+            colorAdjustments.saturation.Override(100);
+            yield return new WaitForSeconds(0.3f);
+            colorAdjustments.saturation.Override(0);
         }
     }
 }
