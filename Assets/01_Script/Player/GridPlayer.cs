@@ -21,7 +21,7 @@ public class GridPlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Attack"))
+        if (collision.CompareTag("Attack") || collision.CompareTag("Pausable"))
         {
             /*GameObject spawVirus*/ tiledestroy = Instantiate(spawnObject, transform.position, transform.rotation);
         }

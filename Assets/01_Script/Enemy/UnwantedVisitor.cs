@@ -58,16 +58,14 @@ public class UnwantedVisitor : MonoBehaviour
         CheckInput();
         Move();
 
+        VisitorAnim.SetBool("IsMoving", animMovement);
 
-    VisitorAnim.SetBool("IsMoving", animMovement);
-         
- 
-
+        PhysicsCheck();
     }
 
     private void FixedUpdate()
     {
-        PhysicsCheck();
+        
     }
 
     void timeControl()
@@ -99,50 +97,55 @@ public class UnwantedVisitor : MonoBehaviour
             getSense = sense[getRandom];
             if (getDirection == "Horizontal" && getSense > 0 && !right || getDirection == "Horizontal" && getSense < 0 && !left || getDirection == "Vertical" && getSense > 0 && !up || getDirection == "Vertical" && getSense < 0 && !down) { timeM = 3; }
         }
-        else if (timeV >= timeSneeze && virusSneeze && !horizontal || timeV >= timeSneeze && virusSneeze && !vertical)//quando o time tiver um valor igual ou maior ao especificado para o ataque é realizado a ação
+
+        if (!animMovement)
         {
-            Debug.Log("Sneeze " + timeV);
-            timeV = 0;
-            timeS = 0;
-            VisitorAnim.SetTrigger("IsSneezing");
-            AudioManager.instance.PlayAudioclip(virusSneezeSound);
-            //VisitorAnim.SetBool("IsSneezing", );
-            Invoke("Sneeze", 0.4f);
-            //Sneeze();
+            if (timeV >= timeSneeze && virusSneeze)//quando o time tiver um valor igual ou maior ao especificado para o ataque é realizado a ação
+            {
+                Debug.Log("Sneeze " + timeV);
+                timeV = 0;
+                timeS = 0;
+                VisitorAnim.SetTrigger("IsSneezing");
+                AudioManager.instance.PlayAudioclip(virusSneezeSound);
+                Invoke("Sneeze", 0.4f);
+            }
+            else if (timeS >= timeVirusShot && virusShot)
+            {
+                Debug.Log("Viorus Shot " + timeS);
+                timeS = 0;
+                VisitorAnim.SetTrigger("IsCoughing");
+                AudioManager.instance.PlayAudioclip(virusShotSound);
+                Invoke("Fire", 0.5f);
+            }
         }
-        else if (timeS >= timeVirusShot && virusShot && !horizontal || timeS >= timeVirusShot && virusShot && !vertical)
+        else
         {
-            Debug.Log("Viorus Shot " + timeS);
-            timeS = 0;
-            VisitorAnim.SetTrigger("IsCoughing");
-            AudioManager.instance.PlayAudioclip(virusShotSound);
-            Invoke("Fire", 0.5f);            
-        }
-        else if (horizontal && timeS >= timeVirusShot && virusShot || vertical && timeS >= timeVirusShot && virusShot)
-        {
-            timeS = 2 - (Mathf.RoundToInt(timeS));
-            Debug.Log("Vertical " + timeS);
-        }
-        else if (horizontal && timeV >= timeSneeze && virusSneeze || vertical && timeV >= timeSneeze && virusSneeze)
-        {
-            timeV = 2 - (Mathf.RoundToInt(timeV));
-            Debug.Log("Forizontal " + timeV);
+            if (timeS >= timeVirusShot && virusShot)
+            {
+                timeS = 0.5f - (Mathf.RoundToInt(timeS));
+                Debug.Log("Vertical " + timeS);
+            }
+            else if (timeV >= timeSneeze && virusSneeze)
+            {
+                timeV = 0.5f - (Mathf.RoundToInt(timeV));
+                Debug.Log("Forizontal " + timeV);
+            }
         }
     }
 
     public void CheckInput()
     {
-        //Checar se a direção e sentidos estão disponiveis, se disponivel a variavel da direção recebe verdadeiro
-        if (getDirection == "Horizontal" && !horizontal && !vertical)
-        {
-            getDirection = null;
-            if (getSense > 0 && right || getSense < 0 && left) { walkSide = true; }
-        }
-        if (getDirection == "Vertical" && !vertical && !horizontal)
-        {
-            getDirection = null;
-            if (getSense > 0 && up || getSense < 0 && down) { walkUp = true; }
-        }
+            //Checar se a direção e sentidos estão disponiveis, se disponivel a variavel da direção recebe verdadeiro
+            if (getDirection == "Horizontal" && !horizontal && !vertical)
+            {
+                getDirection = null;
+                if (getSense > 0 && right || getSense < 0 && left) { walkSide = true; animMovement = true;}
+            }
+            if (getDirection == "Vertical" && !vertical && !horizontal)
+            {
+                getDirection = null;
+                if (getSense > 0 && up || getSense < 0 && down) { walkUp = true; animMovement = true;}
+            }
     }
 
     public void Move()
@@ -181,7 +184,6 @@ public class UnwantedVisitor : MonoBehaviour
         //move para os lados
         if (horizontal)
         {
-            animMovement = true;
             VisitorAnim.SetTrigger("IsMoving");
             transform.position = Vector3.MoveTowards(transform.position, localização, speedSide * Time.deltaTime);
             //play movement audio once
@@ -200,7 +202,6 @@ public class UnwantedVisitor : MonoBehaviour
         //move para cima e baixo
         if (vertical)
         {
-            animMovement = true;
             //play movement audio once
             if (canPlayAudio) {
                 AudioManager.instance.PlayAudioclip(moveSound);
