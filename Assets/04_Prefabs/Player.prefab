@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &97813948
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 97813947}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.014102906, y: 0.011811184, z: 0.014102906}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 407138839}
   m_Father: {fileID: 1046264269}
@@ -36,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.99, y: -1.6270001}
-  m_SizeDelta: {x: 160, y: 47.085}
+  m_AnchoredPosition: {x: 2.64, y: -1.33}
+  m_SizeDelta: {x: 3, y: 0.55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &97813951
 CanvasRenderer:
@@ -72,6 +72,8 @@ MonoBehaviour:
   fontSizeExit: 0
   colorEnter: {r: 0, g: 0, b: 0, a: 0}
   colorExit: {r: 0, g: 0, b: 0, a: 0}
+  myButton: {fileID: 0}
+  myButtonAnim: {fileID: 0}
 --- !u!114 &97813949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +128,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 116508720962546765}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &248666562
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,7 +157,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &248666563
 RectTransform:
   m_ObjectHideFlags: 0
@@ -154,7 +167,7 @@ RectTransform:
   m_GameObject: {fileID: 248666562}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.014102906, y: 0.011811184, z: 0.014102906}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2116682579}
   m_Father: {fileID: 1046264269}
@@ -162,8 +175,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.5, y: -0.575}
-  m_SizeDelta: {x: 160, y: 47.085}
+  m_AnchoredPosition: {x: 1.46, y: -2.1}
+  m_SizeDelta: {x: 3, y: 0.55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &248666566
 CanvasRenderer:
@@ -198,6 +211,8 @@ MonoBehaviour:
   fontSizeExit: 0
   colorEnter: {r: 0, g: 0, b: 0, a: 0}
   colorExit: {r: 0, g: 0, b: 0, a: 0}
+  myButton: {fileID: 0}
+  myButtonAnim: {fileID: 0}
 --- !u!114 &248666564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,6 +258,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1046264270}
         m_MethodName: FinishRound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7219905363250134071}
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -344,8 +370,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 0.2
+  m_fontSizeBase: 0.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -500,8 +526,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 0.2
+  m_fontSizeBase: 0.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -582,7 +608,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &700018929
 RectTransform:
   m_ObjectHideFlags: 0
@@ -592,7 +618,7 @@ RectTransform:
   m_GameObject: {fileID: 700018928}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.014102906, y: 0.011811184, z: 0.014102906}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1292744297}
   m_Father: {fileID: 1046264269}
@@ -600,8 +626,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.51, y: -1.5799999}
-  m_SizeDelta: {x: 160, y: 47.085}
+  m_AnchoredPosition: {x: 1.5000001, y: -0.55}
+  m_SizeDelta: {x: 3, y: 0.55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &700018932
 CanvasRenderer:
@@ -636,6 +662,8 @@ MonoBehaviour:
   fontSizeExit: 0
   colorEnter: {r: 0, g: 0, b: 0, a: 0}
   colorExit: {r: 0, g: 0, b: 0, a: 0}
+  myButton: {fileID: 0}
+  myButtonAnim: {fileID: 0}
 --- !u!114 &700018930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -690,6 +718,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 244109004936067332}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1046264268
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,8 +767,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.3, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 14, y: 10.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1046264270
 MonoBehaviour:
@@ -836,8 +875,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 0.2
+  m_fontSizeBase: 0.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -918,7 +957,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1820757509
 RectTransform:
   m_ObjectHideFlags: 0
@@ -928,7 +967,7 @@ RectTransform:
   m_GameObject: {fileID: 1820757508}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.014102906, y: 0.011811184, z: 0.014102906}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1912716033}
   m_Father: {fileID: 1046264269}
@@ -936,8 +975,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.68, y: 0.272}
-  m_SizeDelta: {x: 160, y: 47.085}
+  m_AnchoredPosition: {x: -0.5299999, y: 0.15}
+  m_SizeDelta: {x: 3, y: 0.55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1820757512
 CanvasRenderer:
@@ -972,6 +1011,8 @@ MonoBehaviour:
   fontSizeExit: 0
   colorEnter: {r: 0, g: 0, b: 0, a: 0}
   colorExit: {r: 0, g: 0, b: 0, a: 0}
+  myButton: {fileID: 0}
+  myButtonAnim: {fileID: 0}
 --- !u!114 &1820757510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1017,6 +1058,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1046264270}
         m_MethodName: FinishRound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7983293833463517161}
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1118,8 +1170,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 0.2
+  m_fontSizeBase: 0.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1200,7 +1252,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1983605685
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1210,7 +1262,7 @@ RectTransform:
   m_GameObject: {fileID: 1983605684}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.014102906, y: 0.011811184, z: 0.014102906}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 534156544}
   m_Father: {fileID: 1046264269}
@@ -1218,8 +1270,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.97, y: -0.56}
-  m_SizeDelta: {x: 160, y: 47.085}
+  m_AnchoredPosition: {x: -0.6399999, y: -2.79}
+  m_SizeDelta: {x: 3, y: 0.55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1983605688
 CanvasRenderer:
@@ -1254,6 +1306,8 @@ MonoBehaviour:
   fontSizeExit: 0
   colorEnter: {r: 0, g: 0, b: 0, a: 0}
   colorExit: {r: 0, g: 0, b: 0, a: 0}
+  myButton: {fileID: 0}
+  myButtonAnim: {fileID: 0}
 --- !u!114 &1983605686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1299,6 +1353,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1046264270}
         m_MethodName: FinishRound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3955768256817902480}
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1400,8 +1465,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 0.2
+  m_fontSizeBase: 0.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

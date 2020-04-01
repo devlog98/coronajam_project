@@ -7,60 +7,77 @@ using UnityEngine.UI;
 
 public class MainMenuButton : MaskableGraphic, IPointerEnterHandler, IPointerExitHandler
 {
+    [Header("Audio Feedback")]
     [EventRef] [SerializeField] private string buttonHighlightSound = "event:/MPass";
     [EventRef] [SerializeField] private string buttonSelectSound = "event:/MSelect";
+
+    [Header("Settings to change Text")]
     [SerializeField] private Text myText;
     [SerializeField] private int fontSize;
     [SerializeField] private int fontSizeExit;
     [SerializeField] private Color colorEnter;
     [SerializeField] private Color colorExit;
-    
 
-    public void OnPointerEnter(PointerEventData eventData) {
-        AudioManager.instance.PlayAudioclip(buttonHighlightSound);
+    [Header("Settings to change Button")]
+    [SerializeField] private GameObject myButton;
+    [SerializeField] private Animator myButtonAnim;
+
+    public void OnPointerEnter(PointerEventData eventData) {        
+        AudioManager.instance.PlayAudioclip(buttonHighlightSound); //play audio
+
+        //change text
         if (myText != null) {
             StartCoroutine("FontIncrement");
         }
+
+        //change button
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        //change text
         if (myText != null) {
             StartCoroutine("FontDecrement");
         }
+
+        //change button
     }
 
     public void OnClick() {
+        AudioManager.instance.PlayAudioclip(buttonSelectSound); //play audio
+
+        //change text
         if (myText != null) {
             FontReturn();
         }
-        AudioManager.instance.PlayAudioclip(buttonSelectSound);
+
+        //change button
     }
 
-    void FontReturn() {
+    #region Text Methods
+    private void FontReturn() {
         myText.fontSize = fontSizeExit;
         myText.color = colorExit;
     }
 
-    IEnumerator FontIncrement()
-    {       
+    private IEnumerator FontIncrement()
+    {
+        myText.color = colorEnter;
         for (int i = fontSizeExit; i <= fontSize; i++ )
         {
             myText.fontSize = i;
-            myText.color = colorEnter;
             yield return new WaitForEndOfFrame();
         }
-        yield return new WaitForEndOfFrame();
     }
 
-    IEnumerator FontDecrement()
+    private IEnumerator FontDecrement()
     {
+        myText.color = colorExit;
         for (int i = fontSize; i >= fontSizeExit; i--)
         {
             myText.fontSize = i;
-            myText.color = colorExit;
             yield return new WaitForEndOfFrame();
         }
-        yield return new WaitForEndOfFrame();
     }
+    #endregion
 }
