@@ -2332,6 +2332,65 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 433584534}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1699121766
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1699121768}
+  - component: {fileID: 1699121767}
+  m_Layer: 0
+  m_Name: PowerUP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1699121767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699121766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd737815010c14489a7c63a83b0dae6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grids:
+  - {fileID: 1100981858}
+  - {fileID: 26583985}
+  - {fileID: 222532889}
+  - {fileID: 1801913703}
+  - {fileID: 798946488}
+  - {fileID: 2029638939}
+  - {fileID: 495105257}
+  - {fileID: 922056812}
+  - {fileID: 1208315916}
+  powerUpLife: 1
+  spawnPowerUpLife: {fileID: 409915837917608991, guid: 2b93f69f033eb7149a2b7f15fa549758,
+    type: 3}
+  amountSpawLife: 1
+  timeIntervalminLife: 5
+  timeIntervalmaxLife: 10
+--- !u!4 &1699121768
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699121766}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.1949005, y: 0.10710952, z: -4.3027344}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1792819498
 GameObject:
   m_ObjectHideFlags: 0

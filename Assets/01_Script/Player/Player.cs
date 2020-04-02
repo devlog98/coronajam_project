@@ -220,6 +220,16 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void ReceiveLife(int life)
+    {
+        if (health < 3)
+        {
+            health += life;
+            healthUI.StartHealthCounter(health);
+            //AudioManager.instance.PlayAudioclip();
+        }
+    }
+
     private IEnumerator ActivateInvincibility()
     {
         isInvincible = true;
