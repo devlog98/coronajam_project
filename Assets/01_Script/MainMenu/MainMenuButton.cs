@@ -18,10 +18,6 @@ public class MainMenuButton : MaskableGraphic, IPointerEnterHandler, IPointerExi
     [SerializeField] private Color colorEnter;
     [SerializeField] private Color colorExit;
 
-    [Header("Settings to change Button")]
-    [SerializeField] private GameObject myButton;
-    [SerializeField] private Animator myButtonAnim;
-
     public void OnPointerEnter(PointerEventData eventData) {        
         AudioManager.instance.PlayAudioclip(buttonHighlightSound); //play audio
 
@@ -29,8 +25,6 @@ public class MainMenuButton : MaskableGraphic, IPointerEnterHandler, IPointerExi
         if (myText != null) {
             StartCoroutine("FontIncrement");
         }
-
-        //change button
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -39,8 +33,6 @@ public class MainMenuButton : MaskableGraphic, IPointerEnterHandler, IPointerExi
         if (myText != null) {
             StartCoroutine("FontDecrement");
         }
-
-        //change button
     }
 
     public void OnClick() {
@@ -50,11 +42,8 @@ public class MainMenuButton : MaskableGraphic, IPointerEnterHandler, IPointerExi
         if (myText != null) {
             FontReturn();
         }
-
-        //change button
     }
-
-    #region Text Methods
+    
     private void FontReturn() {
         myText.fontSize = fontSizeExit;
         myText.color = colorExit;
@@ -79,5 +68,4 @@ public class MainMenuButton : MaskableGraphic, IPointerEnterHandler, IPointerExi
             yield return new WaitForEndOfFrame();
         }
     }
-    #endregion
 }
