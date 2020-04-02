@@ -6,16 +6,11 @@ public class PowerUpLife : MonoBehaviour
 {
     [SerializeField] int life;
     [SerializeField] float timeDestroy;
+
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, timeDestroy);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Destroy(this.gameObject, timeDestroy);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -23,6 +18,7 @@ public class PowerUpLife : MonoBehaviour
         if (other.gameObject.name == "Player")
         {
             other.gameObject.SendMessage("ReceiveLife", life);
+            Destroy(this.gameObject);
         }
     }
 }

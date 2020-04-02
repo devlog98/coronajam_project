@@ -39,8 +39,8 @@ public class PlayerUI : MonoBehaviour {
         }
         else {
             //got health
-            healthIcons[healthIndex].GetComponent<Animator>().SetTrigger("HealthGain");
             healthIndex--;
+            healthIcons[healthIndex].GetComponent<Animator>().SetTrigger("HealthGain");
         }
     }
 }

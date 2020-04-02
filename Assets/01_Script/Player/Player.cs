@@ -225,7 +225,7 @@ public class Player : MonoBehaviour
         if (health < 3)
         {
             health += life;
-            healthUI.StartHealthCounter(health);
+            healthUI.UpdateHealthCounter(false);
             //AudioManager.instance.PlayAudioclip();
         }
     }
