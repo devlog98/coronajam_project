@@ -19,6 +19,7 @@ public class UnwantedVisitor : MonoBehaviour
     bool walkSide;
     bool walkUp;
     bool animMovement = false;
+    bool checkAttack = false;
 
 
     [Header("Control")]
@@ -87,7 +88,7 @@ public class UnwantedVisitor : MonoBehaviour
     public void control()
     {
         //quando o time tiver um valor igual ou maior ao especificado para o movimento é realizado a ação
-        if (timeM >= timeMovement)
+        if (timeM >= timeMovement && !checkAttack)
         {
             timeM = 0;
             //Obtem uma direção e sentido aleatório dos arrays.
@@ -102,6 +103,7 @@ public class UnwantedVisitor : MonoBehaviour
         {
             if (timeV >= timeSneeze && virusSneeze)//quando o time tiver um valor igual ou maior ao especificado para o ataque é realizado a ação
             {
+                checkAttack = true;
                 Debug.Log("Sneeze " + timeV);
                 timeV = 0;
                 timeS = 0;
@@ -111,6 +113,7 @@ public class UnwantedVisitor : MonoBehaviour
             }
             else if (timeS >= timeVirusShot && virusShot)
             {
+                checkAttack = true;
                 Debug.Log("Viorus Shot " + timeS);
                 timeS = 0;
                 VisitorAnim.SetTrigger("IsCoughing");
@@ -230,12 +233,14 @@ public class UnwantedVisitor : MonoBehaviour
 
     void Fire()
     {
-        GameObject cloneVirus = Instantiate(virusObject, distanceAttack + transform.position, transform.rotation);      
+        GameObject cloneVirus = Instantiate(virusObject, distanceAttack + transform.position, transform.rotation);
+        checkAttack = false;
     }
 
     void Sneeze()
     {                
-        GameObject cloneSneeze = Instantiate(SneezeObject, distanceAttack + transform.position, transform.rotation);              
+        GameObject cloneSneeze = Instantiate(SneezeObject, distanceAttack + transform.position, transform.rotation);
+        checkAttack = false;
     }
 
     //altera a dificuldade do inimigo baseado no round
