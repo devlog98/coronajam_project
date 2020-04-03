@@ -45,38 +45,168 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rounds:
   - dialogueSentences:
-    - sentenceKey: Bom dia!
-      sentenceDuration: 2
-    - sentenceKey: "Tudo bem com voc\xEA?"
-      sentenceDuration: 2
-    - sentenceKey: "\xC9 isso a\xED..."
+    - sentenceKey: Bom, acho que posso ficar mais um pouco...
+      sentenceDuration: 4
+    - sentenceKey: Acha que ela demora muito?
+      sentenceDuration: 4
+    enemyDifficulty:
+      speedSide: 20
+      speedUp: 15
+      timeMovement: 3
+      timeVirusShot: 1.5
+      timeSneeze: 0
+      virusShot: 1
+      virusSneeze: 0
+    dialogueChoices:
+    - choiceKey: "N\xE3o, ela chega j\xE1 j\xE1!"
+      choiceValue: 0
+      choiceReactionKey: "Ent\xE3o t\xE1 bom..."
+      reactionTime: 3
+    - choiceKey: "N\xE3o sei..."
+      choiceValue: 1
+      choiceReactionKey: "Eu n\xE3o posso esperar muito, hein..."
+      reactionTime: 3
+  - dialogueSentences:
+    - sentenceKey: "Sabe, a minha neta queria fazer aquelas coisa de inform\xE1tica
+        l\xE1... Tipo o que voc\xEA faz."
+      sentenceDuration: 4
+    - sentenceKey: "Onde j\xE1 se viu. A\xED que ela vai continuar encalhada mesmo!"
+      sentenceDuration: 4
+    - sentenceKey: "Mulher tem que primeiro aprender a ajudar em casa, arrumar um
+        namorado... de prefer\xEAncia casar na igreja."
+      sentenceDuration: 5
+    - sentenceKey: "N\xE3o acha?"
       sentenceDuration: 2
     enemyDifficulty:
-      speedSide: 0
-      speedUp: 0
-      timeMovement: 0
-      timeAttack: 0
-      virusShot: 0
-    dialogueChoices: []
+      speedSide: 20
+      speedUp: 15
+      timeMovement: 2
+      timeVirusShot: 1.5
+      timeSneeze: 0
+      virusShot: 1
+      virusSneeze: 0
+    dialogueChoices:
+    - choiceKey: Ah, depende...
+      choiceValue: 0
+      choiceReactionKey: "Eu s\xF3 quero o melhor pra ela..."
+      reactionTime: 3
+    - choiceKey: Ela tem que fazer o que a faz feliz!
+      choiceValue: 1
+      choiceReactionKey: "Felicidade n\xE3o paga conta!"
+      reactionTime: 3
+    - choiceKey: "Uh... N\xE3o sei..."
+      choiceValue: 1
+      choiceReactionKey: Enfim...
+      reactionTime: 3
   - dialogueSentences:
-    - sentenceKey: "Agora vai come\xE7ar a luta pra valer!"
-      sentenceDuration: 2
-    - sentenceKey: "T\xF4 falando s\xE9rio hein..."
+    - sentenceKey: "Voc\xEA s\xF3 joga essas coisas o dia inteiro!"
+      sentenceDuration: 3
+    - sentenceKey: "Devia fazer um pouco de exerc\xEDcio..."
+      sentenceDuration: 3
+    - sentenceKey: "\xC9 por isso que ta todo mundo com medo dessa gripe!"
+      sentenceDuration: 4
+    - sentenceKey: "Todo mundo sabe que quem tem corpo de atleta n\xE3o pega isso!"
+      sentenceDuration: 4
+    - sentenceKey: Eu lavo, passo e limpo a casa todo dia, tenho certeza que vou
+        ficar bem!
+      sentenceDuration: 4
+    - sentenceKey: "Mas voc\xEA s\xF3 fica a\xED sentado!"
       sentenceDuration: 2
     enemyDifficulty:
-      speedSide: 0
-      speedUp: 0
-      timeMovement: 0
-      timeAttack: 0
-      virusShot: 0
-    dialogueChoices: []
+      speedSide: 20
+      speedUp: 15
+      timeMovement: 3
+      timeVirusShot: 2
+      timeSneeze: 4
+      virusShot: 1
+      virusSneeze: 1
+    dialogueChoices:
+    - choiceKey: "Voc\xEA est\xE1 certa, eu devia fazer alguma coisa..."
+      choiceValue: 0
+      choiceReactionKey: Vai correr na rua, andar de bicicleta...
+      reactionTime: 3
+    - choiceKey: "Afe, nada a ver isso da\xED Dona Sandra!"
+      choiceValue: 1
+      choiceReactionKey: "Bom, quem avisa amigo \xE9 n\xE9."
+      reactionTime: 3
   - dialogueSentences:
-    - sentenceKey: "T\xF4 t\xE3o cansadin...."
+    - sentenceKey: "Meu marido n\xE3o faz nada direito!"
+      sentenceDuration: 3
+    - sentenceKey: "T\xF4 a 3 semanas esperando ele trocar a resist\xEAncia do chuveiro
+        do banheiro de cima."
+      sentenceDuration: 5
+    - sentenceKey: "Mas ele diz que n\xE3o sabe..."
+      sentenceDuration: 2
+    - sentenceKey: Eu casei com um bolha mesmo!
+      sentenceDuration: 3
+    - sentenceKey: "Pra que serve marido se n\xE3o for pra fazer essas manuten\xE7\xF5es
+        de casa ?!"
       sentenceDuration: 5
     enemyDifficulty:
-      speedSide: 0
-      speedUp: 0
-      timeMovement: 0
-      timeAttack: 0
-      virusShot: 0
-    dialogueChoices: []
+      speedSide: 15
+      speedUp: 15
+      timeMovement: 2
+      timeVirusShot: 1.5
+      timeSneeze: 3
+      virusShot: 1
+      virusSneeze: 1
+    dialogueChoices:
+    - choiceKey: "Qualquer hora dessas eu passo l\xE1..."
+      choiceValue: 0
+      choiceReactionKey: "Obrigado querido, mas acho que vou chamar um t\xE9cnico"
+      reactionTime: 3
+    - choiceKey: "N\xE3o \xE9 todo mundo que se liga nisso..."
+      choiceValue: 1
+      choiceReactionKey: Homem tem que saber isso!
+      reactionTime: 3
+    - choiceKey: "UHHH... QU\xCA?"
+      choiceValue: 1
+      choiceReactionKey: Enfim...
+      reactionTime: 3
+  - dialogueSentences:
+    - sentenceKey: "Eu acho que vou embora... Estou te atrapalhando, n\xE3o?"
+      sentenceDuration: 3
+    - sentenceKey: "Voc\xEA lembra o meu filho mais velho..."
+      sentenceDuration: 3
+    - sentenceKey: "Sua m\xE3e que fique de olho em voc\xEA."
+      sentenceDuration: 3
+    - sentenceKey: "Voc\xEA tem que estar presente na vida dela, cuidar dela na velhice."
+      sentenceDuration: 5
+    - sentenceKey: "Depois de um tempo, \xE9 papel dos filhos cuidarem dos pais"
+      sentenceDuration: 6
+    - sentenceKey: "Acho que \xE9 por isso que est\xE1 todo mundo t\xE3o preocupado
+        com essa gripe n\xE9?"
+      sentenceDuration: 5
+    - sentenceKey: Estou me sentindo um pouco mal...
+      sentenceDuration: 3
+    enemyDifficulty:
+      speedSide: 15
+      speedUp: 15
+      timeMovement: 1
+      timeVirusShot: 1.5
+      timeSneeze: 2.5
+      virusShot: 1
+      virusSneeze: 1
+    dialogueChoices:
+    - choiceKey: "Eu liguei pra algu\xE9m..."
+      choiceValue: 0
+      choiceReactionKey: 
+      reactionTime: 3
+  enemy: {fileID: 0}
+  volumeProfile: {fileID: 0}
+  volume: {fileID: 0}
+  choice1: {fileID: 0}
+  choice2: {fileID: 0}
+  choice3: {fileID: 0}
+  choice4: {fileID: 0}
+  choice5: {fileID: 0}
+  choice1Txt: {fileID: 0}
+  choice2Txt: {fileID: 0}
+  choice3Txt: {fileID: 0}
+  choice4Txt: {fileID: 0}
+  choice5Txt: {fileID: 0}
+  reactionWasShown: 0
+  player: {fileID: 0}
+  inRound: 0
+  playerScript: {fileID: 0}
+  duration: 0.2

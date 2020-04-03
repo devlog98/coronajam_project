@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -241,8 +241,8 @@ GameObject:
   m_Component:
   - component: {fileID: 162815771}
   - component: {fileID: 162815770}
-  - component: {fileID: 162815769}
   - component: {fileID: 162815772}
+  - component: {fileID: 162815769}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -250,14 +250,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &162815769
-AudioListener:
+--- !u!114 &162815769
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 162815768}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: -1
 --- !u!20 &162815770
 Camera:
   m_ObjectHideFlags: 0
@@ -356,8 +361,8 @@ GameObject:
   m_Component:
   - component: {fileID: 562737663}
   - component: {fileID: 562737666}
-  - component: {fileID: 562737664}
   - component: {fileID: 562737665}
+  - component: {fileID: 562737664}
   m_Layer: 5
   m_Name: Next Button
   m_TagString: Untagged
@@ -374,7 +379,7 @@ RectTransform:
   m_GameObject: {fileID: 562737662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.6813715, y: 2.6813715, z: 2.6813715}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1872838040}
   m_Father: {fileID: 1337160093}
@@ -382,7 +387,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 827, y: -211}
+  m_AnchoredPosition: {x: 824, y: -209.5}
   m_SizeDelta: {x: 41.01, y: 27.57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &562737664
@@ -406,7 +411,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -459,7 +464,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 562737662}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c0928a1640b64344b90c700557ede5a, type: 3}
+  m_Script: {fileID: 11500000, guid: b8dbba1b3acd25d42912c51e919b84ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -470,11 +475,9 @@ MonoBehaviour:
       m_Calls: []
   buttonHighlightSound: event:/MPass
   buttonSelectSound: event:/MSelect
-  myText: {fileID: 0}
-  fontSize: 0
-  fontSizeExit: 0
-  colorEnter: {r: 0, g: 0, b: 0, a: 0}
-  colorExit: {r: 0, g: 0, b: 0, a: 0}
+  myButton: {fileID: 562737663}
+  buttonScale: 2.7
+  buttonScaleExit: 2
 --- !u!222 &562737666
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -896,8 +899,8 @@ MonoBehaviour:
     soundEffect: event:/CDoao
   - sprite: {fileID: 21300000, guid: 7337ed4aabbaf3a49bd7064d7af29c8a, type: 3}
     name: D.SANDRA
-    sentence: "Ixi acho que eu vou pra casa, quando sua m\xE3e chegar fala pra ela
-      me chamar."
+    sentence: "Ixi... acho que eu vou pra casa, quando sua m\xE3e chegar fala pra
+      ela me chamar."
     soundEffect: event:/CSandra
   - sprite: {fileID: 21300000, guid: 81bb8749c97502846bf62cf8de7af47e, type: 3}
     name: 
@@ -905,7 +908,7 @@ MonoBehaviour:
     soundEffect: 
   - sprite: {fileID: 21300000, guid: 81bb8749c97502846bf62cf8de7af47e, type: 3}
     name: GUTO
-    sentence: "Conhecendo essa veia, ela vai passar na vizinhan\xE7a inteira bater
+    sentence: "Conhecendo essa v\xE9ia, ela vai passar na vizinhan\xE7a inteira bater
       papo... Preciso manter ela aqui at\xE9 ELE chegar..."
     soundEffect: event:/CGuto
   - sprite: {fileID: 21300000, guid: 93e7794acfabfdb46b00018873ad040f, type: 3}
@@ -1261,7 +1264,7 @@ RectTransform:
   m_GameObject: {fileID: 1971806146}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.6813715, y: 2.6813715, z: 2.6813715}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1832504841}
   m_Father: {fileID: 1337160093}
@@ -1269,7 +1272,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 832, y: 470}
+  m_AnchoredPosition: {x: 824, y: 470}
   m_SizeDelta: {x: 41.01, y: 27.57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1971806148
@@ -1293,7 +1296,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.67058825, g: 0.67058825, b: 0.67058825, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1346,7 +1349,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1971806146}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c0928a1640b64344b90c700557ede5a, type: 3}
+  m_Script: {fileID: 11500000, guid: b8dbba1b3acd25d42912c51e919b84ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -1357,11 +1360,9 @@ MonoBehaviour:
       m_Calls: []
   buttonHighlightSound: event:/MPass
   buttonSelectSound: event:/MSelect
-  myText: {fileID: 0}
-  fontSize: 0
-  fontSizeExit: 0
-  colorEnter: {r: 0, g: 0, b: 0, a: 0}
-  colorExit: {r: 0, g: 0, b: 0, a: 0}
+  myButton: {fileID: 1971806147}
+  buttonScale: 2.7
+  buttonScaleExit: 2
 --- !u!222 &1971806150
 CanvasRenderer:
   m_ObjectHideFlags: 0
