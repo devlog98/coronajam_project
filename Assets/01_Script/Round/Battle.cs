@@ -107,6 +107,7 @@ public class Battle : MonoBehaviour
         choiceArray = Choices.ToArray();
         fadeIn = true;
         Time.timeScale = 0.3f;
+        MusicManager.instance.SetMusicState("Health", 1); //change music when time is slowed down
 
         switch (Choices.Count)
         {
@@ -184,6 +185,7 @@ public class Battle : MonoBehaviour
         inReaction = false;
         this.choiceIndex = choiceIndexp;
         Time.timeScale = 1;
+        MusicManager.instance.SetMusicState("Health", 3); //returns music when time is restored
         StartCoroutine(backToNormalColor());
     }
 

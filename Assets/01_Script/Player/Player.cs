@@ -222,6 +222,7 @@ public class Player : MonoBehaviour
             if (health > 0) {
                 //trigger hit
                 playerAnim.SetTrigger("IsGettingDamage");
+                //MusicManager.instance.SetMusicState("Health", health); //change music based on health
                 StartCoroutine(ActivateInvincibility());
                 StartCoroutine(FlashCo());
             }
@@ -238,6 +239,7 @@ public class Player : MonoBehaviour
         {
             health += life;
             healthUI.UpdateHealthCounter(false);
+            //MusicManager.instance.SetMusicState("Health", health); //change music based on health
             //AudioManager.instance.PlayAudioclip();
         }
     }

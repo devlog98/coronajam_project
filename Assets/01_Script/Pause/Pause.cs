@@ -21,12 +21,14 @@ public class Pause : MonoBehaviour {
             //pause
             Time.timeScale = 0.0f; //stops Time completely
             UI.instance.ShowPause();
+            MusicManager.instance.SetMusicState("Pause", 1);
             isPaused = true;
         }
         else {
             //unpause
             Time.timeScale = 1.0f; //resumes Time
             UI.instance.HidePause();
+            MusicManager.instance.SetMusicState("Pause", 0);
             isPaused = false;
         }
     }
