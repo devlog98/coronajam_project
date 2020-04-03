@@ -1707,8 +1707,14 @@ MonoBehaviour:
   health: 3
   healthUI: {fileID: 2391131561026914273}
   invincibilityTime: 2
+  flashColor: {r: 0, g: 0, b: 0, a: 0}
+  regularColor: {r: 0, g: 0, b: 0, a: 0}
+  flashDuration: 0
+  numberofFlashes: 0
+  playerSprite: {fileID: 0}
   moveSound: event:/GDash
   hitSound: event:/GHit
+  powerupSound: event:/GGel
   deathSound: event:/GOver
 --- !u!50 &4464245204284777454
 Rigidbody2D:
@@ -1857,7 +1863,7 @@ PrefabInstance:
     - target: {fileID: 143347296413081438, guid: ce5b1b92a66c44b47851dca4d1caa39f,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 143347296413081438, guid: ce5b1b92a66c44b47851dca4d1caa39f,
         type: 3}

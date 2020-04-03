@@ -180,13 +180,14 @@ public class Battle : MonoBehaviour
 
     public void FinishRound(int choiceIndexp)
     {
-        playerScript.ReceiveDamageFromDialogue(1);
+        this.choiceIndex = choiceIndexp;
+        StartCoroutine(backToNormalColor());
+
         inRound = false;
         inReaction = false;
-        this.choiceIndex = choiceIndexp;
+        
         Time.timeScale = 1;
         MusicManager.instance.SetMusicState("Health", 3); //returns music when time is restored
-        StartCoroutine(backToNormalColor());
     }
 
     public void DisableAllChoices()
@@ -206,6 +207,7 @@ public class Battle : MonoBehaviour
         }
         else
         {
+            playerScript.ReceiveDamageFromDialogue(1);
             colorAdjustments.saturation.Override(100);
             yield return new WaitForSeconds(0.3f);
             colorAdjustments.saturation.Override(0);

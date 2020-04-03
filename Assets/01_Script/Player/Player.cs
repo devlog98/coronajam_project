@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
     [Header("Sound Effects")]
     [EventRef] public string moveSound;
     [EventRef] public string hitSound;
+    [EventRef] public string powerupSound;
     [EventRef] public string deathSound;
     private bool canPlayAudio = true;
 
@@ -235,12 +236,13 @@ public class Player : MonoBehaviour
 
     public void ReceiveLife(int life)
     {
+        AudioManager.instance.PlayAudioclip(powerupSound);
+        //MusicManager.instance.SetMusicState("Health", health); //change music based on health
+
         if (health < 3)
         {
             health += life;
             healthUI.UpdateHealthCounter(false);
-            //MusicManager.instance.SetMusicState("Health", health); //change music based on health
-            //AudioManager.instance.PlayAudioclip();
         }
     }
 

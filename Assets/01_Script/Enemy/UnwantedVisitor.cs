@@ -120,19 +120,19 @@ public class UnwantedVisitor : MonoBehaviour
                 Invoke("Fire", 0.5f);
             }
         }
-        else
-        {
-            if (timeS >= timeVirusShot && virusShot)
-            {
-                timeS = 0.5f - (Mathf.RoundToInt(timeS));
-                Debug.Log("Vertical " + timeS);
-            }
-            else if (timeV >= timeSneeze && virusSneeze)
-            {
-                timeV = 0.5f - (Mathf.RoundToInt(timeV));
-                Debug.Log("Forizontal " + timeV);
-            }
-        }
+        //else
+        //{
+        //    if (timeS >= timeVirusShot && virusShot)
+        //    {
+        //        timeS = 0.5f - (Mathf.RoundToInt(timeS));
+        //        Debug.Log("Vertical " + timeS);
+        //    }
+        //    else if (timeV >= timeSneeze && virusSneeze)
+        //    {
+        //        timeV = 0.5f - (Mathf.RoundToInt(timeV));
+        //        Debug.Log("Forizontal " + timeV);
+        //    }
+        //}
     }
 
     public void CheckInput()
