@@ -118,7 +118,7 @@ public class Battle : MonoBehaviour
 
         foreach (MonoBehaviour script in scripts)
         {
-            script.enabled = false;
+            //script.enabled = false;
         }
 
 

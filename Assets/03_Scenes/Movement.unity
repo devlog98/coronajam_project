@@ -703,6 +703,61 @@ PrefabInstance:
       propertyPath: deathSound
       value: event:/GOver
       objectReference: {fileID: 0}
+    - target: {fileID: 4464245204284777443, guid: 2695ab8f95331c345ac88aa80dfeae8c,
+        type: 3}
+      propertyPath: flashColor.r
+      value: 0.990566
+      objectReference: {fileID: 0}
+    - target: {fileID: 4464245204284777443, guid: 2695ab8f95331c345ac88aa80dfeae8c,
+        type: 3}
+      propertyPath: flashColor.g
+      value: 0.8418162
+      objectReference: {fileID: 0}
+    - target: {fileID: 4464245204284777443, guid: 2695ab8f95331c345ac88aa80dfeae8c,
+        type: 3}
+      propertyPath: flashColor.b
+      value: 0.41585082
+      objectReference: {fileID: 0}
+    - target: {fileID: 4464245204284777443, guid: 2695ab8f95331c345ac88aa80dfeae8c,
+        type: 3}
+      propertyPath: flashColor.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 4464245204284777443, guid: 2695ab8f95331c345ac88aa80dfeae8c,
+        type: 3}
+      propertyPath: regularColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4464245204284777443, guid: 2695ab8f95331c345ac88aa80dfeae8c,
+        type: 3}
+      propertyPath: regularColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4464245204284777443, guid: 2695ab8f95331c345ac88aa80dfeae8c,
+        type: 3}
+      propertyPath: regularColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4464245204284777443, guid: 2695ab8f95331c345ac88aa80dfeae8c,
+        type: 3}
+      propertyPath: regularColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4464245204284777443, guid: 2695ab8f95331c345ac88aa80dfeae8c,
+        type: 3}
+      propertyPath: flashDuration
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4464245204284777443, guid: 2695ab8f95331c345ac88aa80dfeae8c,
+        type: 3}
+      propertyPath: numberofFlashes
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4464245204284777443, guid: 2695ab8f95331c345ac88aa80dfeae8c,
+        type: 3}
+      propertyPath: playerSprite
+      value: 
+      objectReference: {fileID: 635164980}
     - target: {fileID: 4464245204284777453, guid: 2695ab8f95331c345ac88aa80dfeae8c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -979,6 +1034,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1da12fa23e35d14e841f1d45dc82742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &635164980 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4464245204284777452, guid: 2695ab8f95331c345ac88aa80dfeae8c,
+    type: 3}
+  m_PrefabInstance: {fileID: 433584534}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &665071551
 PrefabInstance:
   m_ObjectHideFlags: 0

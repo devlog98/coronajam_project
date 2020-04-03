@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     public Vector3 sideOffset, upOffset;
     bool horizontal;
     bool vertical;
+    bool jump = false;
     Vector3 localização;
     bool walkSide;
     bool walkUp;
@@ -34,6 +35,13 @@ public class Player : MonoBehaviour
     public PlayerUI healthUI;
     public float invincibilityTime = 2f;
     private bool isInvincible;
+
+    [Header("IFrame Stuff")]
+    public Color flashColor;
+    public Color regularColor;
+    public float flashDuration;
+    public int numberofFlashes;
+    public SpriteRenderer playerSprite;
 
     [Header("Sound Effects")]
     [EventRef] public string moveSound;
@@ -57,7 +65,7 @@ public class Player : MonoBehaviour
         if (canMove == false)
         {
             click += Time.deltaTime;
-            if (click >= 0.3f)
+            if (click >= 0.3f && health > 0)
             {
                 canMove = true;
                 click = 0;
@@ -116,6 +124,7 @@ public class Player : MonoBehaviour
                     }
                 canMove = false;
                 isIdle = false;
+                jump = true;
                 vertical = true;               
             }
         }
@@ -160,6 +169,7 @@ public class Player : MonoBehaviour
             if (Vector3.Distance(transform.position, localização) == 0f)
             {
                 vertical = false;
+                jump = false;
                 isIdle = true;
                 canPlayAudio = true;
             }
@@ -180,15 +190,8 @@ public class Player : MonoBehaviour
             playerAnim.SetBool("IsGoingBack", horizontal);
 
         }
-
         playerAnim.SetBool("IsIdle", isIdle);
-        //playerAnim.SetBool("IsJumping", vertical);
-        if (vertical)
-        {
-            playerAnim.SetTrigger("Jump");
-        }
-        
-
+        playerAnim.SetBool("IsJumping", jump);       
     }
 
     void PhysicsCheck()
@@ -211,8 +214,10 @@ public class Player : MonoBehaviour
             if (health > 0) {
                 playerAnim.SetTrigger("IsGettingDamage");
                 StartCoroutine(ActivateInvincibility());
+                StartCoroutine(FlashCo());
             }
             else {
+                canMove = false;               
                 playerAnim.SetTrigger("Death");
                 AudioManager.instance.PlayAudioclip(deathSound);
                 GM.instance.LevelFailed(3.5f); //calls game over -> hack monstro pra fazer funcionar
@@ -235,6 +240,19 @@ public class Player : MonoBehaviour
         isInvincible = true;
         yield return new WaitForSeconds(invincibilityTime);
         isInvincible = false;
+    }
+
+    private IEnumerator FlashCo()
+    {
+        int temp = 0;
+        while (temp < numberofFlashes)
+        {
+            playerSprite.color = flashColor;
+            yield return new WaitForSeconds(flashDuration);
+            playerSprite.color = regularColor;
+            yield return new WaitForSeconds(flashDuration);
+            temp++;
+        }
     }
 
     private void OnDrawGizmos()
