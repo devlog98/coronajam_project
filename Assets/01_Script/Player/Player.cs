@@ -1,4 +1,5 @@
 ﻿using FMODUnity;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,9 +7,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [HideInInspector]public Animator playerAnim;
-
-    //public AudioSource playerAudio;
-    //public AudioClip playerDash;
 
     [Header("Movement")]
     private float moveSide;
@@ -49,15 +47,13 @@ public class Player : MonoBehaviour
     [EventRef] public string deathSound;
     private bool canPlayAudio = true;
 
-    void Start() {
+    private void Start() {
         healthUI.StartHealthCounter(health);
         playerAnim = GetComponent<Animator>();
-        //playerAudio = GetComponent<AudioSource>();
         canPlayAudio = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         CheckInput();
         Move();
@@ -67,7 +63,7 @@ public class Player : MonoBehaviour
             click += Time.deltaTime;
             if (click >= 0.3f && health > 0)
             {
-                canMove = true;
+                UnlockMove();
                 click = 0;
             }
         }
@@ -100,7 +96,7 @@ public class Player : MonoBehaviour
                     localização = transform.position + (-sideOffset);
                     
                 }
-                canMove = false;
+                LockMove();
                 isIdle = false;
                 horizontal = true;               
             }
@@ -122,7 +118,7 @@ public class Player : MonoBehaviour
                         localização = transform.position + (-upOffset);
                         
                     }
-                canMove = false;
+                LockMove();
                 isIdle = false;
                 jump = true;
                 vertical = true;               
@@ -155,6 +151,7 @@ public class Player : MonoBehaviour
                 canPlayAudio = true;
             }
         }
+
         //move para cima e baixo
         if (vertical)
         {
@@ -190,6 +187,7 @@ public class Player : MonoBehaviour
             playerAnim.SetBool("IsGoingBack", horizontal);
 
         }
+
         playerAnim.SetBool("IsIdle", isIdle);
         playerAnim.SetBool("IsJumping", jump);       
     }
@@ -203,8 +201,18 @@ public class Player : MonoBehaviour
         down = Physics2D.OverlapCircle(transform.position + (-upOffset), 0.15f, groundCheck);
     }
 
+    //method to be used for attack damages
+    public void ReceiveDamageFromAttack(int damage) {
+        ReceiveDamage(damage, false);
+    }
+
+    //method to be used for dialogue damages
+    public void ReceiveDamageFromDialogue(int damage) {
+        ReceiveDamage(damage, true);
+    }
+
     //responsável por calcular o dano que o jogador sofre
-    public void ReceiveDamage(int damage)
+    private void ReceiveDamage(int damage, bool fromDialogue)
     {
         if (health != 0 && !isInvincible) {
             health -= damage;
@@ -212,15 +220,14 @@ public class Player : MonoBehaviour
             AudioManager.instance.PlayAudioclip(hitSound);
 
             if (health > 0) {
+                //trigger hit
                 playerAnim.SetTrigger("IsGettingDamage");
                 StartCoroutine(ActivateInvincibility());
                 StartCoroutine(FlashCo());
             }
             else {
-                canMove = false;               
-                playerAnim.SetTrigger("Death");
-                AudioManager.instance.PlayAudioclip(deathSound);
-                GM.instance.LevelFailed(3.5f); //calls game over -> hack monstro pra fazer funcionar
+                //trigger game over
+                GM.instance.LevelFailed(fromDialogue); 
             }
         }
     }
@@ -253,6 +260,30 @@ public class Player : MonoBehaviour
             yield return new WaitForSeconds(flashDuration);
             temp++;
         }
+    }
+
+    //locks and unlocks enemy movement
+    public void LockMove() {
+        canMove = false;
+    }
+
+    public void UnlockMove() {
+        canMove = true;
+    }
+
+    //plays death animation 
+    public void Die(Action<bool> callback) {
+        LockMove();
+        playerAnim.SetTrigger("Death"); //trigger death
+        AudioManager.instance.PlayAudioclip(deathSound); //trigger sound
+        StartCoroutine(WaitForDeathAnimation(callback)); //trigger wait coroutine
+    }
+
+    //return to GM when death animation is over
+    private IEnumerator WaitForDeathAnimation(Action<bool> callback) {
+        yield return null; //wait death anim to compute
+        yield return new WaitForSeconds(playerAnim.GetCurrentAnimatorStateInfo(0).length); //wait duration of death animation
+        callback(true); //activate callback
     }
 
     private void OnDrawGizmos()

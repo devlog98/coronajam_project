@@ -796,7 +796,7 @@ PrefabInstance:
     - target: {fileID: 4464245204284777453, guid: 2695ab8f95331c345ac88aa80dfeae8c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4464245204284777453, guid: 2695ab8f95331c345ac88aa80dfeae8c,
         type: 3}
@@ -4101,6 +4101,16 @@ PrefabInstance:
       propertyPath: battle
       value: 
       objectReference: {fileID: 2022695607}
+    - target: {fileID: 7783847240338921104, guid: 5f92a187c60867a43b187e39fe7f6392,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 635164978}
+    - target: {fileID: 7783847240338921104, guid: 5f92a187c60867a43b187e39fe7f6392,
+        type: 3}
+      propertyPath: unwantedVisitor
+      value: 
+      objectReference: {fileID: 189262955}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f92a187c60867a43b187e39fe7f6392, type: 3}
 --- !u!1001 &7376872679936889892
@@ -4153,7 +4163,7 @@ PrefabInstance:
     - target: {fileID: 7376872679848802381, guid: a943e6668c43c284fa4b3211a97f81bc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7376872679848802381, guid: a943e6668c43c284fa4b3211a97f81bc,
         type: 3}

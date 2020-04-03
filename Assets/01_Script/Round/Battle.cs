@@ -27,8 +27,6 @@ public class Battle : MonoBehaviour
     private bool inReaction;
     public GameObject player;
 
-    private GameObject[] pausableGameObjects;
-
     private Queue<Round> roundsQueue; //queues to help with battle flow
     public bool inRound;
     public Player playerScript;
@@ -37,11 +35,12 @@ public class Battle : MonoBehaviour
 
     bool fadeIn;
     public float duration = 0.2f;
+    private bool lostBattle;
+
     //creates queue with all rounds from this battle
     private void Start()
     {
         roundsQueue = new Queue<Round>(rounds);
-        pausableGameObjects = GameObject.FindGameObjectsWithTag("Pausable");
 
         choice1Txt = choice1.GetComponentInChildren<TextMeshProUGUI>();
         choice2Txt = choice2.GetComponentInChildren<TextMeshProUGUI>();
@@ -64,7 +63,6 @@ public class Battle : MonoBehaviour
 
     private void Update()
     {
-
         if (colorAdjustments.saturation.value <= -100)
         {
             fadeIn = false;
@@ -75,12 +73,11 @@ public class Battle : MonoBehaviour
 
             colorAdjustments.saturation.Override(Mathf.Lerp(0, -100, t));
         }
-        //activate round if none is happening
-        if (!inRound)
-        {
 
+        //activate round if none is happening
+        if (!inRound && !lostBattle)
+        {
             DisableAllChoices();
-            EnablePausableScripts();
 
             if (!isFirstDialogue && !inReaction)
             {
@@ -90,7 +87,6 @@ public class Battle : MonoBehaviour
 
             if (roundsQueue.Count > 0 && reactionWasShown)
             {
-
                 Round round = roundsQueue.Dequeue(); //grabs next round
                 Dialogue.instance.StartDialogue(round.DialogueSentences, round.DialogueChoices, DialogueOverCallback); //sends all needed data to dialogue
                 enemy.SetDifficulty(round.EnemyDifficulty); //sends all needed data to enemy
@@ -108,19 +104,9 @@ public class Battle : MonoBehaviour
     //method will be called after round dialogue is over
     public void DialogueOverCallback(bool isOver, Queue<DialogueChoice> Choices)
     {
-
         choiceArray = Choices.ToArray();
         fadeIn = true;
         Time.timeScale = 0.3f;
-
-        MonoBehaviour[] scripts = player.GetComponents<MonoBehaviour>();
-
-
-        foreach (MonoBehaviour script in scripts)
-        {
-            //script.enabled = false;
-        }
-
 
         switch (Choices.Count)
         {
@@ -188,18 +174,17 @@ public class Battle : MonoBehaviour
         if (isOver && false)
         {
             inRound = false; //stopping round
-
         }
     }
 
     public void FinishRound(int choiceIndexp)
     {
+        playerScript.ReceiveDamageFromDialogue(1);
         inRound = false;
         inReaction = false;
         this.choiceIndex = choiceIndexp;
         Time.timeScale = 1;
         StartCoroutine(backToNormalColor());
-
     }
 
     public void DisableAllChoices()
@@ -211,19 +196,6 @@ public class Battle : MonoBehaviour
         choice5.SetActive(false);
     }
 
-    public void EnablePausableScripts()
-    {
-        foreach (GameObject go in pausableGameObjects)
-        {
-            MonoBehaviour[] scripts = go.GetComponents<MonoBehaviour>();
-
-            foreach (MonoBehaviour script in scripts)
-            {
-                script.enabled = true;
-            }
-        }
-    }
-
     IEnumerator backToNormalColor()
     {
         if (choiceArray[choiceIndex].ChoiceValue == 0)
@@ -232,10 +204,16 @@ public class Battle : MonoBehaviour
         }
         else
         {
-            playerScript.ReceiveDamage(1);
             colorAdjustments.saturation.Override(100);
             yield return new WaitForSeconds(0.3f);
             colorAdjustments.saturation.Override(0);
         }
+    }
+
+    public void LostBattle() {
+        lostBattle = true;
+        DisableAllChoices();
+        Time.timeScale = 1.0f;
+        colorAdjustments.saturation.Override(0);
     }
 }

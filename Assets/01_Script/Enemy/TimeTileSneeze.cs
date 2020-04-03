@@ -18,7 +18,7 @@ public class TimeTileSneeze : MonoBehaviour
     {
         if (other.gameObject.name == "Player") 
         {
-            other.gameObject.SendMessage("ReceiveDamage", damage);
+            other.gameObject.SendMessage("ReceiveDamageFromAttack", damage);
         }
     }
 }

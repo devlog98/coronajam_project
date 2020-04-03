@@ -26,7 +26,7 @@ public class VirusShot : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
-            other.gameObject.SendMessage("ReceiveDamage", damage);
+            other.gameObject.SendMessage("ReceiveDamageFromAttack", damage);
             Destroy(gameObject);
         }
     }

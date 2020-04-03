@@ -1,4 +1,5 @@
 ﻿using FMODUnity;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,7 @@ public class UnwantedVisitor : MonoBehaviour
     bool walkUp;
     bool animMovement = false;
     bool checkAttack = false;
+    bool canMove = true;
 
 
     [Header("Control")]
@@ -54,19 +56,16 @@ public class UnwantedVisitor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeControl();
-        control();
-        CheckInput();
-        Move();
+        if (canMove) {
+            timeControl();
+            control();
+            CheckInput();
+            Move();
 
-        VisitorAnim.SetBool("IsMoving", animMovement);
+            VisitorAnim.SetBool("IsMoving", animMovement);
 
-        PhysicsCheck();
-    }
-
-    private void FixedUpdate()
-    {
-        
+            PhysicsCheck();
+        }
     }
 
     void timeControl()
@@ -92,9 +91,9 @@ public class UnwantedVisitor : MonoBehaviour
         {
             timeM = 0;
             //Obtem uma direção e sentido aleatório dos arrays.
-            getRandom = Random.Range(0, sense.Length);
+            getRandom = UnityEngine.Random.Range(0, sense.Length);
             getDirection = direction[getRandom];
-            getRandom = Random.Range(0, sense.Length);
+            getRandom = UnityEngine.Random.Range(0, sense.Length);
             getSense = sense[getRandom];
             if (getDirection == "Horizontal" && getSense > 0 && !right || getDirection == "Horizontal" && getSense < 0 && !left || getDirection == "Vertical" && getSense > 0 && !up || getDirection == "Vertical" && getSense < 0 && !down) { timeM = 3; }
         }
@@ -255,6 +254,27 @@ public class UnwantedVisitor : MonoBehaviour
         virusShot = difficulty.VirusShot;
         timeSneeze = difficulty.TimeSneeze;
         virusSneeze = difficulty.VirusSneeze;
+    }
+
+    //locks enemy movement
+    public void LockMove() {
+        canMove = false;
+    }
+
+    //plays death animation 
+    public void Die(Action<bool> callback) {
+        LockMove();
+        VisitorAnim.SetTrigger("Death"); //trigger death
+        //AudioManager.instance.PlayAudioclip(unwantedVisitor.deathSound); //trigger sound
+        StartCoroutine(WaitForDeathAnimation(callback)); //trigger wait coroutine
+    }
+
+    //return to GM when death animation is over
+    private IEnumerator WaitForDeathAnimation(Action<bool> callback) {
+        Debug.Log("Chegou até aqui!!!");
+        yield return null; //wait death anim to compute
+        yield return new WaitForSeconds(VisitorAnim.GetCurrentAnimatorStateInfo(0).length); //wait duration of death animation
+        callback(true); //activate callback
     }
 
     private void OnDrawGizmos()
