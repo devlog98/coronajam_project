@@ -18,47 +18,14 @@ public class CutsceneManager : MonoBehaviour {
     public GameObject sentenceContainer;
 
     private void Start() {
-        currentImage.sprite = cutscenes[0].Sprite;
-        AudioManager.instance.PlayAudioclip(cutscenes[0].SoundEffect);
-
-        if (String.IsNullOrEmpty(cutscenes[0].Name)) {
-            nameContainer.SetActive(false);
-        }
-        else {
-            nameContainer.SetActive(true);
-            currentName.text = cutscenes[0].Name;
-        }
-
-        if (String.IsNullOrEmpty(cutscenes[0].Sentence)) {
-            sentenceContainer.SetActive(false);
-        }
-        else {
-            sentenceContainer.SetActive(true);
-            currentSentence.text = cutscenes[0].Sentence;
-        }
+        ShowCutscene();
     }
 
     public void NextImageCutscene() {
         slideIndex++;
 
         if (slideIndex < cutscenes.Count) {
-            currentImage.sprite = cutscenes[slideIndex].Sprite;
-            AudioManager.instance.PlayAudioclip(cutscenes[slideIndex].SoundEffect);
-
-            if (String.IsNullOrEmpty(cutscenes[slideIndex].Name)) {
-                nameContainer.SetActive(false);
-            } else {
-                nameContainer.SetActive(true);
-                currentName.text = cutscenes[slideIndex].Name;
-            }
-
-            if (String.IsNullOrEmpty(cutscenes[slideIndex].Sentence)) {
-                sentenceContainer.SetActive(false);
-            }
-            else {
-                sentenceContainer.SetActive(true);
-                currentSentence.text = cutscenes[slideIndex].Sentence;
-            }
+            ShowCutscene();
         }
         else {
             JumpIntro();
@@ -68,5 +35,29 @@ public class CutsceneManager : MonoBehaviour {
     public void JumpIntro() {
         MusicManager.instance.StopEvent();
         SceneManager.LoadScene(sceneIndex);
+    }
+
+    private void ShowCutscene() {
+        currentImage.sprite = cutscenes[slideIndex].Sprite; //change cutscene sprite
+        AudioManager.instance.StopAudioclips();
+        AudioManager.instance.PlayAudioclipEvent(cutscenes[slideIndex].SoundEffect); //play specific audioclip for cutscene
+
+        //show or hide name box depending on value
+        if (String.IsNullOrEmpty(cutscenes[slideIndex].Name)) {
+            nameContainer.SetActive(false);
+        }
+        else {
+            nameContainer.SetActive(true);
+            currentName.text = cutscenes[slideIndex].Name;
+        }
+
+        //show or hide dialogue box depending on value
+        if (String.IsNullOrEmpty(cutscenes[slideIndex].Sentence)) {
+            sentenceContainer.SetActive(false);
+        }
+        else {
+            sentenceContainer.SetActive(true);
+            currentSentence.text = cutscenes[slideIndex].Sentence;
+        }
     }
 }
