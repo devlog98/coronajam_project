@@ -18,10 +18,6 @@ public class GM : MonoBehaviour {
         }
     }
 
-    public void LevelCompleted() {
-
-    }
-
     public void LevelFailed(bool fromDialogue) {
         battle.LostBattle(); //disable all dialogue choices
 
@@ -37,7 +33,6 @@ public class GM : MonoBehaviour {
         }
 
         Dialogue.instance.PauseDialogue(); //pauses battle so dialogue does not continue any further
-        AudioManager.instance.MuteAudioManager(); //mute audio channel
         MusicManager.instance.StopEvent(); //mute music channel
     }
 

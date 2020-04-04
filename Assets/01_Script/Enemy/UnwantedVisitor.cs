@@ -51,6 +51,8 @@ public class UnwantedVisitor : MonoBehaviour
     [EventRef] public string moveSound;
     [EventRef] public string virusShotSound;
     [EventRef] public string virusSneezeSound;
+    [EventRef] public string deathSound;
+
     private bool canPlayAudio = true;
 
     // Update is called once per frame
@@ -265,13 +267,12 @@ public class UnwantedVisitor : MonoBehaviour
     public void Die(Action<bool> callback) {
         LockMove();
         VisitorAnim.SetTrigger("Death"); //trigger death
-        //AudioManager.instance.PlayAudioclip(unwantedVisitor.deathSound); //trigger sound
+        AudioManager.instance.PlayAudioclip(deathSound); //trigger sound
         StartCoroutine(WaitForDeathAnimation(callback)); //trigger wait coroutine
     }
 
     //return to GM when death animation is over
     private IEnumerator WaitForDeathAnimation(Action<bool> callback) {
-        Debug.Log("Chegou até aqui!!!");
         yield return null; //wait death anim to compute
         yield return new WaitForSeconds(VisitorAnim.GetCurrentAnimatorStateInfo(0).length); //wait duration of death animation
         callback(true); //activate callback
@@ -285,5 +286,10 @@ public class UnwantedVisitor : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position + (-sideOffset), 0.15f);
         Gizmos.DrawWireSphere(transform.position + upOffset, 0.15f);
         Gizmos.DrawWireSphere(transform.position + downOffset, 0.15f);
+    }
+
+    //swaps death sound of the enemy
+    public void SwapDeathSound(string sound) {
+        deathSound = sound;
     }
 }

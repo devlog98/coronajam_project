@@ -570,6 +570,16 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1316911587014294373, guid: eb42fda3c12718640a3ab7c31e8eba4f,
+        type: 3}
+      propertyPath: unwantedVisitor
+      value: 
+      objectReference: {fileID: 189262955}
+    - target: {fileID: 2680237154754087296, guid: eb42fda3c12718640a3ab7c31e8eba4f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2943084216783819469, guid: eb42fda3c12718640a3ab7c31e8eba4f,
         type: 3}
       propertyPath: m_SortingOrder
@@ -578,6 +588,16 @@ PrefabInstance:
     - target: {fileID: 3914223418707221212, guid: eb42fda3c12718640a3ab7c31e8eba4f,
         type: 3}
       propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4283828317614129491, guid: eb42fda3c12718640a3ab7c31e8eba4f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4542569055640060274, guid: eb42fda3c12718640a3ab7c31e8eba4f,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4908558832012104591, guid: eb42fda3c12718640a3ab7c31e8eba4f,
@@ -706,22 +726,22 @@ PrefabInstance:
     - target: {fileID: 4464245204284777443, guid: 2695ab8f95331c345ac88aa80dfeae8c,
         type: 3}
       propertyPath: flashColor.r
-      value: 0.990566
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4464245204284777443, guid: 2695ab8f95331c345ac88aa80dfeae8c,
         type: 3}
       propertyPath: flashColor.g
-      value: 0.8418162
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4464245204284777443, guid: 2695ab8f95331c345ac88aa80dfeae8c,
         type: 3}
       propertyPath: flashColor.b
-      value: 0.41585082
+      value: 0.10067558
       objectReference: {fileID: 0}
     - target: {fileID: 4464245204284777443, guid: 2695ab8f95331c345ac88aa80dfeae8c,
         type: 3}
       propertyPath: flashColor.a
-      value: 0.78431374
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4464245204284777443, guid: 2695ab8f95331c345ac88aa80dfeae8c,
         type: 3}
@@ -746,12 +766,12 @@ PrefabInstance:
     - target: {fileID: 4464245204284777443, guid: 2695ab8f95331c345ac88aa80dfeae8c,
         type: 3}
       propertyPath: flashDuration
-      value: 0.25
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 4464245204284777443, guid: 2695ab8f95331c345ac88aa80dfeae8c,
         type: 3}
       propertyPath: numberofFlashes
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4464245204284777443, guid: 2695ab8f95331c345ac88aa80dfeae8c,
         type: 3}

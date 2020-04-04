@@ -86,17 +86,17 @@ MonoBehaviour:
       virusShot: 1
       virusSneeze: 0
     dialogueChoices:
-    - choiceKey: Ah, depende...
-      choiceValue: 0
-      choiceReactionKey: "Eu s\xF3 quero o melhor pra ela..."
+    - choiceKey: "Uh... N\xE3o sei..."
+      choiceValue: 1
+      choiceReactionKey: Enfim...
       reactionTime: 3
     - choiceKey: Ela tem que fazer o que a faz feliz!
       choiceValue: 1
       choiceReactionKey: "Felicidade n\xE3o paga conta!"
       reactionTime: 3
-    - choiceKey: "Uh... N\xE3o sei..."
-      choiceValue: 1
-      choiceReactionKey: Enfim...
+    - choiceKey: Ah... acho que sim?
+      choiceValue: 0
+      choiceReactionKey: "Eu s\xF3 quero o melhor pra ela..."
       reactionTime: 3
   - dialogueSentences:
     - sentenceKey: "Voc\xEA s\xF3 joga essas coisas o dia inteiro!"
@@ -121,13 +121,13 @@ MonoBehaviour:
       virusShot: 1
       virusSneeze: 1
     dialogueChoices:
-    - choiceKey: "Voc\xEA est\xE1 certa, eu devia fazer alguma coisa..."
-      choiceValue: 0
-      choiceReactionKey: Vai correr na rua, andar de bicicleta...
-      reactionTime: 3
     - choiceKey: "Afe, nada a ver isso da\xED Dona Sandra!"
       choiceValue: 1
       choiceReactionKey: "Bom, quem avisa amigo \xE9 n\xE9."
+      reactionTime: 3
+    - choiceKey: "Voc\xEA est\xE1 certa, eu devia fazer alguma coisa..."
+      choiceValue: 0
+      choiceReactionKey: Vai correr na rua, andar de bicicleta...
       reactionTime: 3
   - dialogueSentences:
     - sentenceKey: "Meu marido n\xE3o faz nada direito!"
@@ -159,9 +159,10 @@ MonoBehaviour:
       choiceValue: 1
       choiceReactionKey: Homem tem que saber isso!
       reactionTime: 3
-    - choiceKey: "UHHH... QU\xCA?"
+    - choiceKey: Ele devia instalar o chuveiro...
       choiceValue: 1
-      choiceReactionKey: Enfim...
+      choiceReactionKey: "O chuveiro j\xE1 est\xE1 instalado! Est\xE1 me escutando,
+        rapaz?"
       reactionTime: 3
   - dialogueSentences:
     - sentenceKey: "Eu acho que vou embora... Estou te atrapalhando, n\xE3o?"

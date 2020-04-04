@@ -369,6 +369,7 @@ MonoBehaviour:
   moveSound: event:/GVDash
   virusShotSound: event:/GCough
   virusSneezeSound: event:/GSneeze
+  deathSound: event:/GVeia
 --- !u!50 &7376872679848802382
 Rigidbody2D:
   serializedVersion: 4

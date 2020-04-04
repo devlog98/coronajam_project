@@ -215,7 +215,7 @@ public class Player : MonoBehaviour
     //responsável por calcular o dano que o jogador sofre
     private void ReceiveDamage(int damage, bool fromDialogue)
     {
-        if (health != 0 && !isInvincible) {
+        if (health != 0 && (fromDialogue || !isInvincible)) {
             health -= damage;
             healthUI.UpdateHealthCounter(true);
             AudioManager.instance.PlayAudioclip(hitSound);
@@ -223,7 +223,6 @@ public class Player : MonoBehaviour
             if (health > 0) {
                 //trigger hit
                 playerAnim.SetTrigger("IsGettingDamage");
-                //MusicManager.instance.SetMusicState("Health", health); //change music based on health
                 StartCoroutine(ActivateInvincibility());
                 StartCoroutine(FlashCo());
             }
@@ -237,7 +236,6 @@ public class Player : MonoBehaviour
     public void ReceiveLife(int life)
     {
         AudioManager.instance.PlayAudioclip(powerupSound);
-        //MusicManager.instance.SetMusicState("Health", health); //change music based on health
 
         if (health < 3)
         {
