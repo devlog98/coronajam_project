@@ -33,6 +33,7 @@ public class CutsceneManager : MonoBehaviour {
     }
 
     public void JumpIntro() {
+        AudioManager.instance.StopAudioclips();
         MusicManager.instance.StopEvent();
         SceneManager.LoadScene(sceneIndex);
     }
