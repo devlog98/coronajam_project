@@ -54,7 +54,7 @@ MonoBehaviour:
   - fileName: en.yml
     languageFlagSprite: {fileID: 21300000, guid: 3b2f2216d22468645882e82a8ed88445,
       type: 3}
-  - fileName: pt_br.json
+  - fileName: pt_br.yml
     languageFlagSprite: {fileID: 21300000, guid: 39ade4c8392509842abbd2ef57e31a91,
       type: 3}
   languageFlagUI: {fileID: 5302464969069057293}

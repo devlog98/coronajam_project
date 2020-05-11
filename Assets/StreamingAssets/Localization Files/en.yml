@@ -1,0 +1,17 @@
+items:
+- key: main_menu_play
+  value: PLAY
+- key: main_menu_credits
+  value: CREDITS
+- key: main_menu_quit
+  value: QUIT
+- key: main_menu_back
+  value: BACK
+- key: credits_programmer
+  value: PROGRAMMER
+- key: credits_artist
+  value: ARTIST
+- key: credits_audio
+  value: AUDIO
+- key: credits_programmer/artist
+  value: PROGRAMMER/ARTIST

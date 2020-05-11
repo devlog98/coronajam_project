@@ -1,0 +1,17 @@
+items:
+- key: main_menu_play
+  value: JOGAR
+- key: main_menu_credits
+  value: CRÉDITOS
+- key: main_menu_quit
+  value: SAIR
+- key: main_menu_back
+  value: VOLTAR
+- key: credits_programmer
+  value: PROGRAMADOR
+- key: credits_artist
+  value: ARTISTA
+- key: credits_audio
+  value: ÁUDIO
+- key: credits_programmer/artist
+  value: PROGRAMADOR/ARTISTA
