@@ -14,9 +14,12 @@ public class MusicManager : MonoBehaviour {
             Destroy(this.gameObject);
         }
         else {
-            instance = this;          
-            instance.StartEvent();
+            instance = this;
         }
+    }
+
+    void Start() {
+        instance.StartEvent();
     }
 
     void StartEvent() {
