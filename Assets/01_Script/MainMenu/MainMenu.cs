@@ -29,14 +29,6 @@ public class MainMenu : MonoBehaviour {
         StartCoroutine(PlayGameCoroutine(sceneIndex));
     }
 
-    public void PauseGame() {
-        Pause.instance.TogglePause();
-    }
-
-    public void Quit() {
-        Application.Quit();
-    }
-
     //coroutine responsible for fade out of menu
     private IEnumerator PlayGameCoroutine(int sceneIndex) {
         anim.SetTrigger("StartGame"); //activates animation
@@ -48,5 +40,23 @@ public class MainMenu : MonoBehaviour {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         SceneManager.LoadScene(sceneIndex); //goes to scene
+    }
+
+    public void PauseGame() {
+        Pause.instance.TogglePause();
+    }
+
+    //increases menu scale in order to show onscreen
+    public void ShowMenu(RectTransform rectTransform) {
+        rectTransform.localScale = new Vector2(1, 1);
+    }
+
+    //decreases menu scale in order to hide onscreen
+    public void HideMenu(RectTransform rectTransform) {
+        rectTransform.localScale = new Vector2(0, 0);
+    }
+
+    public void Quit() {
+        Application.Quit();
     }
 }
