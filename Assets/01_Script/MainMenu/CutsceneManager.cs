@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Locallies.Core;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -58,7 +59,7 @@ public class CutsceneManager : MonoBehaviour {
         }
         else {
             sentenceContainer.SetActive(true);
-            currentSentence.text = cutscenes[slideIndex].Sentence;
+            currentSentence.text = LocalizationManager.Localize(cutscenes[slideIndex].Sentence);
         }
     }
 }

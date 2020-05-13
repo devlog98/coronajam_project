@@ -15,3 +15,39 @@ items:
   value: ÁUDIO
 - key: credits_programmer/artist
   value: PROGRAMADOR/ARTISTA
+
+- key: intro_slide_0
+  value: DING DONG!
+- key: intro_slide_1
+  value: D-Dona Sandra... Opa... tudo bem?
+- key: intro_slide_2
+  value: A sua mãe está, Guto?
+- key: intro_slide_3
+  value: Ah... ela deu uma saidinha... a senhora quer en...
+- key: intro_slide_4
+  value: Eu espero ela então.
+- key: intro_slide_5
+  value: E hoje o governador Doão Jória assinou o decreto que impede os serviços não essenciais de funcionarem por 15 dias...
+- key: intro_slide_6
+  value: Maior bobagem, tudo por uma gripezinha...
+- key: intro_slide_7
+  value: Tenho que tirar essa véia daqui...
+- key: intro_slide_8
+  value: Lembrando a todos, essa doença é altamente infecciosa, você pode portar o virús sem saber. Portanto FIQUE EM CASA.
+- key: intro_slide_9
+  value: Ixi... acho que eu vou pra casa, quando sua mãe chegar fala pra ela me chamar.
+- key: intro_slide_10
+  value: Conhecendo essa véia, ela vai passar na vizinhança inteira bater papo... Preciso manter ela aqui até ELE chegar...
+- key: intro_slide_11
+  value: Peraí Dona Sandra, minha mãe chega já...
+
+- key: outro_slide_0
+  value: Já tem uns dias que a Dona Sandra está no hospital...Acho que eu fiz a coisa certa.
+- key: outro_slide_1
+  value: Mãe, a senhora está bem?
+- key: outro_slide_2
+  value: ...F-Filho?
+- key: outro_slide_3
+  value: Vamos pro hospital, o Guto disse que você não está bem...
+- key: outro_slide_4
+  value: Espero que ela se recupere logo...
