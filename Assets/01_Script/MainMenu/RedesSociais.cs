@@ -9,6 +9,14 @@ public class RedesSociais : MonoBehaviour
 
     public void openUrl()
     {
-        Application.OpenURL(redeSocial);
+#if UNITY_WEBGL
+        Application.ExternalEval("window.open('"+redeSocial+"','_blank')");
+#endif
+
+#if UNITY_STANDALONE
+        Application.OpenURL(redeSocial);     
+#endif
+
+
     }
 }
