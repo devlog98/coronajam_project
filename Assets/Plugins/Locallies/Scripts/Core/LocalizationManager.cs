@@ -19,7 +19,7 @@ namespace Locallies.Core {
         private static string missingKey = "Localized string not found!";
 
         //Localization File used if none was found
-        private static string defaultLocalizationFile = "en.yml";
+        private static string defaultLocalizationFile = "pt_br.yml";
 
         // loads data from Localization File into dictionary
         public static void LoadLocalizationFile(string filename) {

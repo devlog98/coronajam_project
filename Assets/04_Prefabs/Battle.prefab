@@ -45,9 +45,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rounds:
   - dialogueSentences:
-    - sentenceKey: Bom, acho que posso ficar mais um pouco...
+    - sentenceKey: round_0_sentence_0
       sentenceDuration: 4
-    - sentenceKey: Acha que ela demora muito?
+    - sentenceKey: round_0_sentence_1
       sentenceDuration: 4
     enemyDifficulty:
       speedSide: 20
@@ -58,24 +58,22 @@ MonoBehaviour:
       virusShot: 1
       virusSneeze: 0
     dialogueChoices:
-    - choiceKey: "N\xE3o, ela chega j\xE1 j\xE1!"
+    - choiceKey: round_0_choice_0
       choiceValue: 0
-      choiceReactionKey: "Ent\xE3o t\xE1 bom..."
+      choiceReactionKey: round_0_reaction_0
       reactionTime: 3
-    - choiceKey: "N\xE3o sei..."
+    - choiceKey: round_0_choice_1
       choiceValue: 1
-      choiceReactionKey: "Eu n\xE3o posso esperar muito, hein..."
+      choiceReactionKey: round_0_reaction_1
       reactionTime: 3
   - dialogueSentences:
-    - sentenceKey: "Sabe, a minha neta queria fazer aquelas coisa de inform\xE1tica
-        l\xE1... Tipo o que voc\xEA faz."
+    - sentenceKey: round_1_sentence_0
       sentenceDuration: 4
-    - sentenceKey: "Onde j\xE1 se viu. A\xED que ela vai continuar encalhada mesmo!"
+    - sentenceKey: round_1_sentence_1
       sentenceDuration: 4
-    - sentenceKey: "Mulher tem que primeiro aprender a ajudar em casa, arrumar um
-        namorado... de prefer\xEAncia casar na igreja."
+    - sentenceKey: round_1_sentence_2
       sentenceDuration: 5
-    - sentenceKey: "N\xE3o acha?"
+    - sentenceKey: round_1_sentence_3
       sentenceDuration: 2
     enemyDifficulty:
       speedSide: 20
@@ -86,31 +84,30 @@ MonoBehaviour:
       virusShot: 1
       virusSneeze: 0
     dialogueChoices:
-    - choiceKey: "Uh... N\xE3o sei..."
+    - choiceKey: round_1_choice_0
       choiceValue: 1
-      choiceReactionKey: Enfim...
+      choiceReactionKey: round_1_reaction_0
       reactionTime: 3
-    - choiceKey: Ela tem que fazer o que a faz feliz!
+    - choiceKey: round_1_choice_1
       choiceValue: 1
-      choiceReactionKey: "Felicidade n\xE3o paga conta!"
+      choiceReactionKey: round_1_reaction_1
       reactionTime: 3
-    - choiceKey: Ah... acho que sim?
+    - choiceKey: round_1_choice_2
       choiceValue: 0
-      choiceReactionKey: "Eu s\xF3 quero o melhor pra ela..."
+      choiceReactionKey: round_1_reaction_2
       reactionTime: 3
   - dialogueSentences:
-    - sentenceKey: "Voc\xEA s\xF3 joga essas coisas o dia inteiro!"
+    - sentenceKey: round_2_sentence_0
       sentenceDuration: 3
-    - sentenceKey: "Devia fazer um pouco de exerc\xEDcio..."
+    - sentenceKey: round_2_sentence_1
       sentenceDuration: 3
-    - sentenceKey: "\xC9 por isso que ta todo mundo com medo dessa gripe!"
+    - sentenceKey: round_2_sentence_2
       sentenceDuration: 4
-    - sentenceKey: "Todo mundo sabe que quem tem corpo de atleta n\xE3o pega isso!"
+    - sentenceKey: round_2_sentence_3
       sentenceDuration: 4
-    - sentenceKey: Eu lavo, passo e limpo a casa todo dia, tenho certeza que vou
-        ficar bem!
+    - sentenceKey: round_2_sentence_4
       sentenceDuration: 4
-    - sentenceKey: "Mas voc\xEA s\xF3 fica a\xED sentado!"
+    - sentenceKey: round_2_sentence_5
       sentenceDuration: 2
     enemyDifficulty:
       speedSide: 20
@@ -121,26 +118,24 @@ MonoBehaviour:
       virusShot: 1
       virusSneeze: 1
     dialogueChoices:
-    - choiceKey: "Afe, nada a ver isso da\xED Dona Sandra!"
+    - choiceKey: round_2_choice_0
       choiceValue: 1
-      choiceReactionKey: "Bom, quem avisa amigo \xE9 n\xE9."
+      choiceReactionKey: round_2_reaction_0
       reactionTime: 3
-    - choiceKey: "Voc\xEA est\xE1 certa, eu devia fazer alguma coisa..."
+    - choiceKey: round_2_choice_1
       choiceValue: 0
-      choiceReactionKey: Vai correr na rua, andar de bicicleta...
+      choiceReactionKey: round_2_reaction_1
       reactionTime: 3
   - dialogueSentences:
-    - sentenceKey: "Meu marido n\xE3o faz nada direito!"
+    - sentenceKey: round_3_sentence_0
       sentenceDuration: 3
-    - sentenceKey: "T\xF4 a 3 semanas esperando ele trocar a resist\xEAncia do chuveiro
-        do banheiro de cima."
+    - sentenceKey: round_3_sentence_1
       sentenceDuration: 5
-    - sentenceKey: "Mas ele diz que n\xE3o sabe..."
+    - sentenceKey: round_3_sentence_2
       sentenceDuration: 2
-    - sentenceKey: Eu casei com um bolha mesmo!
+    - sentenceKey: round_3_sentence_3
       sentenceDuration: 3
-    - sentenceKey: "Pra que serve marido se n\xE3o for pra fazer essas manuten\xE7\xF5es
-        de casa ?!"
+    - sentenceKey: round_3_sentence_4
       sentenceDuration: 5
     enemyDifficulty:
       speedSide: 15
@@ -151,34 +146,32 @@ MonoBehaviour:
       virusShot: 1
       virusSneeze: 1
     dialogueChoices:
-    - choiceKey: "Qualquer hora dessas eu passo l\xE1..."
+    - choiceKey: round_3_choice_0
       choiceValue: 0
-      choiceReactionKey: "Obrigado querido, mas acho que vou chamar um t\xE9cnico"
+      choiceReactionKey: round_3_reaction_0
       reactionTime: 3
-    - choiceKey: "N\xE3o \xE9 todo mundo que se liga nisso..."
+    - choiceKey: round_3_choice_1
       choiceValue: 1
-      choiceReactionKey: Homem tem que saber isso!
+      choiceReactionKey: round_3_reaction_1
       reactionTime: 3
-    - choiceKey: Ele devia instalar o chuveiro...
+    - choiceKey: round_3_choice_2
       choiceValue: 1
-      choiceReactionKey: "O chuveiro j\xE1 est\xE1 instalado! Est\xE1 me escutando,
-        rapaz?"
+      choiceReactionKey: round_3_reaction_2
       reactionTime: 3
   - dialogueSentences:
-    - sentenceKey: "Eu acho que vou embora... Estou te atrapalhando, n\xE3o?"
+    - sentenceKey: round_4_sentence_0
       sentenceDuration: 3
-    - sentenceKey: "Voc\xEA lembra o meu filho mais velho..."
+    - sentenceKey: round_4_sentence_1
       sentenceDuration: 3
-    - sentenceKey: "Sua m\xE3e que fique de olho em voc\xEA."
+    - sentenceKey: round_4_sentence_2
       sentenceDuration: 3
-    - sentenceKey: "Voc\xEA tem que estar presente na vida dela, cuidar dela na velhice."
+    - sentenceKey: round_4_sentence_3
       sentenceDuration: 5
-    - sentenceKey: "Depois de um tempo, \xE9 papel dos filhos cuidarem dos pais"
+    - sentenceKey: round_4_sentence_4
       sentenceDuration: 6
-    - sentenceKey: "Acho que \xE9 por isso que est\xE1 todo mundo t\xE3o preocupado
-        com essa gripe n\xE9?"
+    - sentenceKey: round_4_sentence_5
       sentenceDuration: 5
-    - sentenceKey: Estou me sentindo um pouco mal...
+    - sentenceKey: round_4_sentence_6
       sentenceDuration: 3
     enemyDifficulty:
       speedSide: 15
@@ -189,23 +182,13 @@ MonoBehaviour:
       virusShot: 1
       virusSneeze: 1
     dialogueChoices:
-    - choiceKey: "Eu liguei pra algu\xE9m..."
+    - choiceKey: round_4_choice_0
       choiceValue: 0
       choiceReactionKey: 
       reactionTime: 3
   enemy: {fileID: 0}
-  volumeProfile: {fileID: 0}
   volume: {fileID: 0}
-  choice1: {fileID: 0}
-  choice2: {fileID: 0}
-  choice3: {fileID: 0}
-  choice4: {fileID: 0}
-  choice5: {fileID: 0}
-  choice1Txt: {fileID: 0}
-  choice2Txt: {fileID: 0}
-  choice3Txt: {fileID: 0}
-  choice4Txt: {fileID: 0}
-  choice5Txt: {fileID: 0}
+  choiceBoxes: []
   reactionWasShown: 0
   player: {fileID: 0}
   inRound: 0

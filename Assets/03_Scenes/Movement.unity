@@ -2791,6 +2791,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
+      propertyPath: choiceBoxes.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
       propertyPath: enemy
       value: 
       objectReference: {fileID: 189262955}
@@ -2834,6 +2839,31 @@ PrefabInstance:
       propertyPath: playerScript
       value: 
       objectReference: {fileID: 635164978}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: choiceBoxes.Array.data[0]
+      value: 
+      objectReference: {fileID: 1676074340}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: choiceBoxes.Array.data[1]
+      value: 
+      objectReference: {fileID: 960354057}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: choiceBoxes.Array.data[2]
+      value: 
+      objectReference: {fileID: 182302176}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: choiceBoxes.Array.data[3]
+      value: 
+      objectReference: {fileID: 1027311748}
+    - target: {fileID: 4847848136191870122, guid: 339b43b08375b5649b38a3562b45d696,
+        type: 3}
+      propertyPath: choiceBoxes.Array.data[4]
+      value: 
+      objectReference: {fileID: 1973539266}
     - target: {fileID: 4847848136191870123, guid: 339b43b08375b5649b38a3562b45d696,
         type: 3}
       propertyPath: m_Name

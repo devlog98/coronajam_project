@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Locallies.Core;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,7 @@ public class Dialogue : MonoBehaviour {
     public Battle battle;
     private Queue<DialogueSentence> dialogueSentencesQueue; //queues to help with dialogue flow
     private Queue<DialogueChoice> dialogueChoicesQueue;
-    private Action<bool,Queue<DialogueChoice>> dialogueCallback; //method to be called after dialogue is finished
+    private Action<bool, Queue<DialogueChoice>> dialogueCallback; //method to be called after dialogue is finished
     private bool inSentence;
     private bool isPaused;
 
@@ -25,8 +26,7 @@ public class Dialogue : MonoBehaviour {
     }
 
     //creates queue with all sentences from this dialogue and sets callback
-    public void StartDialogue(List<DialogueSentence> dialogueSentences, List<DialogueChoice> dialogueChoices, Action<bool, Queue<DialogueChoice>> callback)
-    {
+    public void StartDialogue(List<DialogueSentence> dialogueSentences, List<DialogueChoice> dialogueChoices, Action<bool, Queue<DialogueChoice>> callback) {
         dialogueSentencesQueue = new Queue<DialogueSentence>(dialogueSentences);
         dialogueChoicesQueue = new Queue<DialogueChoice>(dialogueChoices);
         dialogueCallback = callback;
@@ -49,13 +49,15 @@ public class Dialogue : MonoBehaviour {
                     }
                 }
             }
-        }     
+        }
     }
 
     //show sentence for a specific amount of time
     private IEnumerator ShowSentence(DialogueSentence sentence) {
+        string localizedSentence = LocalizationManager.Localize(sentence.SentenceKey); //localizing sentence
+
         inSentence = true; //starting sentence
-        UI.instance.ShowDialogueSentence(sentence.SentenceKey); //write sentence in screen
+        UI.instance.ShowDialogueSentence(localizedSentence); //write sentence in screen
         yield return new WaitForSeconds(sentence.SentenceDuration); //wait for sentence duration to end
         UI.instance.HideDialogueSentence(SentenceFadeCallback); //hide sentence after duration
     }
@@ -75,10 +77,12 @@ public class Dialogue : MonoBehaviour {
     public void UnpauseDialogue() {
         isPaused = false;
     }
-    public IEnumerator ShowReaction(DialogueChoice sentence)
-    {
+
+    public IEnumerator ShowReaction(DialogueChoice sentence) {
+        string localizedSentence = LocalizationManager.Localize(sentence.ChoiceReactionKey); //localizing sentence
+
         inSentence = true; //starting sentence
-        UI.instance.ShowDialogueSentence(sentence.ChoiceReactionKey);
+        UI.instance.ShowDialogueSentence(localizedSentence);
         yield return new WaitForSeconds(sentence.ReactionTime);
         battle.reactionWasShown = true;
 
