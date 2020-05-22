@@ -856,62 +856,77 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cutscenes:
   - sprite: {fileID: 21300000, guid: c9d0e00c1c2224b47a68fce17dde67ba, type: 3}
+    spriteKey: 
     name: 
     sentence: intro_slide_0
     soundEffect: 
   - sprite: {fileID: 21300000, guid: fcede74db29417741aeb2c24c960143d, type: 3}
+    spriteKey: 
     name: GUTO
     sentence: intro_slide_1
     soundEffect: event:/CGuto
   - sprite: {fileID: 21300000, guid: fcede74db29417741aeb2c24c960143d, type: 3}
+    spriteKey: 
     name: D.SANDRA
     sentence: intro_slide_2
     soundEffect: event:/CSandra
   - sprite: {fileID: 21300000, guid: 060c2a1de50392d47910dc763e6c9469, type: 3}
+    spriteKey: 
     name: GUTO
     sentence: intro_slide_3
     soundEffect: event:/CGuto
   - sprite: {fileID: 21300000, guid: 060c2a1de50392d47910dc763e6c9469, type: 3}
+    spriteKey: 
     name: D.SANDRA
     sentence: intro_slide_4
     soundEffect: event:/CSandra
   - sprite: {fileID: 21300000, guid: 21f0df9a0d15a004480692b463488397, type: 3}
+    spriteKey: 
     name: TV
     sentence: intro_slide_5
     soundEffect: event:/CDoao
   - sprite: {fileID: 21300000, guid: de50511fb6583b741ad5a1e2d1559551, type: 3}
+    spriteKey: 
     name: D.SANDRA
     sentence: intro_slide_6
     soundEffect: event:/CSandra
   - sprite: {fileID: 21300000, guid: 2e29f482f119908478aec70a22e63f0e, type: 3}
+    spriteKey: 
     name: 
     sentence: 
     soundEffect: 
   - sprite: {fileID: 21300000, guid: d9866c4b9845fb84e836c80308477513, type: 3}
+    spriteKey: 
     name: GUTO
     sentence: intro_slide_7
     soundEffect: event:/CGuto
   - sprite: {fileID: 21300000, guid: 13317178135c8f2419a4a9ad30dc83c0, type: 3}
+    spriteKey: 
     name: TV
     sentence: intro_slide_8
     soundEffect: event:/CDoao
   - sprite: {fileID: 21300000, guid: 7337ed4aabbaf3a49bd7064d7af29c8a, type: 3}
+    spriteKey: 
     name: D.SANDRA
     sentence: intro_slide_9
     soundEffect: event:/CSandra
   - sprite: {fileID: 21300000, guid: 81bb8749c97502846bf62cf8de7af47e, type: 3}
+    spriteKey: 
     name: 
     sentence: 
     soundEffect: 
   - sprite: {fileID: 21300000, guid: 81bb8749c97502846bf62cf8de7af47e, type: 3}
+    spriteKey: 
     name: GUTO
     sentence: intro_slide_10
     soundEffect: event:/CGuto
   - sprite: {fileID: 21300000, guid: 93e7794acfabfdb46b00018873ad040f, type: 3}
+    spriteKey: 
     name: GUTO
     sentence: intro_slide_11
     soundEffect: event:/CGuto
-  - sprite: {fileID: 21300000, guid: 8ee4967e8e1308c4e82793f127060018, type: 3}
+  - sprite: {fileID: 0}
+    spriteKey: tutorial.png
     name: 
     sentence: 
     soundEffect: 

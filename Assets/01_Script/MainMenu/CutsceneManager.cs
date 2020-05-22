@@ -40,7 +40,13 @@ public class CutsceneManager : MonoBehaviour {
     }
 
     private void ShowCutscene() {
-        currentImage.sprite = cutscenes[slideIndex].Sprite; //change cutscene sprite
+        if (cutscenes[slideIndex].Sprite != null) {
+            currentImage.sprite = cutscenes[slideIndex].Sprite; //change cutscene sprite
+        }
+        else {
+            currentImage.sprite = LocalizationManager.LocalizeImage(cutscenes[slideIndex].SpriteKey); //load from locale
+        }
+        
         AudioManager.instance.StopAudioclips();
         AudioManager.instance.PlayAudioclipEvent(cutscenes[slideIndex].SoundEffect); //play specific audioclip for cutscene
 

@@ -856,30 +856,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cutscenes:
   - sprite: {fileID: 21300000, guid: 309cb8731bb7c0b48a9873def99ac85e, type: 3}
+    spriteKey: 
     name: GUTO
     sentence: outro_slide_0
     soundEffect: event:/CGuto
   - sprite: {fileID: 21300000, guid: e6c691244d8826847906987a899fe9f3, type: 3}
+    spriteKey: 
     name: CAIO
     sentence: outro_slide_1
     soundEffect: event:/CDoao
   - sprite: {fileID: 21300000, guid: a8509f32559178e4ebfebf12b2cbbe4a, type: 3}
+    spriteKey: 
     name: D.SANDRA
     sentence: outro_slide_2
     soundEffect: event:/ShortSandra
   - sprite: {fileID: 21300000, guid: 25526ded560fd2c449b98f98e9abef7f, type: 3}
+    spriteKey: 
     name: CAIO
     sentence: outro_slide_3
     soundEffect: event:/CDoao
   - sprite: {fileID: 21300000, guid: 2a739ea37808ca24d8156b226b4b8c14, type: 3}
+    spriteKey: 
     name: GUTO
     sentence: outro_slide_4
     soundEffect: event:/CGuto
-  - sprite: {fileID: 21300000, guid: f778958c22258d6438534f6c61d2c83f, type: 3}
+  - sprite: {fileID: 0}
+    spriteKey: text1.png
     name: 
     sentence: 
     soundEffect: 
-  - sprite: {fileID: 21300000, guid: c002b502d9c5f3e48a58817317f50d38, type: 3}
+  - sprite: {fileID: 0}
+    spriteKey: text_2.png
     name: 
     sentence: 
     soundEffect: event:/ShortGuto

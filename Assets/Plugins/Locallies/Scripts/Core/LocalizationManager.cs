@@ -17,6 +17,7 @@ namespace Locallies.Core {
         //dictionary with data and related attributes
         private static Dictionary<string, string> localDictionary;
         private static string missingKey = "Localized string not found!";
+        private static string locale;
 
         //Localization File used if none was found
         private static string defaultLocalizationFile = "pt_br.yml";
@@ -40,6 +41,9 @@ namespace Locallies.Core {
 
                 //sucessful debug
                 Debug.Log("Data loaded! Dictionary contains " + localDictionary.Count + " entries!");
+
+                //save locale
+                locale = filename.Split('.')[0];
 
                 //activates mass localization
                 MassLocalize();
@@ -66,6 +70,22 @@ namespace Locallies.Core {
             result = String.IsNullOrEmpty(result) ? missingKey : result;
 
             return result;
+        }
+
+        public static Sprite LocalizeImage(string key) {
+            Sprite sprite = null;
+
+            string filepath = Path.Combine(Application.streamingAssetsPath, "Localization Images", locale, key);
+            if (File.Exists(filepath)) {
+                byte[] fileData = File.ReadAllBytes(filepath);
+
+                Texture2D texture = new Texture2D(2, 2);
+                texture.LoadImage(fileData);
+
+                sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
+            }
+
+            return sprite;
         }
     }
 }
