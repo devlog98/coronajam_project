@@ -81,9 +81,11 @@ public class Player : MonoBehaviour
             return;
 
         //Checar inputs do usuário
-        if (Input.GetButtonDown("Horizontal") && !horizontal && !vertical)
+        InputManager.GetInput();
+
+        if (InputManager.GetHorizontalDown() && !horizontal && !vertical)
         {
-            moveSide = Input.GetAxis("Horizontal");
+            moveSide = InputManager.GetHorizontal();
             if (moveSide > 0 && right || moveSide < 0 && left) 
             {
                 //move para os lados
@@ -103,9 +105,9 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonDown("Vertical") && !vertical && !horizontal)
+        if (InputManager.GetVerticalDown() && !vertical && !horizontal)
         {
-            moveUp = Input.GetAxis("Vertical");
+            moveUp = InputManager.GetVertical();
             if (moveUp > 0 && up || moveUp < 0 && down) 
             {
                 //move para cima e baixo
