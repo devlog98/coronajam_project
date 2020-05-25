@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using UnityEngine;
+using UnityEngine.Networking;
 using YamlDotNet.Serialization;
 
 /*
@@ -43,23 +44,48 @@ namespace Locallies.Core {
             bool success = false;
             localizationData = null;
 
-            //if file is valid...
-            if (File.Exists(filepath)) {
-                //read data based on extension
-                string fileData = File.ReadAllText(filepath);
-                string fileExtension = Path.GetExtension(filepath);
 
-                switch (fileExtension) {
-                    case ".json":
-                        localizationData = FromJson(fileData);
-                        break;
-                    case ".yml":
-                        localizationData = FromYaml(fileData);
-                        break;
-                }
+            //ANDROID TEST
+            UnityWebRequest request = UnityWebRequest.Get(filepath);
 
-                success = true;
+            request.SendWebRequest();
+
+            //HACK PERIGOSÍSSIMO
+            while (!request.isDone) { Debug.Log(request.uri); }
+
+            //read data based on extension
+            string fileData = request.downloadHandler.text;
+            string fileExtension = Path.GetExtension(filepath);
+
+            switch (fileExtension) {
+                case ".json":
+                    localizationData = FromJson(fileData);
+                    break;
+                case ".yml":
+                    localizationData = FromYaml(fileData);
+                    break;
             }
+
+            success = true;
+
+
+            //if file is valid...
+            //if (File.Exists(filepath)) {
+            //    //read data based on extension
+            //    string fileData = File.ReadAllText(filepath);
+            //    string fileExtension = Path.GetExtension(filepath);
+
+            //    switch (fileExtension) {
+            //        case ".json":
+            //            localizationData = FromJson(fileData);
+            //            break;
+            //        case ".yml":
+            //            localizationData = FromYaml(fileData);
+            //            break;
+            //    }
+
+            //    success = true;
+            //}
 
             //result feedback
             return success;

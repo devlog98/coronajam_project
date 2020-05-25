@@ -77,21 +77,21 @@ public class UI : MonoBehaviour {
 
     //activates pause menu
     public void ShowPause() {
-        pauseContainer.SetActive(true);
+        pauseContainer.transform.localScale = Vector3.one;
     }
 
     //deactivates pause menu
     public void HidePause() {
-        pauseContainer.SetActive(false);
+        pauseContainer.transform.localScale = Vector3.zero;
     }
 
     //activates game over menu
     public void ShowGameOver() {
-        gameOverContainer.SetActive(true);
+        gameOverContainer.transform.localScale = Vector3.one;
     }
 
     //deactivates game over menu
     public void HideGameOver() {
-        gameOverContainer.SetActive(false);
+        gameOverContainer.transform.localScale = Vector3.zero;
     }
 }

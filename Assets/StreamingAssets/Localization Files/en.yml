@@ -15,3 +15,154 @@ items:
   value: AUDIO
 - key: credits_programmer/artist
   value: PROGRAMMER/ARTIST
+
+- key: game_pause
+  value: PAUSE
+- key: game_resume
+  value: RESUME GAME
+- key: game_main_menu
+  value: MAIN MENU
+- key: game_over
+  value: YOU FAILED...
+- key: game_retry
+  value: TRY AGAIN
+
+- key: char_guto
+  value: TYLER
+- key: char_sandra
+  value: AINSWORTH
+- key: char_tv
+  value: TV
+- key: char_caio
+  value: CARL
+
+- key: intro_slide_0
+  value: DING DONG!
+- key: intro_slide_1
+  value: M-Mrs. Ainsworth... Hi...
+- key: intro_slide_2
+  value: Hello, Tyler. Is your mother home?
+- key: intro_slide_3
+  value: She just left for a bit... Do you want to come in...?
+- key: intro_slide_4
+  value: I’ll wait for her then.
+- key: intro_slide_5
+  value: Today the governor has signed for a statewide lockdown...
+- key: intro_slide_6
+  value: Well, that’s just silly, it’s just a mild flu...
+- key: intro_slide_7
+  value: Gotta get this old hag out here...
+- key: intro_slide_8
+  value: This is a highly infectious decease, so we plead you. STAY INSIDE YOUR HOMES!
+- key: intro_slide_9
+  value: Well, I’m leaving. Call me when your mother gets home.
+- key: intro_slide_10
+  value: Knowing her, she’s gonna bother the whole neighborhood... I’ve got to keep her here until HE arrives...
+- key: intro_slide_11
+  value: Wait! She’ll be here soon!
+
+- key: round_0_sentence_0
+  value: Well, I guess I can stay for a bit longer...
+- key: round_0_sentence_1
+  value: She won’t take long, right dearie?
+- key: round_0_choice_0
+  value: No, no, she’s on her way!
+- key: round_0_reaction_0
+  value: Okay, then I’ll wait...
+- key: round_0_choice_1
+  value: I hope so...
+- key: round_0_reaction_1
+  value: Oh, I can’t stay for long...
+
+- key: round_1_sentence_0
+  value: You know, my granddaughter wants to do those computers things... just like you.
+- key: round_1_sentence_1
+  value: But that’s no thing for a lady!
+- key: round_1_sentence_2
+  value: A young woman needs to learn how to take care of her home first, so she can find a good husband...
+- key: round_1_sentence_3
+  value: Don’t you think?
+- key: round_1_choice_0
+  value: Uh, I don’t know...
+- key: round_1_reaction_0
+  value: Anyway...
+- key: round_1_choice_1
+  value: She should do whatever makes her happy!
+- key: round_1_reaction_1
+  value: That’s fine but it doesn’t pay the bills!
+- key: round_1_choice_2
+  value: Well, I suppose so...
+- key: round_1_reaction_2
+  value: I just want what’s best for her, you know...
+
+- key: round_2_sentence_0
+  value: You just sit here all day long!
+- key: round_2_sentence_1
+  value: You should get some exercise...
+- key: round_2_sentence_2
+  value: That’s why everyone is afraid of this flu!
+- key: round_2_sentence_3
+  value: If you exercise and eat your greens, you have nothing to worry about!
+- key: round_2_sentence_4
+  value: I do work out a lot while doing the house chores, I’m sure I’ll be fine!
+- key: round_2_sentence_5
+  value: You on the other hand...
+- key: round_2_choice_0
+  value: That’s unrelated!
+- key: round_2_reaction_0
+  value: Well, don’t say I didn’t warn ya...
+- key: round_2_choice_1
+  value: You’re right, I gotta pull myself together...
+- key: round_2_reaction_1
+  value: You should run around the block, get some fresh air...
+
+- key: round_3_sentence_0
+  value: My husband can’t do anything right!
+- key: round_3_sentence_1
+  value: There’s a leak in the upstairs bathroom...
+- key: round_3_sentence_2
+  value: But he says he doesn’t know how to fix it!
+- key: round_3_sentence_3
+  value: I married an useless slob!
+- key: round_3_sentence_4
+  value: How good can a husband be if he can’t even do some home repairs?!
+- key: round_3_choice_0
+  value: I’ll go check it out one of these days...
+- key: round_3_reaction_0
+  value: Thanks dearie, but I’ll just call a handyman...
+- key: round_3_choice_1
+  value: Well, it’s not like that...
+- key: round_3_reaction_1
+  value: Of course it is!
+- key: round_3_choice_2
+  value: He should fix the bedroom...
+- key: round_3_reaction_2
+  value: The problem's in the BATHROOM! Are you listening, boy?
+
+- key: round_4_sentence_0
+  value: I think I’m bothering you...
+- key: round_4_sentence_1
+  value: You remind me of my older son...
+- key: round_4_sentence_2
+  value: Your mother should keep an eye on you.
+- key: round_4_sentence_3
+  value: So you don’t leave her. You stay with her.
+- key: round_4_sentence_4
+  value: Afterall, it’s a son’s duty to take care of his old mother.
+- key: round_4_sentence_5
+  value: I think that’s why everyone is worried with this flu...
+- key: round_4_sentence_6
+  value: I’m feeling a bit ill...
+- key: round_4_choice_0
+  value: I called someone...
+
+- key: outro_slide_0
+  value: It’s been a week since Mrs. Ainsworth went to the hospital... I think I did the right thing.
+- key: outro_slide_1
+  value: Mother! Are you alright?!
+- key: outro_slide_2
+  value: ...S-Son?
+- key: outro_slide_3
+  value: Tyler said you’re not feeling well... We should hurry!
+- key: outro_slide_4
+  value: I hope she recovers soon...

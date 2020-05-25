@@ -16,6 +16,26 @@ items:
 - key: credits_programmer/artist
   value: PROGRAMADOR/ARTISTA
 
+- key: game_pause
+  value: PAUSE
+- key: game_resume
+  value: VOLTAR PARA PARTIDA
+- key: game_main_menu
+  value: MENU PRINCIPAL
+- key: game_over
+  value: VOCÊ FALHOU...
+- key: game_retry
+  value: TENTAR NOVAMENTE
+
+- key: char_guto
+  value: GUTO
+- key: char_sandra
+  value: D.SANDRA
+- key: char_tv
+  value: TV
+- key: char_caio
+  value: CAIO
+
 - key: intro_slide_0
   value: DING DONG!
 - key: intro_slide_1

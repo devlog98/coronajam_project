@@ -56,7 +56,7 @@ public class CutsceneManager : MonoBehaviour {
         }
         else {
             nameContainer.SetActive(true);
-            currentName.text = cutscenes[slideIndex].Name;
+            currentName.text = LocalizationManager.Localize(cutscenes[slideIndex].Name);
         }
 
         //show or hide dialogue box depending on value

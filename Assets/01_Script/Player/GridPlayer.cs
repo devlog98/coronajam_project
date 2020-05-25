@@ -23,7 +23,7 @@ public class GridPlayer : MonoBehaviour
     {
         if (collision.CompareTag("Attack") || collision.CompareTag("Pausable"))
         {
-            /*GameObject spawVirus*/ tiledestroy = Instantiate(spawnObject, transform.position, transform.rotation);
+            tiledestroy = Instantiate(spawnObject, transform.position, transform.rotation);
         }
        
     }

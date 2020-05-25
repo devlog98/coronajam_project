@@ -1,5 +1,4 @@
-﻿using Locallies.Core;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -20,7 +19,7 @@ namespace Locallies.Core {
         private static string locale;
 
         //Localization File used if none was found
-        private static string defaultLocalizationFile = "pt_br.yml";
+        private static string defaultLocalizationFile = "en.yml";
 
         // loads data from Localization File into dictionary
         public static void LoadLocalizationFile(string filename) {
