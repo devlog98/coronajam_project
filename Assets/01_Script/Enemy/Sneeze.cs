@@ -64,19 +64,19 @@ public class Sneeze : MonoBehaviour
         if (transform.position.y >= 0.1f )
         {
             targetGrid = linha1[getRandom];
-            Debug.Log("1 " +targetGrid.name);
+            //Debug.Log("1 " +targetGrid.name);
             get = true;
         }
         else if (transform.position.y >= -0.8 || transform.position.y <= -0.9)
         {
             targetGrid = linha2[getRandom];
-            Debug.Log(targetGrid.name);
+            //Debug.Log(targetGrid.name);
             get = true;
         }
         if (transform.position.y == -2.54f)
         {
             targetGrid = linha3[getRandom];
-            Debug.Log(targetGrid.name);
+            //Debug.Log(targetGrid.name);
             get = true;
         }
 
@@ -87,8 +87,8 @@ public class Sneeze : MonoBehaviour
         //Se a grid de colisão tiver o mesmo nome do gameobject destroi o o objeto e spawna uma grid infectada
         if (collision.gameObject.name == targetGrid.name)
         {
-            Debug.Log("meu onjeto " + targetGrid.name);
-            Debug.Log("objeto da cena " + collision.gameObject.name);
+            //Debug.Log("meu onjeto " + targetGrid.name);
+            //Debug.Log("objeto da cena " + collision.gameObject.name);
             AudioManager.instance.PlayAudioclip(sneezeSound);
             GameObject spawVirus = Instantiate(spawnObject, collision.transform.position, collision.transform.rotation);
             Destroy(gameObject);

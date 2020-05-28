@@ -105,7 +105,7 @@ public class UnwantedVisitor : MonoBehaviour
             if (timeV >= timeSneeze && virusSneeze)//quando o time tiver um valor igual ou maior ao especificado para o ataque é realizado a ação
             {
                 checkAttack = true;
-                Debug.Log("Sneeze " + timeV);
+                //Debug.Log("Sneeze " + timeV);
                 timeV = 0;
                 timeS = 0;
                 VisitorAnim.SetTrigger("IsSneezing");
@@ -115,7 +115,7 @@ public class UnwantedVisitor : MonoBehaviour
             else if (timeS >= timeVirusShot && virusShot)
             {
                 checkAttack = true;
-                Debug.Log("Viorus Shot " + timeS);
+                //Debug.Log("Viorus Shot " + timeS);
                 timeS = 0;
                 VisitorAnim.SetTrigger("IsCoughing");
                 AudioManager.instance.PlayAudioclip(virusShotSound);
