@@ -495,6 +495,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 198313385990414540, guid: eb42fda3c12718640a3ab7c31e8eba4f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 531224223332916324, guid: eb42fda3c12718640a3ab7c31e8eba4f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -560,6 +565,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: room_wall
       objectReference: {fileID: 0}
+    - target: {fileID: 531224223332916326, guid: eb42fda3c12718640a3ab7c31e8eba4f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 563680978993212877, guid: eb42fda3c12718640a3ab7c31e8eba4f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 716392606631198394, guid: eb42fda3c12718640a3ab7c31e8eba4f,
         type: 3}
       propertyPath: m_SortingOrder
@@ -575,10 +590,30 @@ PrefabInstance:
       propertyPath: unwantedVisitor
       value: 
       objectReference: {fileID: 189262955}
+    - target: {fileID: 1501794950376476471, guid: eb42fda3c12718640a3ab7c31e8eba4f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796978854093170971, guid: eb42fda3c12718640a3ab7c31e8eba4f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558635617836551845, guid: eb42fda3c12718640a3ab7c31e8eba4f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2680237154754087296, guid: eb42fda3c12718640a3ab7c31e8eba4f,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2680237154754087296, guid: eb42fda3c12718640a3ab7c31e8eba4f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2943084216783819469, guid: eb42fda3c12718640a3ab7c31e8eba4f,
         type: 3}
@@ -590,15 +625,35 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4267892470839073498, guid: eb42fda3c12718640a3ab7c31e8eba4f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4283828317614129491, guid: eb42fda3c12718640a3ab7c31e8eba4f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4283828317614129491, guid: eb42fda3c12718640a3ab7c31e8eba4f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4542569055640060274, guid: eb42fda3c12718640a3ab7c31e8eba4f,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4542569055640060274, guid: eb42fda3c12718640a3ab7c31e8eba4f,
         type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736157280104968004, guid: eb42fda3c12718640a3ab7c31e8eba4f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4908558832012104591, guid: eb42fda3c12718640a3ab7c31e8eba4f,
         type: 3}
@@ -614,6 +669,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6285627712882128864, guid: eb42fda3c12718640a3ab7c31e8eba4f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6301157696730715500, guid: eb42fda3c12718640a3ab7c31e8eba4f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6364834515342456286, guid: eb42fda3c12718640a3ab7c31e8eba4f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030440942052935944, guid: eb42fda3c12718640a3ab7c31e8eba4f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319064258417425088, guid: eb42fda3c12718640a3ab7c31e8eba4f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9107647766800769111, guid: eb42fda3c12718640a3ab7c31e8eba4f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb42fda3c12718640a3ab7c31e8eba4f, type: 3}
@@ -1327,7 +1412,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!212 &827432188
 SpriteRenderer:
@@ -1411,7 +1496,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &831127924
 Transform:
@@ -1514,7 +1599,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 1.6575, y: 0.44, z: 0}
+  m_ChunkCullingBounds: {x: 1.6582062, y: 0.44, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -3039,7 +3124,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!156049354 &2077885821
 Grid:
@@ -3087,7 +3172,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &2118612290
 Transform:
@@ -3143,7 +3228,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 1.6575, y: 0.44, z: 0}
+  m_ChunkCullingBounds: {x: 1.6582062, y: 0.44, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
