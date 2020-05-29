@@ -79,25 +79,21 @@ public class Player : MonoBehaviour
     {
         if (!canMove)
             return;
-
-        //Checar inputs do usuário
-        InputManager.GetInput();
+        
+        InputManager.GetInput();//Checar inputs do usuário
 
         if (InputManager.GetHorizontalDown() && !horizontal && !vertical)
         {
             moveSide = InputManager.GetHorizontal();
             if (moveSide > 0 && right || moveSide < 0 && left) 
-            {
-                //move para os lados
-                if (moveSide > 0)
+            {               
+                if (moveSide > 0)//move para os lados
                 {
-                    localização = transform.position + sideOffset;
-                    
+                    localização = transform.position + sideOffset;                 
                 }
                 else
                 {
-                    localização = transform.position + (-sideOffset);
-                    
+                    localização = transform.position + (-sideOffset);     
                 }
                 LockMove();
                 isIdle = false;
@@ -110,17 +106,16 @@ public class Player : MonoBehaviour
             moveUp = InputManager.GetVertical();
             if (moveUp > 0 && up || moveUp < 0 && down) 
             {
-                //move para cima e baixo
-                    if (moveUp > 0)
-                    {
-                        localização = transform.position + upOffset;
+                if (moveUp > 0)//move para cima e baixo
+                {
+                    localização = transform.position + upOffset;
                         
-                    }
-                    else
-                    {
-                        localização = transform.position + (-upOffset);
+                }
+                else
+                {
+                    localização = transform.position + (-upOffset);
                         
-                    }
+                }
                 LockMove();
                 isIdle = false;
                 jump = true;
@@ -128,20 +123,14 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonDown("Cancel")) {
-            Pause.instance.TogglePause();
-        }
+        if (Input.GetButtonDown("Cancel")) {Pause.instance.TogglePause();}
     }
 
     public void Move()
     {
-        //Mover em grid com base nos Physics2dOverlap
-
-        //move para os lados
-
-        if (horizontal) {
-            //play movement audio once
-            if (canPlayAudio) {
+        
+        if (horizontal) {//Mover em grid com base nos Physics2dOverlap, move para os lados
+                if (canPlayAudio) {//play movement audio once
                 AudioManager.instance.PlayAudioclip(moveSound);
                 canPlayAudio = false;
             }
@@ -154,17 +143,14 @@ public class Player : MonoBehaviour
                 canPlayAudio = true;
             }
         }
-
-        //move para cima e baixo
-        if (vertical)
+       
+        if (vertical)//move para cima e baixo
         {
-            //play movement audio once
-            if (canPlayAudio) {
+            if (canPlayAudio) {//play movement audio once
                 AudioManager.instance.PlayAudioclip(moveSound);
                 canPlayAudio = false;
             }
-
-            //playerAnim.SetTrigger("IsJumping");           
+                      
             transform.position = Vector3.MoveTowards(transform.position, localização, speedUp * Time.deltaTime);
             if (Vector3.Distance(transform.position, localização) == 0f)
             {
@@ -180,65 +166,51 @@ public class Player : MonoBehaviour
     {
         if (moveSide > 0)
         {
-            //playerAnim.SetTrigger("IsGoingFront");
             playerAnim.SetBool("IsGoingFront", horizontal);
-
         }
         else
-        {
-            //playerAnim.SetTrigger("IsGoingBack");
+        {         
             playerAnim.SetBool("IsGoingBack", horizontal);
-
         }
-
         playerAnim.SetBool("IsIdle", isIdle);
         playerAnim.SetBool("IsJumping", jump);       
     }
 
     void PhysicsCheck()
     {
-        //verificar se pode se locomover, e distancia de cada grid.
-        right = Physics2D.OverlapCircle(transform.position + sideOffset, 0.15f, groundCheck);
+        right = Physics2D.OverlapCircle(transform.position + sideOffset, 0.15f, groundCheck);//verificar se pode se locomover, e distancia de cada grid.
         left = Physics2D.OverlapCircle(transform.position + (-sideOffset), 0.15f, groundCheck);
         up = Physics2D.OverlapCircle(transform.position + upOffset, 0.15f, groundCheck);
         down = Physics2D.OverlapCircle(transform.position + (-upOffset), 0.15f, groundCheck);
     }
-
-    //method to be used for attack damages
-    public void ReceiveDamageFromAttack(int damage) {
+    
+    public void ReceiveDamageFromAttack(int damage) { //method to be used for attack damages
         ReceiveDamage(damage, false);
     }
-
-    //method to be used for dialogue damages
-    public void ReceiveDamageFromDialogue(int damage) {
+   
+    public void ReceiveDamageFromDialogue(int damage) { //method to be used for dialogue damages
         ReceiveDamage(damage, true);
     }
-
-    //responsável por calcular o dano que o jogador sofre
-    private void ReceiveDamage(int damage, bool fromDialogue)
+  
+    private void ReceiveDamage(int damage, bool fromDialogue) //responsável por calcular o dano que o jogador sofre
     {
         if (health != 0 && (fromDialogue || !isInvincible)) {
             health -= damage;
             healthUI.UpdateHealthCounter(true);
             AudioManager.instance.PlayAudioclip(hitSound);
 
-            if (health > 0) {
-                //trigger hit
+            if (health > 0) { //trigger hit               
                 playerAnim.SetTrigger("IsGettingDamage");
                 StartCoroutine(ActivateInvincibility());
                 StartCoroutine(FlashCo());
             }
-            else {
-                //trigger game over
-                GM.instance.LevelFailed(fromDialogue); 
-            }
+            else {GM.instance.LevelFailed(fromDialogue);}//trigger game over
         }
     }
 
     public void ReceiveLife(int life)
     {
         AudioManager.instance.PlayAudioclip(powerupSound);
-
         if (health < 3)
         {
             health += life;
@@ -266,31 +238,25 @@ public class Player : MonoBehaviour
         }
     }
 
-    //locks and unlocks enemy movement
-    public void LockMove() {
-        canMove = false;
-    }
+    
+    public void LockMove() { canMove = false; }//locks and unlocks enemy movement
 
-    public void UnlockMove() {
-        canMove = true;
-    }
-
-    //plays death animation 
-    public void Die(Action<bool> callback) {
+    public void UnlockMove() { canMove = true; }
+  
+    public void Die(Action<bool> callback) {//plays death animation 
         LockMove();
         playerAnim.SetTrigger("Death"); //trigger death
         AudioManager.instance.PlayAudioclip(deathSound); //trigger sound
         StartCoroutine(WaitForDeathAnimation(callback)); //trigger wait coroutine
     }
-
-    //return to GM when death animation is over
-    private IEnumerator WaitForDeathAnimation(Action<bool> callback) {
+   
+    private IEnumerator WaitForDeathAnimation(Action<bool> callback) {//return to GM when death animation is over
         yield return null; //wait death anim to compute
         yield return new WaitForSeconds(playerAnim.GetCurrentAnimatorStateInfo(0).length); //wait duration of death animation
         callback(true); //activate callback
     }
 
-    private void OnDrawGizmos()
+    /*private void OnDrawGizmos()
     {
         //mostra o overlap na unity
         Gizmos.color = Color.red;
@@ -298,5 +264,5 @@ public class Player : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position + (-sideOffset), 0.15f);
         Gizmos.DrawWireSphere(transform.position + upOffset, 0.15f);
         Gizmos.DrawWireSphere(transform.position + (-upOffset), 0.15f);
-    }
+    }*/
 }

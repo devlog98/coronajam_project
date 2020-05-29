@@ -17,25 +17,22 @@ public class ChoiceButton : MaskableGraphic, IPointerEnterHandler, IPointerExitH
 
     public void OnPointerEnter(PointerEventData eventData) {
         AudioManager.instance.PlayAudioclip(buttonHighlightSound); //play audio
-
-        //change button
-        if (myButton != null) {
+       
+        if (myButton != null) {//change button
             StartCoroutine("ButtonIncrement");
         }
     }
 
-    public void OnPointerExit(PointerEventData eventData) {
-        //change button
-        if (myButton != null) {
+    public void OnPointerExit(PointerEventData eventData) {     
+        if (myButton != null) {//change button
             StartCoroutine("ButtonDecrement");
         }
     }
 
     public void OnClick() {
         AudioManager.instance.PlayAudioclip(buttonSelectSound); //play audio
-
-        //change button
-        if (myButton != null) {
+       
+        if (myButton != null) {//change button
             ButtonReturn();
         }
     }
