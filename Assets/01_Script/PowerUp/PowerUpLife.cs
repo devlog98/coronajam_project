@@ -10,7 +10,17 @@ public class PowerUpLife : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(this.gameObject, timeDestroy);
+        Invoke("Disable", timeDestroy);
+    }
+
+    public void TimePowerUP()
+    {
+        Invoke("Disable", timeDestroy);
+    }
+
+    public void Disable()
+    {
+        gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -18,7 +28,7 @@ public class PowerUpLife : MonoBehaviour
         if (other.gameObject.name == "Player")
         {
             other.gameObject.SendMessage("ReceiveLife", life);
-            Destroy(this.gameObject);
+            Disable();
         }
     }
 }

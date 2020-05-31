@@ -7,6 +7,9 @@ TagManager:
   - Ground
   - Grid
   - Pausable
+  - Attack
+  - Attack2
+  - PowerUp
   layers:
   - Default
   - TransparentFX

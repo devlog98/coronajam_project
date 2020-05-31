@@ -256,6 +256,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnObject: {fileID: 8184321193156047688, guid: 2be3982c97bb3184c90ab78ddf98e90d,
     type: 3}
+  spawnObject2: {fileID: 3453182228024514286, guid: 99ef0555088b2f743a0d0c85bd923641,
+    type: 3}
 --- !u!1 &182302176 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 97813947, guid: 2695ab8f95331c345ac88aa80dfeae8c,
@@ -408,6 +410,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnObject: {fileID: 8184321193156047688, guid: 2be3982c97bb3184c90ab78ddf98e90d,
+    type: 3}
+  spawnObject2: {fileID: 3453182228024514286, guid: 99ef0555088b2f743a0d0c85bd923641,
     type: 3}
 --- !u!1001 &225267752
 PrefabInstance:
@@ -1055,6 +1059,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnObject: {fileID: 8184321193156047688, guid: 2be3982c97bb3184c90ab78ddf98e90d,
     type: 3}
+  spawnObject2: {fileID: 3453182228024514286, guid: 99ef0555088b2f743a0d0c85bd923641,
+    type: 3}
 --- !u!1 &495216069
 GameObject:
   m_ObjectHideFlags: 0
@@ -1396,6 +1402,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnObject: {fileID: 8184321193156047688, guid: 2be3982c97bb3184c90ab78ddf98e90d,
+    type: 3}
+  spawnObject2: {fileID: 3453182228024514286, guid: 99ef0555088b2f743a0d0c85bd923641,
     type: 3}
 --- !u!1 &827432187
 GameObject:
@@ -1888,6 +1896,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnObject: {fileID: 8184321193156047688, guid: 2be3982c97bb3184c90ab78ddf98e90d,
     type: 3}
+  spawnObject2: {fileID: 3453182228024514286, guid: 99ef0555088b2f743a0d0c85bd923641,
+    type: 3}
 --- !u!1 &960354057 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 700018928, guid: 2695ab8f95331c345ac88aa80dfeae8c,
@@ -2214,6 +2224,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnObject: {fileID: 8184321193156047688, guid: 2be3982c97bb3184c90ab78ddf98e90d,
     type: 3}
+  spawnObject2: {fileID: 3453182228024514286, guid: 99ef0555088b2f743a0d0c85bd923641,
+    type: 3}
 --- !u!1 &1208315916
 GameObject:
   m_ObjectHideFlags: 0
@@ -2348,6 +2360,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnObject: {fileID: 8184321193156047688, guid: 2be3982c97bb3184c90ab78ddf98e90d,
+    type: 3}
+  spawnObject2: {fileID: 3453182228024514286, guid: 99ef0555088b2f743a0d0c85bd923641,
     type: 3}
 --- !u!1001 &1374575069
 PrefabInstance:
@@ -2773,6 +2787,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnObject: {fileID: 8184321193156047688, guid: 2be3982c97bb3184c90ab78ddf98e90d,
     type: 3}
+  spawnObject2: {fileID: 3453182228024514286, guid: 99ef0555088b2f743a0d0c85bd923641,
+    type: 3}
 --- !u!1 &1914226395
 GameObject:
   m_ObjectHideFlags: 0
@@ -3109,6 +3125,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnObject: {fileID: 8184321193156047688, guid: 2be3982c97bb3184c90ab78ddf98e90d,
     type: 3}
+  spawnObject2: {fileID: 3453182228024514286, guid: 99ef0555088b2f743a0d0c85bd923641,
+    type: 3}
 --- !u!1 &2077885820
 GameObject:
   m_ObjectHideFlags: 0
@@ -3167,6 +3185,7 @@ GameObject:
   - component: {fileID: 2118612291}
   - component: {fileID: 2118612294}
   - component: {fileID: 2118612295}
+  - component: {fileID: 2118612293}
   m_Layer: 8
   m_Name: ground
   m_TagString: Ground
@@ -3382,6 +3401,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &2118612293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118612289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 729139b25e508b34396013b9ceab287b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &2118612294
 Rigidbody2D:
   serializedVersion: 4
@@ -3416,7 +3447,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 4.8, y: -1.82}
+  m_Offset: {x: 4.7, y: -1.82}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3427,7 +3458,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12.68, y: 5.4}
+  m_Size: {x: 12.97, y: 5.4}
   m_EdgeRadius: 0
 --- !u!1001 &3175525509353307836
 PrefabInstance:

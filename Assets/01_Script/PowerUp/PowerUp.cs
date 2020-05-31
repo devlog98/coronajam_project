@@ -13,6 +13,7 @@ public class PowerUp : MonoBehaviour
     [SerializeField] int amountSpawLife;
     [SerializeField] int timeIntervalminLife;
     [SerializeField] int timeIntervalmaxLife;
+    List<GameObject> powerUp = new List<GameObject>();
 
     private float time;
     private int getRandom1;
@@ -45,10 +46,28 @@ public class PowerUp : MonoBehaviour
 
     void spawnPowerupLife()
     {
-            int randomPosition = Random.Range(0, 8);
-            amountSpawLife = amountSpawLife - 1;
-            GameObject spawPowerUp = Instantiate(spawnPowerUpLife, grids[randomPosition].transform.position, grids[randomPosition].transform.rotation);
-            timeSpawn();
+        int randomPosition = Random.Range(0, 8);
+        if (powerUp.Count > 1)
+        {
+            powerUp.Add(powerUp[0].gameObject);
+            powerUp[0].gameObject.transform.position = grids[randomPosition].transform.position;
+            powerUp[0].gameObject.transform.rotation = grids[randomPosition].transform.rotation;
+            powerUp[0].gameObject.SetActive(true);
+            powerUp[0].gameObject.GetComponent<PowerUpLife>().TimePowerUP();
+            powerUp.RemoveAt(0);
+            ResetStatus();
+        }
+        else
+        {
+            powerUp.Add(Instantiate(spawnPowerUpLife, grids[randomPosition].transform.position, grids[randomPosition].transform.rotation));
+            ResetStatus();
+        }          
+    }
+
+    void ResetStatus()
+    {
+        amountSpawLife = amountSpawLife - 1;
+        timeSpawn();
     }
 
     void RoundFinal()

@@ -7,17 +7,15 @@ public class VirusShot : MonoBehaviour
     [Header("Bullet")]
     public float speed;
     public int damage = 1;
-    private float timeDestroy;
-
-    void Start()
-    {
-        timeDestroy = 5.0f;
-        Destroy(gameObject, timeDestroy);
-    }
 
     void Update()
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
+    }
+
+    void FireDisable()
+    {
+        gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -25,7 +23,7 @@ public class VirusShot : MonoBehaviour
         if (other.gameObject.name == "Player")
         {
             other.gameObject.SendMessage("ReceiveDamageFromAttack", damage);
-            Destroy(gameObject);
+            FireDisable();
         }
     }
 }

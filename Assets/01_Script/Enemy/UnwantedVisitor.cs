@@ -42,6 +42,8 @@ public class UnwantedVisitor : MonoBehaviour
     public GameObject SneezeObject;
     public float timeSneeze;
     float timeS;
+    List<GameObject> listFire = new List<GameObject>();
+    List<GameObject> listSneeze = new List<GameObject>();
 
     public Animator VisitorAnim;
 
@@ -181,13 +183,28 @@ public class UnwantedVisitor : MonoBehaviour
 
     void Fire()
     {
-        GameObject cloneVirus = Instantiate(virusObject, distanceAttack + transform.position, transform.rotation);
+        if (listFire.Count < 5){ listFire.Add(Instantiate(virusObject, distanceAttack + transform.position, transform.rotation)); }
+        else
+        {
+            listFire[0].gameObject.SetActive(true);
+            listFire.Add(listFire[0].gameObject);
+            listFire[0].gameObject.transform.position = distanceAttack + transform.position;
+            listFire.RemoveAt(0);
+        }       
         checkAttack = false;
     }
 
     void Sneeze()
-    {                
-        GameObject cloneSneeze = Instantiate(SneezeObject, distanceAttack + transform.position, transform.rotation);
+    {
+        if(listSneeze.Count < 5){ listSneeze.Add(Instantiate(SneezeObject, distanceAttack + transform.position, transform.rotation));}
+        else
+        {          
+            listSneeze.Add(listSneeze[0].gameObject);            
+            listSneeze[0].gameObject.transform.position = distanceAttack + transform.position;
+            listSneeze[0].gameObject.SetActive(true);
+            listSneeze[0].gameObject.GetComponent<Sneeze>().getTargetGrid();          
+            listSneeze.RemoveAt(0);
+        }
         checkAttack = false;
     }
 
