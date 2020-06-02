@@ -195,6 +195,7 @@ public class Player : MonoBehaviour
     private void ReceiveDamage(int damage, bool fromDialogue) //responsável por calcular o dano que o jogador sofre
     {
         if (health != 0 && (fromDialogue || !isInvincible)) {
+            Vibrator.Vibrate();//comando para vibrar ao levar dano
             health -= damage;
             healthUI.UpdateHealthCounter(true);
             AudioManager.instance.PlayAudioclip(hitSound);
