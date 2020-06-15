@@ -38,7 +38,7 @@ namespace Locallies.Tools {
 
             //selects new language based on index and loads
             LanguageItem languageItem = languages[languageIndex];
-            languageFlagUI.sprite = languageItem.languageFlagSprite;
+            //languageFlagUI.sprite = languageItem.languageFlagSprite;
             LocalizationManager.LoadLocalizationFile(languageItem.fileName);
         }
 

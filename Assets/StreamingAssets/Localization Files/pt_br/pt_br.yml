@@ -1,0 +1,168 @@
+items:
+- key: main_menu_play
+  value: JOGAR
+- key: main_menu_credits
+  value: CRÉDITOS
+- key: main_menu_quit
+  value: SAIR
+- key: main_menu_back
+  value: VOLTAR
+- key: credits_programmer
+  value: PROGRAMADOR
+- key: credits_artist
+  value: ARTISTA
+- key: credits_audio
+  value: ÁUDIO
+- key: credits_programmer/artist
+  value: PROGRAMADOR/ARTISTA
+
+- key: game_pause
+  value: PAUSE
+- key: game_resume
+  value: VOLTAR PARA PARTIDA
+- key: game_main_menu
+  value: MENU PRINCIPAL
+- key: game_over
+  value: VOCÊ FALHOU...
+- key: game_retry
+  value: TENTAR NOVAMENTE
+
+- key: char_guto
+  value: GUTO
+- key: char_sandra
+  value: D.SANDRA
+- key: char_tv
+  value: TV
+- key: char_caio
+  value: CAIO
+
+- key: intro_slide_0
+  value: DING DONG!
+- key: intro_slide_1
+  value: D-Dona Sandra... Opa... tudo bem?
+- key: intro_slide_2
+  value: A sua mãe está, Guto?
+- key: intro_slide_3
+  value: Ah... ela deu uma saidinha... a senhora quer en...
+- key: intro_slide_4
+  value: Eu espero ela então.
+- key: intro_slide_5
+  value: E hoje o governador Doão Jória assinou o decreto que impede os serviços não essenciais de funcionarem por 15 dias...
+- key: intro_slide_6
+  value: Maior bobagem, tudo por uma gripezinha...
+- key: intro_slide_7
+  value: Tenho que tirar essa véia daqui...
+- key: intro_slide_8
+  value: Lembrando a todos, essa doença é altamente infecciosa, você pode portar o virús sem saber. Portanto FIQUE EM CASA.
+- key: intro_slide_9
+  value: Ixi... acho que eu vou pra casa, quando sua mãe chegar fala pra ela me chamar.
+- key: intro_slide_10
+  value: Conhecendo essa véia, ela vai passar na vizinhança inteira bater papo... Preciso manter ela aqui até ELE chegar...
+- key: intro_slide_11
+  value: Peraí Dona Sandra, minha mãe chega já...
+
+- key: round_0_sentence_0
+  value: Bom, acho que posso ficar mais um pouco...
+- key: round_0_sentence_1
+  value: Acha que ela demora muito?
+- key: round_0_choice_0
+  value: Não, ela chega já já!
+- key: round_0_reaction_0
+  value: Então tá bom...
+- key: round_0_choice_1
+  value: Não sei...
+- key: round_0_reaction_1
+  value: Eu não posso esperar muito, hein...
+
+- key: round_1_sentence_0
+  value: Sabe, a minha neta queria fazer aquelas coisa de informática lá... Tipo o que você faz.
+- key: round_1_sentence_1
+  value: Onde já se viu. Aí que ela vai continuar encalhada mesmo!
+- key: round_1_sentence_2
+  value: Mulher tem que primeiro aprender a ajudar em casa, arrumar um namorado... de preferência casar na igreja.
+- key: round_1_sentence_3
+  value: Não acha?
+- key: round_1_choice_0
+  value: Uh... Não sei...
+- key: round_1_reaction_0
+  value: Enfim...
+- key: round_1_choice_1
+  value: Ela tem que fazer o que a faz feliz!
+- key: round_1_reaction_1
+  value: Felicidade não paga conta!
+- key: round_1_choice_2
+  value: Ah... acho que sim?
+- key: round_1_reaction_2
+  value: Eu só quero o melhor pra ela...
+
+- key: round_2_sentence_0
+  value: Você só joga essas coisas o dia inteiro!
+- key: round_2_sentence_1
+  value: Devia fazer um pouco de exercício...
+- key: round_2_sentence_2
+  value: É por isso que ta todo mundo com medo dessa gripe!
+- key: round_2_sentence_3
+  value: Todo mundo sabe que quem tem corpo de atleta não pega isso!
+- key: round_2_sentence_4
+  value: Eu lavo, passo e limpo a casa todo dia, tenho certeza que vou ficar bem!
+- key: round_2_sentence_5
+  value: Mas você só fica aí sentado!
+- key: round_2_choice_0
+  value: Afe, nada a ver isso daí Dona Sandra!
+- key: round_2_reaction_0
+  value: Bom, quem avisa amigo é né.
+- key: round_2_choice_1
+  value: Você está certa, eu devia fazer alguma coisa...
+- key: round_2_reaction_1
+  value: Vai correr na rua, andar de bicicleta...
+
+- key: round_3_sentence_0
+  value: Meu marido não faz nada direito!
+- key: round_3_sentence_1
+  value: Tô há 3 semanas esperando ele trocar a resistência do chuveiro do banheiro de cima.
+- key: round_3_sentence_2
+  value: Mas ele diz que não sabe...
+- key: round_3_sentence_3
+  value: Eu casei com um bolha mesmo!
+- key: round_3_sentence_4
+  value: Pra que serve marido se não for pra fazer essas manutenções de casa ?!
+- key: round_3_choice_0
+  value: Qualquer hora dessas eu passo lá...
+- key: round_3_reaction_0
+  value: Obrigado querido, mas acho que vou chamar um técnico
+- key: round_3_choice_1
+  value: Não é todo mundo que se liga nisso...
+- key: round_3_reaction_1
+  value: Homem tem que saber isso!
+- key: round_3_choice_2
+  value: Ele devia instalar o chuveiro...
+- key: round_3_reaction_2
+  value: O chuveiro já está instalado! Está me escutando, rapaz?
+
+- key: round_4_sentence_0
+  value: Eu acho que vou embora... Estou te atrapalhando, não?
+- key: round_4_sentence_1
+  value: Você lembra o meu filho mais velho...
+- key: round_4_sentence_2
+  value: Sua mãe que fique de olho em você.
+- key: round_4_sentence_3
+  value: Você tem que estar presente na vida dela, cuidar dela na velhice.
+- key: round_4_sentence_4
+  value: Depois de um tempo, é papel dos filhos cuidarem dos pais
+- key: round_4_sentence_5
+  value: Acho que é por isso que está todo mundo tão preocupado com essa gripe né?
+- key: round_4_sentence_6
+  value: Estou me sentindo um pouco mal...
+- key: round_4_choice_0
+  value: Eu liguei pra alguém...
+
+- key: outro_slide_0
+  value: Já tem uns dias que a Dona Sandra está no hospital...Acho que eu fiz a coisa certa.
+- key: outro_slide_1
+  value: Mãe, a senhora está bem?
+- key: outro_slide_2
+  value: ...F-Filho?
+- key: outro_slide_3
+  value: Vamos pro hospital, o Guto disse que você não está bem...
+- key: outro_slide_4
+  value: Espero que ela se recupere logo...

@@ -188,7 +188,7 @@ MonoBehaviour:
     sentence: intro_slide_11
     soundEffect: event:/CGuto
   - sprite: {fileID: 0}
-    spriteKey: tutorial.png
+    spriteKey: tutorial
     name: 
     sentence: 
     soundEffect: 

@@ -44,7 +44,7 @@ public class CutsceneManager : MonoBehaviour {
             currentImage.sprite = cutscenes[slideIndex].Sprite; //change cutscene sprite
         }
         else {
-            currentImage.sprite = LocalizationManager.LocalizeImage(cutscenes[slideIndex].SpriteKey); //load from locale
+            currentImage.sprite = LocalizationManager.LocalizeSprite(cutscenes[slideIndex].SpriteKey); //load from locale
         }
         
         AudioManager.instance.StopAudioclips();
@@ -56,7 +56,7 @@ public class CutsceneManager : MonoBehaviour {
         }
         else {
             nameContainer.SetActive(true);
-            currentName.text = LocalizationManager.Localize(cutscenes[slideIndex].Name);
+            currentName.text = LocalizationManager.LocalizeString(cutscenes[slideIndex].Name);
         }
 
         //show or hide dialogue box depending on value
@@ -65,7 +65,7 @@ public class CutsceneManager : MonoBehaviour {
         }
         else {
             sentenceContainer.SetActive(true);
-            currentSentence.text = LocalizationManager.Localize(cutscenes[slideIndex].Sentence);
+            currentSentence.text = LocalizationManager.LocalizeString(cutscenes[slideIndex].Sentence);
         }
     }
 }

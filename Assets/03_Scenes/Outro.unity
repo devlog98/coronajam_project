@@ -589,7 +589,7 @@ PrefabInstance:
     - target: {fileID: 2384440045316944322, guid: e3b7c3adee3cd4e48a3573f514ecfeaa,
         type: 3}
       propertyPath: cutscenes.Array.data[5].spriteKey
-      value: text1.png
+      value: text1
       objectReference: {fileID: 0}
     - target: {fileID: 2384440045316944322, guid: e3b7c3adee3cd4e48a3573f514ecfeaa,
         type: 3}
@@ -609,7 +609,7 @@ PrefabInstance:
     - target: {fileID: 2384440045316944322, guid: e3b7c3adee3cd4e48a3573f514ecfeaa,
         type: 3}
       propertyPath: cutscenes.Array.data[6].spriteKey
-      value: text_2.png
+      value: text_2
       objectReference: {fileID: 0}
     - target: {fileID: 2384440045316944322, guid: e3b7c3adee3cd4e48a3573f514ecfeaa,
         type: 3}

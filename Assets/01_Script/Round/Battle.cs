@@ -102,7 +102,7 @@ public class Battle : MonoBehaviour {
 
         for (int i = 0; i < choices.Count; i++) {
             choiceBoxes[i].SetActive(true);
-            choiceTexts[i].text = LocalizationManager.Localize(choiceArray[i].ChoiceKey);
+            choiceTexts[i].text = LocalizationManager.LocalizeString(choiceArray[i].ChoiceKey);
         }
 
         if (isOver && false) {

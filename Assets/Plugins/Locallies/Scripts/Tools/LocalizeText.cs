@@ -18,7 +18,7 @@ namespace Locallies.Tools {
 
         // updates in game text
         public override void Localize(bool canLocalize) {
-            element.text = LocalizationManager.Localize(key);
+            element.text = LocalizationManager.LocalizeString(key);
         }
     }
 }

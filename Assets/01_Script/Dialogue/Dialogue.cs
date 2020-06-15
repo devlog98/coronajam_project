@@ -54,7 +54,7 @@ public class Dialogue : MonoBehaviour {
 
     //show sentence for a specific amount of time
     private IEnumerator ShowSentence(DialogueSentence sentence) {
-        string localizedSentence = LocalizationManager.Localize(sentence.SentenceKey); //localizing sentence
+        string localizedSentence = LocalizationManager.LocalizeString(sentence.SentenceKey); //localizing sentence
 
         inSentence = true; //starting sentence
         UI.instance.ShowDialogueSentence(localizedSentence); //write sentence in screen
@@ -79,7 +79,7 @@ public class Dialogue : MonoBehaviour {
     }
 
     public IEnumerator ShowReaction(DialogueChoice sentence) {
-        string localizedSentence = LocalizationManager.Localize(sentence.ChoiceReactionKey); //localizing sentence
+        string localizedSentence = LocalizationManager.LocalizeString(sentence.ChoiceReactionKey); //localizing sentence
 
         inSentence = true; //starting sentence
         UI.instance.ShowDialogueSentence(localizedSentence);

@@ -12,7 +12,7 @@ using UnityEngine;
 namespace Locallies.Tools {
     public class LocalizationFileEditor : EditorWindow {
         //data from the Localization File
-        public LocalizationData localizationData;
+        public LocalizationText localizationText;
 
         //current file properties
         private string filename = "language";
@@ -38,7 +38,7 @@ namespace Locallies.Tools {
             scrollPosition = BeginScrollView();
 
             //if file is loaded...
-            if (localizationData != null) {
+            if (localizationText != null) {
                 //allows data to be edited via Inspector
                 SerializedObject serializedObject = new SerializedObject(this);
                 SerializedProperty serializedProperty = serializedObject.FindProperty("localizationData");
@@ -51,7 +51,7 @@ namespace Locallies.Tools {
             //begin horizontal layout
             GUILayout.BeginHorizontal();
 
-            if (localizationData != null) {
+            if (localizationText != null) {
                 //save file button
                 if (GUILayout.Button("Save File")) {
                     SaveLocalizationFile();
@@ -75,17 +75,17 @@ namespace Locallies.Tools {
 
         //creates new file
         private void NewLocalizationFile() {
-            localizationData = new LocalizationData();
+            localizationText = new LocalizationText();
             filename = "New Localization File";
         }
 
         //saves current file
         private void SaveLocalizationFile() {
             //save window
-            string filepath = EditorUtility.SaveFilePanel("Save Localization File", Application.streamingAssetsPath, filename, fileExtension);
+            string filepath = EditorUtility.SaveFilePanel("Save Localization File", Path.Combine(Application.streamingAssetsPath, "Localization Files"), filename, fileExtension);
 
             //operation
-            bool success = LocalizationParser.WriteLocalizationFile(filepath, localizationData);
+            bool success = LocalizationParser.WriteLocalizationText(filepath, localizationText);
 
             //if operation successful...
             if (success) {
@@ -98,10 +98,10 @@ namespace Locallies.Tools {
         //loads file
         private void LoadLocalizationFile() {
             //load window
-            string filepath = EditorUtility.OpenFilePanel("Load Localization File", Application.streamingAssetsPath, "*json;*yml");
+            string filepath = EditorUtility.OpenFilePanel("Load Localization File", Path.Combine(Application.streamingAssetsPath, "Localization Files"), "*json;*yml");
 
             //operation
-            bool success = LocalizationParser.ReadLocalizationFile(filepath, out localizationData);
+            bool success = LocalizationParser.ReadLocalizationText(filepath, out localizationText);
 
             //if operation successful...
             if (success) {
