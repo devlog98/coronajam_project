@@ -18,7 +18,7 @@ namespace Locallies.Core {
 
             // get all files from locale folder
             string path = Path.Combine(Application.streamingAssetsPath, "Localization Files", locale);
-            string[] filenames = new string[] { locale + ".yml", "locallies_flag.png", "text1.png", "text_2.png", "tutorial.png" };//GetFilenamesFromPath(path);
+            string[] filenames = new string[] { locale + ".yml", "locallies_flag.png", "text1.png", "text_2.png", "tutorial.png", "tutorial_mobile.png" };//GetFilenamesFromPath(path);
 
             // setup for data
             localizationText = new LocalizationText();
