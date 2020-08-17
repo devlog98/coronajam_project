@@ -2027,6 +2027,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4776853956472542445, guid: 47989a37c0946264bb46261a02cff803,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4776853957163930198, guid: 47989a37c0946264bb46261a02cff803,
         type: 3}
       propertyPath: m_RenderMode
@@ -2628,6 +2633,24 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 433584534}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1763431402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6462308318097080494, guid: 47989a37c0946264bb46261a02cff803,
+    type: 3}
+  m_PrefabInstance: {fileID: 1019972660}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &1763431404
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763431402}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1792819498
 GameObject:
   m_ObjectHideFlags: 0
