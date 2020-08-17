@@ -17,6 +17,10 @@ public class RedesSociais : MonoBehaviour
         Application.OpenURL(redeSocial);     
 #endif
 
+#if UNITY_ANDROID
+        Application.OpenURL(redeSocial);
+#endif
+
 
     }
 }
