@@ -8,28 +8,28 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
+  - enabled: 1
     path: Assets/03_Scenes/MainMenu-Mobile.unity
     guid: a2656aa2d3b0bc94fba595c2f9d1828a
-  - enabled: 0
+  - enabled: 1
     path: Assets/03_Scenes/Movement-Mobile.unity
     guid: 5694758e344f16a47b5aa06026e059ea
-  - enabled: 0
+  - enabled: 1
     path: Assets/03_Scenes/Intro-Mobile.unity
     guid: 6a33d920403e04149bebbeb09218f5c1
-  - enabled: 0
+  - enabled: 1
     path: Assets/03_Scenes/Outro-Mobile.unity
     guid: 273387c457e4b574089cb826a7d4921e
-  - enabled: 1
+  - enabled: 0
     path: Assets/03_Scenes/MainMenu.unity
     guid: b5b65e06834fb334ba696b101c3d68f5
-  - enabled: 1
+  - enabled: 0
     path: Assets/03_Scenes/Movement.unity
     guid: bd0a2702d41094245b4b6f6003c31000
-  - enabled: 1
+  - enabled: 0
     path: Assets/03_Scenes/Intro.unity
     guid: 196d013d232b1d54d983735f79bedae7
-  - enabled: 1
+  - enabled: 0
     path: Assets/03_Scenes/Outro.unity
     guid: fcff5edbc676e4f4ba6d0b76282f03eb
   m_configObjects: {}
