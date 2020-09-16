@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Locallies.Tools;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,33 +10,24 @@ public class MainMenu : MonoBehaviour {
 
     //is being used for every scene change
     public void PlayGame() {
-        //hides and locks mouse to avoid repeated clicks
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        Time.timeScale = 1.0f;
+        if (!LanguageSelector.instance.IsLoading) {
+            //hides and locks mouse to avoid repeated clicks
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            Time.timeScale = 1.0f;
 
-        //start fade out
-        StartCoroutine(PlayGameCoroutine(gameSceneIndex));
-    }
-
-    //loads scene
-    public void LoadScene(int sceneIndex) {
-        //hides and locks mouse to avoid repeated clicks
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        Time.timeScale = 1.0f;
-
-        //start fade out
-        StartCoroutine(PlayGameCoroutine(sceneIndex));
+            //start fade out
+            StartCoroutine(PlayGameCoroutine(gameSceneIndex));
+        }
     }
 
     //coroutine responsible for fade out of menu
     private IEnumerator PlayGameCoroutine(int sceneIndex) {
+        MusicManager.instance.StopEvent();
+
         anim.SetTrigger("StartGame"); //activates animation
         yield return null; //skips frame so that animator info is updated with new activated animation
-        yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length); //waits duration on fade out animation
-
-        MusicManager.instance.StopEvent();
+        yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length); //waits duration on fade out animation        
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -48,15 +40,21 @@ public class MainMenu : MonoBehaviour {
 
     //increases menu scale in order to show onscreen
     public void ShowMenu(RectTransform rectTransform) {
-        rectTransform.localScale = new Vector2(1, 1);
+        if (!LanguageSelector.instance.IsLoading) {
+            rectTransform.localScale = new Vector2(1, 1);
+        }
     }
 
     //decreases menu scale in order to hide onscreen
     public void HideMenu(RectTransform rectTransform) {
-        rectTransform.localScale = new Vector2(0, 0);
+        if (!LanguageSelector.instance.IsLoading) {
+            rectTransform.localScale = new Vector2(0, 0);
+        }
     }
 
     public void Quit() {
-        Application.Quit();
+        if (!LanguageSelector.instance.IsLoading) {
+            Application.Quit();
+        }
     }
 }

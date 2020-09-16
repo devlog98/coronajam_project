@@ -1,5 +1,98 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1219509106156882300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3663184771652334551}
+  - component: {fileID: 4676232139043630867}
+  - component: {fileID: 5573704777213095681}
+  - component: {fileID: 3463600770152076016}
+  m_Layer: 5
+  m_Name: Language Load
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &3663184771652334551
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219509106156882300}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5302464968374662062}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: -21.5}
+  m_SizeDelta: {x: 96, y: 96}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &4676232139043630867
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219509106156882300}
+  m_CullTransparentMesh: 0
+--- !u!114 &5573704777213095681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219509106156882300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 7ab96120d3a69de4bbc0cef92d7f7611, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!95 &3463600770152076016
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219509106156882300}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a2917229dfb5fe1418737fd6719e6c4e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5302464968374662061
 GameObject:
   m_ObjectHideFlags: 0
@@ -29,6 +122,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5302464969069057292}
+  - {fileID: 3663184771652334551}
   - {fileID: 5302464969097614493}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -51,13 +145,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   languages:
-  - fileName: en
-    languageFlagSprite: {fileID: 21300000, guid: 3b2f2216d22468645882e82a8ed88445,
-      type: 3}
-  - fileName: pt_br
-    languageFlagSprite: {fileID: 21300000, guid: 39ade4c8392509842abbd2ef57e31a91,
-      type: 3}
+  - {fileID: 11400000, guid: d28dc07acefafc24c8d0b0c6a4712208, type: 2}
+  - {fileID: 11400000, guid: 4188249c67296e6478182d57cd4aa5ac, type: 2}
   languageFlagUI: {fileID: 5302464969069057293}
+  languageLoadUI: {fileID: 5573704777213095681}
+  previousLanguageButton: {fileID: 5302464969669485701}
+  nextLanguageButton: {fileID: 5302464969168456073}
 --- !u!1 &5302464969069057291
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,7 +268,7 @@ RectTransform:
   - {fileID: 5302464969669485700}
   - {fileID: 5302464969168456072}
   m_Father: {fileID: 5302464968374662062}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

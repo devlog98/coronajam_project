@@ -1,4 +1,5 @@
 ﻿using Locallies.Core;
+using Locallies.Tools;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -20,26 +21,23 @@ namespace Locallies.Core {
         private static string missingKey = "Localized string not found!";
         private static string missingSprite;
 
-        // default locale to be used
-        private static string defaultLocale = "en";
-
         // loads data from Localization File
-        public static void LoadLocalizationFile(string locale) {
+        public static void LoadLanguageItem(Language language) {
             // loads data from file
-            LocalizationText localizationText = new LocalizationText();
-            LocalizationSheet localizationSheet = new LocalizationSheet();
+            LanguageText languageText = new LanguageText();
+            LanguageSheet languageSheet = new LanguageSheet();
 
-            bool success = LocalizationParser.LoadLocalizationFile(locale, out localizationText, out localizationSheet);
+            bool success = LanguageParser.LoadLocalizationFile(language, out languageText, out languageSheet);
 
             if (success) {
                 // creates and populates dictionary
                 textDictionary = new Dictionary<string, string>();
-                foreach (LocalizationString item in localizationText.items) {
+                foreach (LanguageString item in languageText.items) {
                     textDictionary.Add(item.key, item.value);
                 }
 
                 sheetDictionary = new Dictionary<string, Sprite>();
-                foreach (LocalizationSprite item in localizationSheet.items) {
+                foreach (LanguageSprite item in languageSheet.items) {
                     sheetDictionary.Add(item.key, item.value);
                 }
 
@@ -64,7 +62,7 @@ namespace Locallies.Core {
         public static string LocalizeString(string key) {
             // loads default Localization File if no dictionary
             if (textDictionary == null) {
-                LoadLocalizationFile(defaultLocale);
+                LoadLanguageItem(DefaultLanguage.instance.Language);
             }
 
             textDictionary.TryGetValue(key, out string result);
@@ -76,7 +74,7 @@ namespace Locallies.Core {
         public static Sprite LocalizeSprite(string key) {
             // loads default Localization File if no dictionary
             if (sheetDictionary == null) {
-                LoadLocalizationFile(defaultLocale);
+                LoadLanguageItem(DefaultLanguage.instance.Language);
             }
 
             sheetDictionary.TryGetValue(key, out Sprite result);
