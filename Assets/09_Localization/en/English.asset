@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: English
   m_EditorClassIdentifier: 
   name: English
-  localizationText: {fileID: 4900000, guid: 047d2a4412f3ab440acbc1b87048ac35, type: 3}
-  localizationSprite:
+  text: {fileID: 4900000, guid: 047d2a4412f3ab440acbc1b87048ac35, type: 3}
+  textFormat: 1
+  sheet:
   - {fileID: 21300000, guid: 96ac954c659cd994cbe31b90828188ac, type: 3}
   - {fileID: 21300000, guid: 733542dd585d13f4b85ec2b51845cb0a, type: 3}
   - {fileID: 21300000, guid: c29d46ecb22223e4baf80d38b7417efe, type: 3}
   - {fileID: 21300000, guid: 2da7e678769b6ee448afe8e768ffe3e8, type: 3}
   - {fileID: 21300000, guid: 7e2408eca37f09b41ac4fcad0c83d08e, type: 3}
-  localizationTextFormat: 1

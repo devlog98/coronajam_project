@@ -1,16 +1,15 @@
 ﻿using FMODUnity;
 using Locallies.Core;
+using Locallies.Tools;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 /*
  * Allows Player to choose a language
  * Put this script into a Game Object to use it
 */
 
-namespace Locallies.Tools {
     public class LanguageSelector : MonoBehaviour {
         public static LanguageSelector instance;
 
@@ -22,8 +21,6 @@ namespace Locallies.Tools {
         //language flag display
         [Header("UI Elements")]
         [SerializeField] Image languageFlagUI;
-
-        [Header("UI Buttons")]
         [SerializeField] Image languageLoadUI;
 
         private bool isLoading;
@@ -43,7 +40,7 @@ namespace Locallies.Tools {
         }
 
         private void ChangeLanguage(Language language) {
-            LocalizationManager.LoadLanguageItem(language);
+            LocalizationManager.LoadLanguage(language);
         }
 
         //changes current language
@@ -76,6 +73,8 @@ namespace Locallies.Tools {
             languageLoadUI.gameObject.SetActive(false);
 
             isLoading = false;
+
+       
         }
 
         //navigation methods
@@ -91,4 +90,3 @@ namespace Locallies.Tools {
             }
         }
     }
-}

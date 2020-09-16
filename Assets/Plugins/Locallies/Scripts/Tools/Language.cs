@@ -1,22 +1,22 @@
 ﻿using UnityEngine;
 
 /*
- * Specifies a language option to choose from via Language Manager
+ * Specifies a language option to choose from via Language Selector
 */
 
 namespace Locallies.Tools {
-    public enum LocalizationTextFormat { JSON, YAML };
+    public enum TextFormat { JSON, YAML };
 
-    [CreateAssetMenu(fileName = "New Language Item", menuName = "Locallies/New Language Item")]
+    [CreateAssetMenu(fileName = "New Language", menuName = "Locallies/New Language")]
     public class Language : ScriptableObject {
         [SerializeField] private new string name; // language name
 
-        [SerializeField] private TextAsset localizationText; // language text file with keys and values
-        [SerializeField] private Sprite[] localizationSprite; // language translated images
-        [SerializeField] private LocalizationTextFormat localizationTextFormat;
+        [SerializeField] private TextAsset text; // language text file with keys and values
+        [SerializeField] private TextFormat textFormat; // language text format
+        [SerializeField] private Sprite[] sheet; // language translated images
 
-        public TextAsset LocalizationText { get { return localizationText; } }
-        public Sprite[] LocalizationSprite { get { return localizationSprite; } }
-        public LocalizationTextFormat LocalizationTextFormat { get { return localizationTextFormat; } }
+        public TextAsset Text { get { return text; } }
+        public Sprite[] Sheet { get { return sheet; } }
+        public TextFormat TextFormat { get { return textFormat; } }
     }
 }

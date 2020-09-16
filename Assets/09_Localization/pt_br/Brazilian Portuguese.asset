@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Brazilian Portuguese
   m_EditorClassIdentifier: 
   name: Brazilian Portuguese
-  localizationText: {fileID: 4900000, guid: 7ba9580a83a860740a2b948a6fd789d5, type: 3}
-  localizationSprite:
+  text: {fileID: 4900000, guid: 7ba9580a83a860740a2b948a6fd789d5, type: 3}
+  textFormat: 1
+  sheet:
   - {fileID: 21300000, guid: bfcfcc5f56587134fb232081c250ac3e, type: 3}
   - {fileID: 21300000, guid: f778958c22258d6438534f6c61d2c83f, type: 3}
   - {fileID: 21300000, guid: c002b502d9c5f3e48a58817317f50d38, type: 3}
   - {fileID: 21300000, guid: 8ee4967e8e1308c4e82793f127060018, type: 3}
   - {fileID: 21300000, guid: 29893e96c991a30468160bc781f9bb04, type: 3}
-  localizationTextFormat: 1

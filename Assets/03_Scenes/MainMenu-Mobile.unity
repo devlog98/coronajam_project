@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1119,6 +1119,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 232561367}
     m_Modifications:
+    - target: {fileID: 1219509106156882300, guid: 01e3f67626dea8649bb64634726ff3d4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663184771652334551, guid: 01e3f67626dea8649bb64634726ff3d4,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663184771652334551, guid: 01e3f67626dea8649bb64634726ff3d4,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663184771652334551, guid: 01e3f67626dea8649bb64634726ff3d4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 49.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5302464968374662061, guid: 01e3f67626dea8649bb64634726ff3d4,
         type: 3}
       propertyPath: m_Name
@@ -1559,6 +1579,21 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5573704777213095681, guid: 01e3f67626dea8649bb64634726ff3d4,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.17254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573704777213095681, guid: 01e3f67626dea8649bb64634726ff3d4,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.99607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573704777213095681, guid: 01e3f67626dea8649bb64634726ff3d4,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.88235295
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5302464969669485702, guid: 01e3f67626dea8649bb64634726ff3d4, type: 3}
     - {fileID: 5302464969168456074, guid: 01e3f67626dea8649bb64634726ff3d4, type: 3}
@@ -1658,17 +1693,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 506424628}
         m_MethodName: OnClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1950078740}
-        m_MethodName: StopEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5442,18 +5466,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1.14e-13, y: 24.978}
   m_SizeDelta: {x: 700, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1950078740 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3520340928472885642, guid: 994784aba5b8dae4eba1870b9d5492c9,
-    type: 3}
-  m_PrefabInstance: {fileID: 187384532}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f15f586841ca8684daf54e7ea000f05a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1995081927
 GameObject:
   m_ObjectHideFlags: 0

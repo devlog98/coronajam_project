@@ -1,11 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
+/*
+ * Put at scene in order to load a language for tests
+*/
 
 namespace Locallies.Tools {
     public class DefaultLanguage : MonoBehaviour {
         public static DefaultLanguage instance;
 
+        // language 
         [SerializeField] private Language language;
         public Language Language { get { return language; } }
 

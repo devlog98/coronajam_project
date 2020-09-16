@@ -1,8 +1,6 @@
-﻿using Locallies.Core;
-using Locallies.Tools;
+﻿using Locallies.Tools;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 
 /*
@@ -22,12 +20,12 @@ namespace Locallies.Core {
         private static string missingSprite;
 
         // loads data from Localization File
-        public static void LoadLanguageItem(Language language) {
+        public static void LoadLanguage(Language language) {
             // loads data from file
             LanguageText languageText = new LanguageText();
             LanguageSheet languageSheet = new LanguageSheet();
 
-            bool success = LanguageParser.LoadLocalizationFile(language, out languageText, out languageSheet);
+            bool success = LanguageParser.ReadLanguage(language, out languageText, out languageSheet);
 
             if (success) {
                 // creates and populates dictionary
@@ -60,9 +58,9 @@ namespace Locallies.Core {
 
         // gets value from dictionary or returns missing key message
         public static string LocalizeString(string key) {
-            // loads default Localization File if no dictionary
+            // loads Default Language if no dictionary
             if (textDictionary == null) {
-                LoadLanguageItem(DefaultLanguage.instance.Language);
+                LoadLanguage(DefaultLanguage.instance.Language);
             }
 
             textDictionary.TryGetValue(key, out string result);
@@ -72,9 +70,9 @@ namespace Locallies.Core {
         }
 
         public static Sprite LocalizeSprite(string key) {
-            // loads default Localization File if no dictionary
+            // loads Default Language File if no dictionary
             if (sheetDictionary == null) {
-                LoadLanguageItem(DefaultLanguage.instance.Language);
+                LoadLanguage(DefaultLanguage.instance.Language);
             }
 
             sheetDictionary.TryGetValue(key, out Sprite result);

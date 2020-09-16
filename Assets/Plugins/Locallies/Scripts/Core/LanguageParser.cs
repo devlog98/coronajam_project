@@ -3,29 +3,72 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using UnityEngine.Networking;
 using YamlDotNet.Serialization;
 
 /*
- * Reads and writes data into Localization Files
+ * Reads and writes data into Languages
  * Supports .json and .yml files
 */
 
 namespace Locallies.Core {
     public static class LanguageParser {
-        //reads all files from locale
-        public static bool LoadLocalizationFile(Language language, out LanguageText localizationText, out LanguageSheet localizationSheet) {
-            bool success = false;
+        //reads all files from language
+        public static bool ReadLanguage(Language language, out LanguageText languageText, out LanguageSheet languageSheet) {
+            bool success = true;
 
-            // setup for data
-            localizationText = ReadLocalizationText(language.LocalizationText, language.LocalizationTextFormat);
+            // read text
+            languageText = ReadLanguageText(language.Text, language.TextFormat);
+            if (language.Text != null && languageText == null) {
+                success = false;
+            }
 
             // read sheet
-            localizationSheet = ReadLocalizationSprite(language.LocalizationSprite);
-
-            success = true;
+            languageSheet = ReadLanguageSheet(language.Sheet);
+            if (language.Sheet != null && languageSheet.items.Length == 0) {
+                success = false;
+            }
 
             return success;
+        }
+
+        //reads text data from Language
+        public static LanguageText ReadLanguageText(TextAsset text, TextFormat textFormat) {
+            LanguageText languageText = null;
+
+            // if file is valid...
+            string textData = text.text;
+            if (!String.IsNullOrEmpty(textData)) {
+                switch (textFormat) {
+                    case TextFormat.JSON:
+                        languageText = FromJson(textData);
+                        break;
+                    case TextFormat.YAML:
+                        languageText = FromYaml(textData);
+                        break;
+                }
+            }
+
+            // result feedback
+            return languageText;
+        }
+
+        //reads sheet data from file
+        public static LanguageSheet ReadLanguageSheet(Sprite[] sprites) {
+            LanguageSheet languageSheet = new LanguageSheet();
+
+            // loop through all sprites
+            List<LanguageSprite> languageSprites = new List<LanguageSprite>();
+            foreach (Sprite sprite in sprites) {
+                LanguageSprite languageSprite = new LanguageSprite();
+
+                languageSprite.key = Path.GetFileNameWithoutExtension(sprite.name);
+                languageSprite.value = sprite;
+                languageSprites.Add(languageSprite);
+            }
+            languageSheet.items = languageSprites.ToArray();
+
+            // result feedback
+            return languageSheet;
         }
 
         //writes text data into file
@@ -54,65 +97,6 @@ namespace Locallies.Core {
 
             //result feedback
             return success;
-        }
-
-        //reads text data from file
-        public static LanguageText ReadLocalizationText(TextAsset file, LocalizationTextFormat format) {
-            LanguageText localizationText = null;
-
-            string fileData = file.text;
-
-            // if file is valid...
-            if (!String.IsNullOrEmpty(fileData)) {
-                switch (format) {
-                    case LocalizationTextFormat.JSON:
-                        localizationText = FromJson(fileData);
-                        break;
-                    case LocalizationTextFormat.YAML:
-                        localizationText = FromYaml(fileData);
-                        break;
-                }
-            }
-
-            // result feedback
-            return localizationText;
-        }
-
-        //reads sheet data from file
-        public static LanguageSheet ReadLocalizationSprite(Sprite[] file) {
-            LanguageSheet localizationSheet = new LanguageSheet();
-
-            List<LanguageSprite> sprites = new List<LanguageSprite>();
-            foreach (Sprite sprite in file) {
-                LanguageSprite localizationSprite = new LanguageSprite();
-                localizationSprite.key = Path.GetFileNameWithoutExtension(sprite.name);
-                localizationSprite.value = sprite;
-
-                sprites.Add(localizationSprite);
-            }
-
-            localizationSheet.items = sprites.ToArray();
-
-            // result feedback
-            return localizationSheet;
-        }
-
-        //get files from path
-        private static string[] GetFilenamesFromPath(string path) {
-            List<String> filenames = new List<String>();
-
-            string[] files = Directory.GetFiles(path);
-
-            foreach (string file in files) {
-                string fileExtension = Path.GetExtension(file);
-
-                // ignore .meta files
-                if (fileExtension != ".meta") {
-                    filenames.Add(file);
-                }
-            }
-
-            return filenames.ToArray();
         }
 
         //json utility methods
