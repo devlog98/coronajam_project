@@ -659,6 +659,7 @@ GameObject:
   - component: {fileID: 48526350921494758}
   - component: {fileID: 2924151234469706566}
   - component: {fileID: 1717558376434647266}
+  - component: {fileID: 5749656217147761632}
   m_Layer: 0
   m_Name: Quit Button
   m_TagString: Untagged
@@ -784,6 +785,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5749656217147761632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2806172564050271555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c985e1dc0ea811446aa8943b51479b0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myText: {fileID: 1128074406}
+  CoodPT: {x: -4, y: -211, z: 0}
+  widthPT: 722.7
+  CoodEn: {x: -9.1, y: -211, z: 0}
+  widthEn: 492.9
+  width: {fileID: 4036283856021589279}
 --- !u!1 &3392405716845785635
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,6 +1239,7 @@ GameObject:
   - component: {fileID: 4241319927559749825}
   - component: {fileID: 8760046951028802490}
   - component: {fileID: 3628057251139262042}
+  - component: {fileID: 3077400902877374287}
   m_Layer: 0
   m_Name: Resume Button
   m_TagString: Untagged
@@ -1319,7 +1339,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8760046951028802490}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -1345,6 +1365,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3077400902877374287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5447542819062172441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c985e1dc0ea811446aa8943b51479b0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myText: {fileID: 504204929}
+  CoodPT: {x: 3.3, y: 0, z: 0}
+  widthPT: 965.9
+  CoodEn: {x: 5.8, y: 0, z: 0}
+  widthEn: 601.7
+  width: {fileID: 452375130215606732}
 --- !u!1 &6462308318097080494
 GameObject:
   m_ObjectHideFlags: 0
